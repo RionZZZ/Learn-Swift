@@ -10,6 +10,14 @@
 		49C5A42BBFC9DD551EC1C2E5 /* Pods_NewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7198029ECAEE2BED2C33B9A /* Pods_NewsUITests.framework */; };
 		8BDE9727D42A84F945B5CB40 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E1D27EAE955FB0FABD2F58 /* Pods_News.framework */; };
 		90DDC51E84C04616E20A41C2 /* Pods_NewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71478A5168E3B9166C287A32 /* Pods_NewsTests.framework */; };
+		AE1A4A972216550F004DFFB9 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A962216550F004DFFB9 /* Const.swift */; };
+		AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9C221655F0004DFFB9 /* UIColor.swift */; };
+		AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9F221661B8004DFFB9 /* Network.swift */; };
+		AE1A4AA222166E35004DFFB9 /* MineCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4AA122166E35004DFFB9 /* MineCellModel.swift */; };
+		AE4401012216B2160097DEA9 /* MineOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */; };
+		AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4401002216B2160097DEA9 /* MineOtherCell.xib */; };
+		AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */; };
+		AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE46B8FB22170300006B75DD /* MineFirstSectionCell.xib */; };
 		AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE89A51A221571B5007FF80F /* Assets.xcassets */; };
 		AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */; };
 		AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F32215ADD300904DDE /* VideoViewController.swift */; };
@@ -49,6 +57,14 @@
 		71478A5168E3B9166C287A32 /* Pods_NewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66482A2D7C7BC802736493C /* Pods-NewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsTests/Pods-NewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		A68672A22171CF60DDF3241A /* Pods-NewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsUITests/Pods-NewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE1A4A962216550F004DFFB9 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		AE1A4A9C221655F0004DFFB9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AE1A4A9F221661B8004DFFB9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		AE1A4AA122166E35004DFFB9 /* MineCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCellModel.swift; sourceTree = "<group>"; };
+		AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOtherCell.swift; sourceTree = "<group>"; };
+		AE4401002216B2160097DEA9 /* MineOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineOtherCell.xib; sourceTree = "<group>"; };
+		AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineFirstSectionCell.swift; sourceTree = "<group>"; };
+		AE46B8FB22170300006B75DD /* MineFirstSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineFirstSectionCell.xib; sourceTree = "<group>"; };
 		AE89A51A221571B5007FF80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F32215ADD300904DDE /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -124,15 +140,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AE1A4A9B221655F0004DFFB9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A4A9C221655F0004DFFB9 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AE1A4A9E22165D33004DFFB9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A4A9F221661B8004DFFB9 /* Network.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		AEB9C6EB2215ADD300904DDE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AEB9C6FB2215ADD300904DDE /* Others */,
+				AEB9C7032215ADD300904DDE /* Main */,
 				AEB9C6EC2215ADD300904DDE /* Home */,
 				AEB9C6F12215ADD300904DDE /* Video */,
 				AEB9C6F62215ADD300904DDE /* Huoshan */,
-				AEB9C6FB2215ADD300904DDE /* Others */,
 				AEB9C6FE2215ADD300904DDE /* Mine */,
-				AEB9C7032215ADD300904DDE /* Main */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -238,6 +270,7 @@
 			children = (
 				AEB9C6FC2215ADD300904DDE /* AppDelegate.swift */,
 				AEB9C6FD2215ADD300904DDE /* Info.plist */,
+				AE1A4A962216550F004DFFB9 /* Const.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -270,6 +303,10 @@
 		AEB9C7022215ADD300904DDE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */,
+				AE4401002216B2160097DEA9 /* MineOtherCell.xib */,
+				AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */,
+				AE46B8FB22170300006B75DD /* MineFirstSectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +314,8 @@
 		AEB9C7032215ADD300904DDE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AE1A4A9E22165D33004DFFB9 /* Tools */,
+				AE1A4A9B221655F0004DFFB9 /* Extension */,
 				AEB9C7042215ADD300904DDE /* Controller */,
 				AEB9C7072215ADD300904DDE /* Model */,
 				AEB9C7082215ADD300904DDE /* View */,
@@ -296,6 +335,7 @@
 		AEB9C7072215ADD300904DDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AE1A4AA122166E35004DFFB9 /* MineCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +410,7 @@
 				AEDEA608221444F8006074A1 /* Sources */,
 				AEDEA609221444F8006074A1 /* Frameworks */,
 				AEDEA60A221444F8006074A1 /* Resources */,
+				DD2502E000189CF5A1E47620 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -467,7 +508,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEDEA61A221444F9006074A1 /* LaunchScreen.storyboard in Resources */,
+				AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */,
 				AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */,
+				AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +598,32 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DD2502E000189CF5A1E47620 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-News/Pods-News-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-News/Pods-News-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -566,10 +635,16 @@
 				AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */,
 				AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */,
 				AEB9C7122215ADD300904DDE /* MyTabBar.swift in Sources */,
+				AE1A4AA222166E35004DFFB9 /* MineCellModel.swift in Sources */,
 				AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */,
+				AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */,
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
 				AEB9C70F2215ADD300904DDE /* MineViewController.swift in Sources */,
+				AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */,
+				AE4401012216B2160097DEA9 /* MineOtherCell.swift in Sources */,
 				AEB9C7102215ADD300904DDE /* MyTabBarController.swift in Sources */,
+				AE1A4A972216550F004DFFB9 /* Const.swift in Sources */,
+				AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +824,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9D43652ZYM;
 				INFOPLIST_FILE = "$(SRCROOT)/News/Classes/Others/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -769,6 +845,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9D43652ZYM;
 				INFOPLIST_FILE = "$(SRCROOT)/News/Classes/Others/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
