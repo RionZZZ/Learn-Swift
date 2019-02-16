@@ -12,10 +12,17 @@ class MineOtherCell: UITableViewCell, RegisterCellOrNib {
 
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
+    @IBOutlet weak var arrowImage: UIImageView!
+    @IBOutlet weak var separator: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        leftLabel.theme_textColor = "colors.black"
+        rightLabel.theme_textColor = "colors.cellRightTextColor"
+        arrowImage.theme_image = "images.cellArrow"
+        separator.theme_backgroundColor = "colors.separatorColor"
+        theme_backgroundColor = "colors.cellBackgroundColor"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

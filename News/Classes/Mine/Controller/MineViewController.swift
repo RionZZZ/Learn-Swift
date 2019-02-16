@@ -31,7 +31,8 @@ class MineViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
-        tableView.backgroundColor = UIColor.globalBgc()
+//        tableView.backgroundColor = UIColor.globalBgc()
+        tableView.theme_backgroundColor = "colors.tableViewBackgroundColor"
         tableView.separatorStyle = .none
         tableView._registerCell(cell: MineFirstSectionCell.self)
         tableView._registerCell(cell: MineOtherCell.self)
@@ -72,7 +73,8 @@ extension MineViewController {
     //头部视图
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 10))
-        view.backgroundColor = UIColor.globalBgc()
+//        view.backgroundColor = UIColor.globalBgc()
+        view.theme_backgroundColor = "colors.tableViewBackgroundColor"
         return view
     }
     //cell高度

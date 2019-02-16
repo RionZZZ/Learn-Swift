@@ -98,10 +98,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="arrowImage" destination="hNi-jH-HUK" id="8gc-as-bs4"/>
                 <outlet property="collectionView" destination="YFH-pn-bzV" id="DHZ-sp-suy"/>
                 <outlet property="leftLabel" destination="DlX-9h-RxQ" id="ELz-OJ-mKG"/>
                 <outlet property="rightImage" destination="ELZ-Ry-2yk" id="XzC-7k-F98"/>
                 <outlet property="rightLabel" destination="L61-8r-6Ui" id="0aI-Iz-Fcd"/>
+                <outlet property="separator" destination="JTa-Hq-9uW" id="rob-73-HqB"/>
+                <outlet property="topView" destination="TpQ-m4-klK" id="8Dl-YO-t8H"/>
             </connections>
             <point key="canvasLocation" x="8.8000000000000007" y="152.92353823088456"/>
         </tableViewCell>

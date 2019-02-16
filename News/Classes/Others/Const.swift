@@ -17,3 +17,5 @@ let device_id = "6096495334"
 let IID = "5034850950"
 
 let MineHeaderHeight: CGFloat = 280
+
+let isNight = "isNight"

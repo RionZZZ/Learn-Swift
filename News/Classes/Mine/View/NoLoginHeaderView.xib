@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper_profile_night" translatesAutoresizingMaskIntoConstraints="NO" id="tGn-iv-a9L">
-                    <rect key="frame" x="0.0" y="-20" width="375" height="280"/>
+                    <rect key="frame" x="0.0" y="-44" width="375" height="304"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arB-BD-Rma">
                     <rect key="frame" x="0.0" y="190" width="375" height="70"/>
@@ -39,6 +39,9 @@
                             <state key="normal" title="夜间" image="nighticon_profile_24x24_">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="onDayOrNightClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="005-xD-mgb"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfi-gL-LuV">
                             <rect key="frame" x="125" y="0.0" width="125" height="70"/>
@@ -125,13 +128,14 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tGn-iv-a9L" secondAttribute="bottom" id="ULF-UK-Xrx"/>
                 <constraint firstItem="tGn-iv-a9L" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YWv-nB-czT"/>
                 <constraint firstItem="arB-BD-Rma" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="e0F-92-nC3"/>
-                <constraint firstItem="tGn-iv-a9L" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-20" id="eSb-z8-xq2"/>
+                <constraint firstItem="tGn-iv-a9L" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-44" id="eSb-z8-xq2"/>
                 <constraint firstItem="V7E-i2-Wki" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="l9e-0O-oQK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backgroundImage" destination="tGn-iv-a9L" id="xCe-bJ-sMU"/>
+                <outlet property="bottomView" destination="arB-BD-Rma" id="AmP-cX-2hF"/>
                 <outlet property="dayOrNight" destination="fdW-M7-duv" id="g39-b7-pAC"/>
                 <outlet property="favoriteButton" destination="TR3-iq-0wZ" id="afG-0a-aJl"/>
                 <outlet property="historyButton" destination="gfi-gL-LuV" id="Mvu-xs-Hqj"/>

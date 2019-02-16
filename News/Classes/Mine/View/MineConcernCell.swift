@@ -16,7 +16,6 @@ class MineConcernCell: UICollectionViewCell, RegisterCellOrNib {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tipsButton: UIButton!
     
-    
     var mineConcern : MineConcernModel? {
         didSet {
             avatorImage.kf.setImage(with: URL(string: (mineConcern?.icon)!))
@@ -35,6 +34,9 @@ class MineConcernCell: UICollectionViewCell, RegisterCellOrNib {
         
         tipsButton.layer.borderWidth = 1
         tipsButton.layer.borderColor = UIColor.white.cgColor
+        
+        nameLabel.theme_textColor = "colors.black"
+        theme_backgroundColor = "colors.cellBackgroundColor"
     }
 
 }

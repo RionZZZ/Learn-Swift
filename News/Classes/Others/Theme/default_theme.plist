@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>images</key>
+	<dict>
+		<key>publishButton</key>
+		<string>feed_publish_44x44_</string>
+		<key>publishButtonSelected</key>
+		<string>feed_publish_press_44x44_</string>
+		<key>loginMobileButton</key>
+		<string>cellphoneicon_login_profile_66x66_</string>
+		<key>loginWechatButton</key>
+		<string>weixinicon_login_profile_66x66_</string>
+		<key>loginQQButton</key>
+		<string>qqicon_login_profile_66x66_</string>
+		<key>loginSinaButton</key>
+		<string>sinaicon_login_profile_66x66_</string>
+		<key>mineFavoriteButton</key>
+		<string>favoriteicon_profile_24x24_</string>
+		<key>mineHistoryButton</key>
+		<string>history_profile_24x24_</string>
+		<key>dayOrNightButton</key>
+		<string>nighticon_profile_24x24_</string>
+		<key>cellArrow</key>
+		<string>setting_rightarrow_8x14_</string>
+	</dict>
+	<key>colors</key>
+	<dict>
+		<key>tabbarTint</key>
+		<string>#f55a5d</string>
+		<key>separatorColor</key>
+		<string>#f0f0f0</string>
+		<key>cellRightTextColor</key>
+		<string>#aaaaaa</string>
+		<key>cellBackgroundColor</key>
+		<string>#ffffff</string>
+		<key>moreLoginBackgroundColor</key>
+		<string>#00000060</string>
+		<key>moreLoginColor</key>
+		<string>#ffffff</string>
+		<key>black</key>
+		<string>#000000</string>
+		<key>tableViewBackgroundColor</key>
+		<string>#f6f6f6</string>
+	</dict>
+</dict>
+</plist>

@@ -60,8 +60,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="arrowImage" destination="gJs-hF-uIt" id="DKg-ci-haL"/>
                 <outlet property="leftLabel" destination="MyU-vg-cEU" id="tcV-LX-743"/>
                 <outlet property="rightLabel" destination="wNi-4w-6Za" id="LDu-uI-yNe"/>
+                <outlet property="separator" destination="12O-zJ-agK" id="NuS-Tw-R9P"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="120.53973013493254"/>
         </tableViewCell>

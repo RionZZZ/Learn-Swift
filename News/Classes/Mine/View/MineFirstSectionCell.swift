@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MineFirstSectionCell: UITableViewCell, RegisterCellOrNib {
 
@@ -14,6 +15,9 @@ class MineFirstSectionCell: UITableViewCell, RegisterCellOrNib {
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var separator: UIView!
+    @IBOutlet weak var arrowImage: UIImageView!
+    @IBOutlet weak var topView: UIView!
     
     var concerns = [MineConcernModel]() {
         didSet {
@@ -29,16 +33,26 @@ class MineFirstSectionCell: UITableViewCell, RegisterCellOrNib {
     }
     var mineConcern : MineConcernModel? {
         didSet {
-            
+            self.rightLabel.text = mineConcern?.name
+            self.rightImage.kf.setImage(with: URL(string: (mineConcern?.icon)!))
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         collectionView.collectionViewLayout = MineConcernFlowLayout()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView._registerCell(cell: MineConcernCell.self)
+        
+        leftLabel.theme_textColor = "colors.black"
+        rightLabel.theme_textColor = "colors.cellRightTextColor"
+        arrowImage.theme_image = "images.cellArrow"
+        separator.theme_backgroundColor = "colors.separatorColor"
+        topView.theme_backgroundColor = "colors.cellBackgroundColor"
+        collectionView.theme_backgroundColor = "colors.cellBackgroundColor"
+        theme_backgroundColor = "colors.cellBackgroundColor"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
