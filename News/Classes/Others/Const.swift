@@ -15,3 +15,5 @@ let BASE_URL = "http://is.snssdk.com"
 
 let device_id = "6096495334"
 let IID = "5034850950"
+
+let MineHeaderHeight: CGFloat = 280

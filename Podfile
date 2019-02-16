@@ -8,6 +8,9 @@ target 'News' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'HandyJSON'
+  pod 'Kingfisher'
+  pod 'IBAnimatable'
+  pod 'SwiftTheme'
 
   # Pods for News
 

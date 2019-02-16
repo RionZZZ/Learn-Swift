@@ -18,6 +18,13 @@
 		AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4401002216B2160097DEA9 /* MineOtherCell.xib */; };
 		AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */; };
 		AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE46B8FB22170300006B75DD /* MineFirstSectionCell.xib */; };
+		AE46B8FF22179BCD006B75DD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B8FE22179BCD006B75DD /* UIView.swift */; };
+		AE46B90122179C70006B75DD /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B90022179C70006B75DD /* UITableView.swift */; };
+		AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B90222179EB9006B75DD /* UICollectionView.swift */; };
+		AE46B9062217AFED006B75DD /* MineConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B9042217AFED006B75DD /* MineConcernCell.swift */; };
+		AE46B9072217AFED006B75DD /* MineConcernCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE46B9052217AFED006B75DD /* MineConcernCell.xib */; };
+		AE46B9092217C82C006B75DD /* NoLoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B9082217C82C006B75DD /* NoLoginHeaderView.swift */; };
+		AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE46B90A2217C849006B75DD /* NoLoginHeaderView.xib */; };
 		AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE89A51A221571B5007FF80F /* Assets.xcassets */; };
 		AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */; };
 		AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F32215ADD300904DDE /* VideoViewController.swift */; };
@@ -65,6 +72,13 @@
 		AE4401002216B2160097DEA9 /* MineOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineOtherCell.xib; sourceTree = "<group>"; };
 		AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineFirstSectionCell.swift; sourceTree = "<group>"; };
 		AE46B8FB22170300006B75DD /* MineFirstSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineFirstSectionCell.xib; sourceTree = "<group>"; };
+		AE46B8FE22179BCD006B75DD /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		AE46B90022179C70006B75DD /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		AE46B90222179EB9006B75DD /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		AE46B9042217AFED006B75DD /* MineConcernCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineConcernCell.swift; sourceTree = "<group>"; };
+		AE46B9052217AFED006B75DD /* MineConcernCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineConcernCell.xib; sourceTree = "<group>"; };
+		AE46B9082217C82C006B75DD /* NoLoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoLoginHeaderView.swift; sourceTree = "<group>"; };
+		AE46B90A2217C849006B75DD /* NoLoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoLoginHeaderView.xib; sourceTree = "<group>"; };
 		AE89A51A221571B5007FF80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F32215ADD300904DDE /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				AE1A4A9C221655F0004DFFB9 /* UIColor.swift */,
+				AE46B8FE22179BCD006B75DD /* UIView.swift */,
+				AE46B90022179C70006B75DD /* UITableView.swift */,
+				AE46B90222179EB9006B75DD /* UICollectionView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -307,6 +324,10 @@
 				AE4401002216B2160097DEA9 /* MineOtherCell.xib */,
 				AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */,
 				AE46B8FB22170300006B75DD /* MineFirstSectionCell.xib */,
+				AE46B9042217AFED006B75DD /* MineConcernCell.swift */,
+				AE46B9052217AFED006B75DD /* MineConcernCell.xib */,
+				AE46B9082217C82C006B75DD /* NoLoginHeaderView.swift */,
+				AE46B90A2217C849006B75DD /* NoLoginHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,6 +533,8 @@
 				AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */,
 				AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
+				AE46B9072217AFED006B75DD /* MineConcernCell.xib in Resources */,
+				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +632,9 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-News/Pods-News-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -617,6 +643,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +663,8 @@
 				AEB9C70D2215ADD300904DDE /* AppDelegate.swift in Sources */,
 				AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */,
 				AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */,
+				AE46B9092217C82C006B75DD /* NoLoginHeaderView.swift in Sources */,
+				AE46B9062217AFED006B75DD /* MineConcernCell.swift in Sources */,
 				AEB9C7122215ADD300904DDE /* MyTabBar.swift in Sources */,
 				AE1A4AA222166E35004DFFB9 /* MineCellModel.swift in Sources */,
 				AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */,
@@ -641,10 +672,13 @@
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
 				AEB9C70F2215ADD300904DDE /* MineViewController.swift in Sources */,
 				AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */,
+				AE46B8FF22179BCD006B75DD /* UIView.swift in Sources */,
 				AE4401012216B2160097DEA9 /* MineOtherCell.swift in Sources */,
 				AEB9C7102215ADD300904DDE /* MyTabBarController.swift in Sources */,
+				AE46B90122179C70006B75DD /* UITableView.swift in Sources */,
 				AE1A4A972216550F004DFFB9 /* Const.swift in Sources */,
 				AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */,
+				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

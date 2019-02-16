@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MineOtherCell: UITableViewCell {
+class MineOtherCell: UITableViewCell, RegisterCellOrNib {
 
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!

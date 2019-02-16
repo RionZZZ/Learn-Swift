@@ -18,7 +18,7 @@ struct MineCellModel : HandyJSON {
     var tip_new : Int = 0
 }
 
-struct MineConcern : HandyJSON {
+struct MineConcernModel : HandyJSON {
     
     var name : String?
     var url : String?
