@@ -10,6 +10,7 @@ import UIKit
 
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
+let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
 
 let BASE_URL = "http://is.snssdk.com"
 
@@ -19,3 +20,5 @@ let IID = "5034850950"
 let MineHeaderHeight: CGFloat = 280
 
 let isNight = "isNight"
+
+let isBigPhone: Bool = screenWidth > 800 ? true : false

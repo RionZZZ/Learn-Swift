@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE3B0FE83CB803A7B7E7E4E557F8E063"
+               BlueprintIdentifier = "565EAC7C47C59E29CE27FB8AA8D3F92C"
                BlueprintName = "SwiftTheme"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SwiftTheme.framework">

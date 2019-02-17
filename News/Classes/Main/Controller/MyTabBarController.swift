@@ -96,5 +96,10 @@ class MyTabBarController: UITabBarController {
         setValue(MyTabBar(), forKey: "tabBar")
     }
     
+    //控制器销毁时移除通知
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 
 }

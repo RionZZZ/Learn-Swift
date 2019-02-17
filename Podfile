@@ -11,6 +11,8 @@ target 'News' do
   pod 'Kingfisher'
   pod 'IBAnimatable'
   pod 'SwiftTheme'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   # Pods for News
 

@@ -14,6 +14,8 @@
 		AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9C221655F0004DFFB9 /* UIColor.swift */; };
 		AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9F221661B8004DFFB9 /* Network.swift */; };
 		AE1A4AA222166E35004DFFB9 /* MineCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4AA122166E35004DFFB9 /* MineCellModel.swift */; };
+		AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */; };
+		AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */; };
 		AE4401012216B2160097DEA9 /* MineOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */; };
 		AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4401002216B2160097DEA9 /* MineOtherCell.xib */; };
 		AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */; };
@@ -71,6 +73,8 @@
 		AE1A4A9C221655F0004DFFB9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AE1A4A9F221661B8004DFFB9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		AE1A4AA122166E35004DFFB9 /* MineCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCellModel.swift; sourceTree = "<group>"; };
+		AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
+		AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
 		AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOtherCell.swift; sourceTree = "<group>"; };
 		AE4401002216B2160097DEA9 /* MineOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineOtherCell.xib; sourceTree = "<group>"; };
 		AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineFirstSectionCell.swift; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				AEB9C7002215ADD300904DDE /* MineViewController.swift */,
+				AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */,
+				AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */,
 				AEDEA61A221444F9006074A1 /* LaunchScreen.storyboard in Resources */,
 				AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */,
 				AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */,
@@ -653,6 +660,9 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -664,6 +674,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -680,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB9C70D2215ADD300904DDE /* AppDelegate.swift in Sources */,
+				AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */,
 				AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */,
 				AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */,
 				AE46B9092217C82C006B75DD /* NoLoginHeaderView.swift in Sources */,
