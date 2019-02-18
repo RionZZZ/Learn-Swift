@@ -141,6 +141,13 @@ extension MineViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 3 && indexPath.row == 1 {
+            //系统设置界面
+            let settingVC = SettingViewController()
+            settingVC.navigationItem.title = "设置"
+            navigationController?.pushViewController(settingVC, animated: true)
+        }
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

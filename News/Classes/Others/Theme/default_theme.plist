@@ -4,6 +4,20 @@
 <dict>
 	<key>images</key>
 	<dict>
+		<key>wechatButton</key>
+		<string>weixin_sdk_login_40x40_</string>
+		<key>QQButton</key>
+		<string>qq_sdk_login_40x40_</string>
+		<key>tianyiButton</key>
+		<string>tianyi_sdk_login_40x40_</string>
+		<key>mailButton</key>
+		<string>mailbox_sdk_login_40x40_</string>
+		<key>closeButton</key>
+		<string>close_sdk_login_14x14_</string>
+		<key>agreementButton</key>
+		<string>details_choose_icon_15x15_</string>
+		<key>agreementOKButton</key>
+		<string>details_choose_ok_icon_15x15_</string>
 		<key>publishButton</key>
 		<string>feed_publish_44x44_</string>
 		<key>publishButtonSelected</key>
@@ -27,6 +41,14 @@
 	</dict>
 	<key>colors</key>
 	<dict>
+		<key>navigationBarTint</key>
+		<string>#000000</string>
+		<key>loginFieldBackground</key>
+		<string>#ffffff</string>
+		<key>enterTextColor</key>
+		<string>#ffffff</string>
+		<key>enterBackgroundColor</key>
+		<string>#f9a9a9</string>
 		<key>tabbarTint</key>
 		<string>#f55a5d</string>
 		<key>separatorColor</key>

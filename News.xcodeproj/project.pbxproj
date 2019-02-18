@@ -13,7 +13,6 @@
 		AE1A4A972216550F004DFFB9 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A962216550F004DFFB9 /* Const.swift */; };
 		AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9C221655F0004DFFB9 /* UIColor.swift */; };
 		AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9F221661B8004DFFB9 /* Network.swift */; };
-		AE1A4AA222166E35004DFFB9 /* MineCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4AA122166E35004DFFB9 /* MineCellModel.swift */; };
 		AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */; };
 		AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */; };
 		AE4401012216B2160097DEA9 /* MineOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */; };
@@ -30,6 +29,12 @@
 		AE46B90D2217E29C006B75DD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B90C2217E29C006B75DD /* Theme.swift */; };
 		AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE46B90F2217E4D6006B75DD /* default_theme.plist */; };
 		AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE46B9112217E4F1006B75DD /* night_theme.plist */; };
+		AE48AC0F221A418500FA2015 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48AC0E221A418500FA2015 /* SettingViewController.swift */; };
+		AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE48AC10221A45BA00FA2015 /* Setting.plist */; };
+		AE48AC13221A4C6C00FA2015 /* MineCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48AC12221A4C6C00FA2015 /* MineCellModel.swift */; };
+		AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48AC14221A4C9600FA2015 /* SettingModel.swift */; };
+		AE48AC18221A519F00FA2015 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48AC16221A519F00FA2015 /* SettingCell.swift */; };
+		AE48AC19221A519F00FA2015 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE48AC17221A519F00FA2015 /* SettingCell.xib */; };
 		AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE89A51A221571B5007FF80F /* Assets.xcassets */; };
 		AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */; };
 		AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F32215ADD300904DDE /* VideoViewController.swift */; };
@@ -72,7 +77,6 @@
 		AE1A4A962216550F004DFFB9 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		AE1A4A9C221655F0004DFFB9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AE1A4A9F221661B8004DFFB9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		AE1A4AA122166E35004DFFB9 /* MineCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCellModel.swift; sourceTree = "<group>"; };
 		AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
 		AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
 		AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOtherCell.swift; sourceTree = "<group>"; };
@@ -89,6 +93,12 @@
 		AE46B90C2217E29C006B75DD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		AE46B90F2217E4D6006B75DD /* default_theme.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
 		AE46B9112217E4F1006B75DD /* night_theme.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
+		AE48AC0E221A418500FA2015 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		AE48AC10221A45BA00FA2015 /* Setting.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Setting.plist; sourceTree = "<group>"; };
+		AE48AC12221A4C6C00FA2015 /* MineCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCellModel.swift; sourceTree = "<group>"; };
+		AE48AC14221A4C9600FA2015 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		AE48AC16221A519F00FA2015 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		AE48AC17221A519F00FA2015 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
 		AE89A51A221571B5007FF80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F32215ADD300904DDE /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -309,6 +319,7 @@
 				AEB9C6FC2215ADD300904DDE /* AppDelegate.swift */,
 				AEB9C6FD2215ADD300904DDE /* Info.plist */,
 				AE1A4A962216550F004DFFB9 /* Const.swift */,
+				AE48AC10221A45BA00FA2015 /* Setting.plist */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -329,6 +340,7 @@
 				AEB9C7002215ADD300904DDE /* MineViewController.swift */,
 				AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */,
 				AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */,
+				AE48AC0E221A418500FA2015 /* SettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -336,6 +348,8 @@
 		AEB9C7012215ADD300904DDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AE48AC12221A4C6C00FA2015 /* MineCellModel.swift */,
+				AE48AC14221A4C9600FA2015 /* SettingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +365,8 @@
 				AE46B9052217AFED006B75DD /* MineConcernCell.xib */,
 				AE46B9082217C82C006B75DD /* NoLoginHeaderView.swift */,
 				AE46B90A2217C849006B75DD /* NoLoginHeaderView.xib */,
+				AE48AC16221A519F00FA2015 /* SettingCell.swift */,
+				AE48AC17221A519F00FA2015 /* SettingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -379,7 +395,6 @@
 		AEB9C7072215ADD300904DDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AE1A4AA122166E35004DFFB9 /* MineCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -559,7 +574,9 @@
 				AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
 				AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */,
+				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
 				AE46B9072217AFED006B75DD /* MineConcernCell.xib in Resources */,
+				AE48AC19221A519F00FA2015 /* SettingCell.xib in Resources */,
 				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,15 +710,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB9C70D2215ADD300904DDE /* AppDelegate.swift in Sources */,
+				AE48AC0F221A418500FA2015 /* SettingViewController.swift in Sources */,
+				AE48AC18221A519F00FA2015 /* SettingCell.swift in Sources */,
 				AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */,
 				AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */,
 				AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */,
 				AE46B9092217C82C006B75DD /* NoLoginHeaderView.swift in Sources */,
 				AE46B9062217AFED006B75DD /* MineConcernCell.swift in Sources */,
 				AEB9C7122215ADD300904DDE /* MyTabBar.swift in Sources */,
-				AE1A4AA222166E35004DFFB9 /* MineCellModel.swift in Sources */,
 				AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */,
 				AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */,
+				AE48AC13221A4C6C00FA2015 /* MineCellModel.swift in Sources */,
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
 				AEB9C70F2215ADD300904DDE /* MineViewController.swift in Sources */,
 				AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */,
@@ -713,6 +732,7 @@
 				AE46B90D2217E29C006B75DD /* Theme.swift in Sources */,
 				AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
+				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

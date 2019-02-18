@@ -171,7 +171,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgS-k3-u6q" customClass="AnimatableButton" customModule="IBAnimatable">
                                 <rect key="frame" x="30" y="257" width="315" height="44"/>
-                                <color key="backgroundColor" red="0.87646732233502533" green="0.42611130445760159" blue="0.45446658495263176" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.66274509803921566" blue="0.66274509803921566" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="进入头条"/>
                                 <userDefinedRuntimeAttributes>
@@ -189,6 +189,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-MO-CCR">
                                 <rect key="frame" x="72" y="307" width="15" height="22"/>
                                 <state key="normal" image="details_choose_ok_icon_15x15_"/>
+                                <connections>
+                                    <action selector="argeementClick:" destination="wod-ko-ZgE" eventType="touchUpInside" id="TM1-0Q-cEK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esf-gV-hq8">
                                 <rect key="frame" x="147.5" y="354.5" width="80" height="28"/>
@@ -196,6 +199,9 @@
                                 <state key="normal" title="账号密码登录">
                                     <color key="titleColor" red="0.28235294117647058" green="0.41960784313725491" blue="0.61568627450980395" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginModeClick:" destination="wod-ko-ZgE" eventType="touchUpInside" id="ZyE-qM-NEK"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="7Cs-BB-7HL">
                                 <rect key="frame" x="30" y="577" width="315" height="40"/>
@@ -263,6 +269,27 @@
                             <real key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="argeementButton" destination="4Zz-MO-CCR" id="BkR-me-DFp"/>
+                        <outlet property="argeementLabel" destination="cky-XT-hPr" id="uEg-zS-WNv"/>
+                        <outlet property="closeButton" destination="MAP-Sv-Gyc" id="8iR-8m-pPB"/>
+                        <outlet property="enterButton" destination="KgS-k3-u6q" id="eGl-gR-OAv"/>
+                        <outlet property="findPassword" destination="eua-En-0Df" id="hr1-y8-saP"/>
+                        <outlet property="findPasswordButton" destination="gik-MQ-DUc" id="3QL-WM-2fo"/>
+                        <outlet property="loginModeButton" destination="esf-gV-hq8" id="a7q-Dg-DFb"/>
+                        <outlet property="mailButton" destination="O5h-Rr-wyQ" id="Pfq-v2-gZM"/>
+                        <outlet property="mobileTextField" destination="DSv-Lz-Bx3" id="V5d-8o-ZUR"/>
+                        <outlet property="mobileView" destination="WW5-0W-BA7" id="Iwd-4g-Gmo"/>
+                        <outlet property="passwordTextField" destination="L9k-T7-XAt" id="iDw-d0-ja1"/>
+                        <outlet property="passwordView" destination="sAl-8h-NuO" id="Lu8-GI-PXL"/>
+                        <outlet property="qqButton" destination="KyN-l9-2BH" id="i07-bm-gfw"/>
+                        <outlet property="sendCaptcha" destination="EBL-Bl-f1K" id="Ejx-7k-KlK"/>
+                        <outlet property="sendCaptchaButton" destination="ETm-Bk-Le0" id="Drg-K4-ueE"/>
+                        <outlet property="tianyiButton" destination="9Dk-5O-QZ2" id="gac-g7-tMg"/>
+                        <outlet property="tipLabel" destination="NMS-yi-eok" id="20J-PC-630"/>
+                        <outlet property="topLabel" destination="aYf-H6-3KW" id="c8V-Dc-3Ao"/>
+                        <outlet property="wechatButton" destination="QyN-b5-WPW" id="Nq5-K5-b8E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enk-eG-XKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
