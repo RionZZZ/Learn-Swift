@@ -16,6 +16,8 @@ class MyNavigationController: UINavigationController {
         let navigationBar = UINavigationBar.appearance()
         navigationBar.theme_backgroundColor = "colors.cellBackgroundColor"
         navigationBar.theme_tintColor = "colors.navigationBarTint"
+        
+        initGlobalPan()
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -30,5 +32,21 @@ class MyNavigationController: UINavigationController {
         popViewController(animated: true)
     }
     
+}
 
+extension MyNavigationController: UIGestureRecognizerDelegate {
+    //全局拖拽手势
+    fileprivate func initGlobalPan() {
+        //创建pan手势
+        let target = interactivePopGestureRecognizer?.delegate
+        let globalPan = UIPanGestureRecognizer(target: target, action: Selector(("handleNavigationTransition:")))
+        globalPan.delegate = self
+        view.addGestureRecognizer(globalPan)
+        //禁止系统手势
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count != 1
+    }
 }

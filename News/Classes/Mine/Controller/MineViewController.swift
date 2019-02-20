@@ -15,6 +15,11 @@ class MineViewController: UITableViewController {
     var sections = [[MineCellModel]]()
     var concerns = [MineConcernModel]()
     
+    fileprivate lazy var headerView: NoLoginHeaderView = {
+        let headerView = NoLoginHeaderView.headerView()
+        return headerView
+    }()
+    
     fileprivate let disposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +38,7 @@ class MineViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
 //        tableView.backgroundColor = UIColor.globalBgc()
@@ -70,14 +76,9 @@ class MineViewController: UITableViewController {
             }).disposed(by: disposeBag)
     }
     
-    fileprivate lazy var headerView: NoLoginHeaderView = {
-        let headerView = NoLoginHeaderView.headerView()
-        return headerView
-    }()
 }
 
 extension MineViewController {
-    
     //每组头部高度
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 1 ? 0 : 10
@@ -126,6 +127,14 @@ extension MineViewController {
             if concerns.count > 1 {
                 cell.concerns = concerns
             }
+//            cell.delegate = self
+            cell.mineConcernSelected = { (concernCell) in
+                if concernCell.userid != nil {
+                    let userDetailVC = UserDetailViewController()
+                    userDetailVC.userId = concernCell.userid!
+                    self.navigationController?.pushViewController(userDetailVC, animated: true)
+                }
+            }
             return cell
         }
 //        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
@@ -159,3 +168,11 @@ extension MineViewController {
         }
     }
 }
+
+//extension MineViewController: MineFirstSectionCellDelegate {
+//    func MineFirstSectionCell(_ firstCell: MineFirstSectionCell, mineConcern: MineConcernModel) {
+//        let userDetailVC = UserDetailViewController()
+//        navigationController?.pushViewController(userDetailVC, animated: true)
+//    }
+//
+//}

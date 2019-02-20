@@ -13,6 +13,8 @@ target 'News' do
   pod 'SwiftTheme'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SQLite.swift'
+  pod 'SVProgressHUD'
 
   # Pods for News
 

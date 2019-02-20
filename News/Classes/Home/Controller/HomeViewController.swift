@@ -10,8 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    fileprivate let newsTitleTable = NewsTitleTable()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Network.loadHomeNewsTitle(completionHandler: { titles in
+            //添加数据到数据库中
+            self.newsTitleTable.insert(titles)
+        })
     }
 
 }

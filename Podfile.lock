@@ -8,6 +8,10 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
+  - SQLite.swift (0.11.5):
+    - SQLite.swift/standard (= 0.11.5)
+  - SQLite.swift/standard (0.11.5)
+  - SVProgressHUD (2.2.5)
   - SwiftTheme (0.4.3)
   - SwiftyJSON (4.2.0)
 
@@ -18,6 +22,8 @@ DEPENDENCIES:
   - Kingfisher
   - RxCocoa
   - RxSwift
+  - SQLite.swift
+  - SVProgressHUD
   - SwiftTheme
   - SwiftyJSON
 
@@ -30,6 +36,8 @@ SPEC REPOS:
     - RxAtomic
     - RxCocoa
     - RxSwift
+    - SQLite.swift
+    - SVProgressHUD
     - SwiftTheme
     - SwiftyJSON
 
@@ -41,9 +49,11 @@ SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftTheme: 628345b948068a48d330d76dffb1a990ea5f90aa
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: bbd6028a08fcff21fca8457c121858dbeed55708
+PODFILE CHECKSUM: 2af8e613abee3657debf3501d9bd40833dd0758f
 
 COCOAPODS: 1.5.3

@@ -9,8 +9,16 @@
 import UIKit
 import Kingfisher
 
+//protocol MineFirstSectionCellDelegate: class {
+//    //点击了第几个cell
+//    func MineFirstSectionCell(_ firstCell: MineFirstSectionCell, mineConcern: MineConcernModel)
+//}
+
 class MineFirstSectionCell: UITableViewCell, RegisterCellOrNib {
 
+//    weak var delegate: MineFirstSectionCellDelegate?
+    var mineConcernSelected: ((_ mineConcern: MineConcernModel)->())?
+    
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var rightImage: UIImageView!
@@ -57,8 +65,6 @@ class MineFirstSectionCell: UITableViewCell, RegisterCellOrNib {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
@@ -72,6 +78,12 @@ extension MineFirstSectionCell: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView._dequeueReusableCell(indexPath: indexPath) as MineConcernCell
         cell.mineConcern = concerns[indexPath.item]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let mineConcren = concerns[indexPath.item]
+//        delegate?.MineFirstSectionCell(self, mineConcern: mineConcren)
+        mineConcernSelected?(mineConcren)
     }
     
     

@@ -9,18 +9,35 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 protocol NetworkProtocol {
     //我的界面cell
-    static func loadMineCellData(completionHandler: @escaping (_ sections:[[MineCellModel]]) -> ())
+    static func loadMineCellData(completionHandler: @escaping (_ sections: [[MineCellModel]]) -> ())
     
     //我的关注
-    static func loadMineConcern(completionHandler: @escaping (_ concerns:[MineConcernModel]) -> ())
+    static func loadMineConcern(completionHandler: @escaping (_ concerns: [MineConcernModel]) -> ())
+    
+    //首页顶部新闻标题
+    static func loadHomeNewsTitle(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ())
+    
+    //用户详情
+    static func loadUserDetail(user_id: Int, completionHandler: @escaping (_ userDetail: UserDetail)  -> ())
+    
+    //取消关注用户
+    static func relationUnfollow(user_id: Int, completionHandler: @escaping (_ user: ConcernUser)  -> ())
+    
+    //关注用户
+    static func relationFollow(user_id: Int, completionHandler: @escaping (_ user: ConcernUser)  -> ())
+    
+    //推荐关注
+    static func loadRelationUserRecommand(user_id: Int, completionHandler: @escaping (_ concerns: [UserCard]) -> ())
+    
 }
 
 extension NetworkProtocol {
     //我的界面cell
-    static func loadMineCellData(completionHandler: @escaping (_ sections:[[MineCellModel]]) -> ()){
+    static func loadMineCellData(completionHandler: @escaping (_ sections: [[MineCellModel]]) -> ()){
         let url = BASE_URL + "/user/tab/tabs/?"
         let params = ["device_id": device_id]
         Alamofire.request(url, parameters: params).responseJSON { res in
@@ -37,17 +54,23 @@ extension NetworkProtocol {
                     return
                 }
                 if let data = json["data"].dictionary {
-                    if let sections = data["sections"]?.array {
-                        var sectionArray = [[MineCellModel]]()
-                        for item in sections {
-                            var rows = [MineCellModel]()
-                            for row in item.arrayObject! {
-                                let mineCellModel = MineCellModel.deserialize(from: row as? NSDictionary)
-                                rows.append(mineCellModel!)
-                            }
-                            sectionArray.append(rows)
-                        }
-                        completionHandler(sectionArray)
+                    if let sections = data["sections"]?.arrayObject {
+//                        var sectionArray = [[MineCellModel]]()
+//                        for item in sections {
+//                            var rows = [MineCellModel]()
+//                            for row in item.arrayObject! {
+//                                let mineCellModel = MineCellModel.deserialize(from: row as? NSDictionary)
+//                                rows.append(mineCellModel!)
+//                            }
+//                            sectionArray.append(rows)
+//                        }
+//                        completionHandler(sectionArray)
+                        
+                        completionHandler(sections.compactMap({ item in
+                            (item as! [Any]).compactMap({
+                                MineCellModel.deserialize(from: $0 as? NSDictionary)
+                            })
+                        }))
                     }
                 }
             }
@@ -56,7 +79,7 @@ extension NetworkProtocol {
     }
     
     //我的关注
-    static func loadMineConcern(completionHandler: @escaping (_ concerns:[MineConcernModel]) -> ()){
+    static func loadMineConcern(completionHandler: @escaping (_ concerns: [MineConcernModel]) -> ()){
             let url = BASE_URL + "/concern/v2/follow/my_follow/?"
             let params = ["device_id": device_id]
             Alamofire.request(url, parameters: params).responseJSON { res in
@@ -73,18 +96,166 @@ extension NetworkProtocol {
                         return
                     }
                     if let datas = json["data"].arrayObject {
-                        var concerns = [MineConcernModel]()
-                        for data in datas {
-                            let mineFirstSectionCell = MineConcernModel.deserialize(from: data as? NSDictionary)
-                            concerns.append(mineFirstSectionCell!)
-                        }
-                        completionHandler(concerns)
+//                        var concerns = [MineConcernModel]()
+//                        for data in datas {
+//                            let mineFirstSectionCell = MineConcernModel.deserialize(from: data as? NSDictionary)
+//                            concerns.append(mineFirstSectionCell!)
+//                        }
+//                        completionHandler(concerns)
+                        completionHandler(datas.compactMap({
+                            MineConcernModel.deserialize(from: $0 as? NSDictionary)
+                        }))
                     }
                 }
                 
             }
     }
     
+    //首页顶部新闻标题
+    static func loadHomeNewsTitle(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ()){
+        let url = BASE_URL + "/article/category/get_subscribed/v1/?"
+        let params = ["device_id": device_id, "iid": iid]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    //提示接口错误
+                    print("接口调用错误!!")
+                    return
+                }
+                if let dataDict = json["data"].dictionary {
+                    if let data = dataDict["data"]?.arrayObject {
+                        var titles = [HomeNewsTitleModel]()
+                        let jsonString = "{\"category\": \"\", \"name\": \"推荐\"}"
+                        let recommend = HomeNewsTitleModel.deserialize(from: jsonString)
+                        titles.append(recommend!)
+                        for item in data {
+                            let newsTitle = HomeNewsTitleModel.deserialize(from: item as? NSDictionary)
+                            titles.append(newsTitle!)
+                        }
+                        completionHandler(titles)
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    //用户详情
+    static func loadUserDetail(user_id: Int, completionHandler: @escaping (_ userDetail: UserDetail)  -> ()){
+        let url = BASE_URL + "/user/profile/homepage/v4/?"
+        let params = ["device_id": device_id, "iid": iid, "user_id": user_id] as [String : Any]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    //提示接口错误
+                    print("接口调用错误!!")
+                    return
+                }
+                if let data = json["data"].dictionaryObject {
+                    let userDetail = UserDetail.deserialize(from: data as Dictionary)
+                    completionHandler(userDetail!)
+                }
+            }
+            
+        }
+    }
+    
+    //取消关注用户
+    static func relationUnfollow(user_id: Int, completionHandler: @escaping (_ user: ConcernUser)  -> ()){
+        let url = BASE_URL + "/2/relation/unfollow/?"
+        let params = ["device_id": device_id, "iid": iid, "user_id": user_id] as [String : Any]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    //提示接口错误
+                    if let data = json["data"].dictionaryObject {
+                        SVProgressHUD.showInfo(withStatus: data["description"] as? String)
+                        SVProgressHUD.setForegroundColor(UIColor.white)
+                        SVProgressHUD.setBackgroundColor(UIColor(r: 0, g: 0, b: 0, alpha: 0.3))
+                    }
+                    return
+                }
+                if let data = json["data"].dictionaryObject {
+                    let user = ConcernUser.deserialize(from: data["user"] as? Dictionary)
+                    completionHandler(user!)
+                }
+            }
+            
+        }
+    }
+    
+    //关注用户
+    static func relationFollow(user_id: Int, completionHandler: @escaping (_ user: ConcernUser)  -> ()){
+        let url = BASE_URL + "/2/relation/follow/v2/?"
+        let params = ["device_id": device_id, "iid": iid, "user_id": user_id] as [String : Any]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    //提示接口错误
+                    print("接口调用错误!!")
+                    return
+                }
+                if let data = json["data"].dictionaryObject {
+                    let user = ConcernUser.deserialize(from: data["user"] as? Dictionary)
+                    completionHandler(user!)
+                }
+            }
+            
+        }
+    }
+    
+    //推荐关注
+    static func loadRelationUserRecommand(user_id: Int, completionHandler: @escaping (_ concerns: [UserCard]) -> ()){
+        let url = BASE_URL + "/user/relation/user_recommand/v1/supplement_recommends/?"
+        let params = ["device_id": device_id, "iid": iid, "user_id": user_id, "scene": "follow", "source": "follow"] as [String : Any]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["err_no"] == 0 else {
+                    //提示接口错误
+                    print("接口调用错误!!")
+                    return
+                }
+                if let user_cards = json["userCards"].arrayObject {
+                    completionHandler(user_cards.compactMap({
+                        UserCard.deserialize(from: $0 as? NSDictionary)
+                    }))
+                }
+            }
+            
+        }
+    }
+    
 }
 
-struct Network : NetworkProtocol {}
+struct Network : NetworkProtocol {
+}

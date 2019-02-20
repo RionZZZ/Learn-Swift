@@ -4,6 +4,10 @@
 <dict>
 	<key>images</key>
 	<dict>
+		<key>air_download</key>
+		<string>air_download_option_night_20x20_</string>
+		<key>air_download_press</key>
+		<string>air_download_option_press_night_20x20_</string>
 		<key>wechatButton</key>
 		<string>weixin_sdk_login_night_40x40_</string>
 		<key>QQButton</key>
