@@ -13,13 +13,24 @@ let screenHeight = UIScreen.main.bounds.height
 let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
 let safeAreaBottom = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom
 
+let isBigPhone: Bool = screenHeight > 800 ? true : false
+
 let BASE_URL = "http://is.snssdk.com"
 
 let device_id = "6096495334"
 let iid = "5034850950"
 
 let MineHeaderHeight: CGFloat = 280
+let UserDetailHeaderBGHeight: CGFloat = 146
 
 let isNight = "isNight"
 
-let isBigPhone: Bool = screenHeight > 800 ? true : false
+/// 关注的用户详情界面 topTab 的按钮的宽度
+let topTabButtonWidth: CGFloat = screenWidth * 0.2
+/// 关注的用户详情界面 topTab 的指示条的宽度 和 高度
+let topTabindicatorWidth: CGFloat = 40
+let topTabindicatorHeight: CGFloat = 2
+
+//广播关闭present
+let BottomPresentationControllerDismiss = "BottomPresentationControllerDismiss"
+

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol RegisterCellOrNib {}
+protocol RegisterCellOrNib { }
 
 extension RegisterCellOrNib {
     
@@ -91,5 +91,14 @@ extension UIView {
             tempCenter.y            = newValue
             center                  = tempCenter;
         }
+    }
+}
+
+
+protocol NibLoadable { }
+
+extension NibLoadable {
+    static func loadViewFromNib() -> Self {
+        return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! Self
     }
 }

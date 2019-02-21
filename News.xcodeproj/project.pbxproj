@@ -10,6 +10,10 @@
 		49C5A42BBFC9DD551EC1C2E5 /* Pods_NewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7198029ECAEE2BED2C33B9A /* Pods_NewsUITests.framework */; };
 		8BDE9727D42A84F945B5CB40 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E1D27EAE955FB0FABD2F58 /* Pods_News.framework */; };
 		90DDC51E84C04616E20A41C2 /* Pods_NewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71478A5168E3B9166C287A32 /* Pods_NewsTests.framework */; };
+		AE034B8E221E800500CE0EE5 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE034B8D221E800500CE0EE5 /* NavigationBarView.swift */; };
+		AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE034B8F221E802400CE0EE5 /* NavigationBarView.xib */; };
+		AE034B92221E9ABC00CE0EE5 /* RelationRecommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE034B91221E9ABC00CE0EE5 /* RelationRecommandView.swift */; };
+		AE034B94221E9ADF00CE0EE5 /* RelationRecommandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE034B93221E9ADF00CE0EE5 /* RelationRecommandView.xib */; };
 		AE0DEA5D221C3EDC00F9827E /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0DEA5C221C3EDC00F9827E /* UserDetail.swift */; };
 		AE1A4A972216550F004DFFB9 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A962216550F004DFFB9 /* Const.swift */; };
 		AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9C221655F0004DFFB9 /* UIColor.swift */; };
@@ -59,6 +63,12 @@
 		AEDEA61A221444F9006074A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDEA618221444F9006074A1 /* LaunchScreen.storyboard */; };
 		AEDEA625221444F9006074A1 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEA624221444F9006074A1 /* NewsTests.swift */; };
 		AEDEA630221444FA006074A1 /* NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEA62F221444FA006074A1 /* NewsUITests.swift */; };
+		AEEA869D221D534800BD0137 /* UserDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEA869C221D534800BD0137 /* UserDetailBottomView.swift */; };
+		AEEA869F221E348200BD0137 /* UserDetailBottomPushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEA869E221E348200BD0137 /* UserDetailBottomPushController.swift */; };
+		AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEA86A0221E3BAB00BD0137 /* UserDetailBottomPopController.swift */; };
+		AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEEA86A6221E405000BD0137 /* UserDetailBottomPopController.storyboard */; };
+		AEEA86A9221E4B1700BD0137 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEA86A8221E4B1700BD0137 /* PopAnimator.swift */; };
+		AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEA86AA221E4EE400BD0137 /* BottomPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +95,10 @@
 		71478A5168E3B9166C287A32 /* Pods_NewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66482A2D7C7BC802736493C /* Pods-NewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsTests/Pods-NewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		A68672A22171CF60DDF3241A /* Pods-NewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsUITests/Pods-NewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE034B8D221E800500CE0EE5 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		AE034B8F221E802400CE0EE5 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
+		AE034B91221E9ABC00CE0EE5 /* RelationRecommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationRecommandView.swift; sourceTree = "<group>"; };
+		AE034B93221E9ADF00CE0EE5 /* RelationRecommandView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationRecommandView.xib; sourceTree = "<group>"; };
 		AE0DEA5C221C3EDC00F9827E /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		AE1A4A962216550F004DFFB9 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		AE1A4A9C221655F0004DFFB9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -140,6 +154,12 @@
 		AEDEA62B221444FA006074A1 /* NewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDEA62F221444FA006074A1 /* NewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUITests.swift; sourceTree = "<group>"; };
 		AEDEA631221444FA006074A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEEA869C221D534800BD0137 /* UserDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBottomView.swift; sourceTree = "<group>"; };
+		AEEA869E221E348200BD0137 /* UserDetailBottomPushController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBottomPushController.swift; sourceTree = "<group>"; };
+		AEEA86A0221E3BAB00BD0137 /* UserDetailBottomPopController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailBottomPopController.swift; sourceTree = "<group>"; };
+		AEEA86A6221E405000BD0137 /* UserDetailBottomPopController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetailBottomPopController.storyboard; sourceTree = "<group>"; };
+		AEEA86A8221E4B1700BD0137 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		AEEA86AA221E4EE400BD0137 /* BottomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPresentationController.swift; sourceTree = "<group>"; };
 		B6F5A65223178E2789774493 /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Pods/Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
 		C7198029ECAEE2BED2C33B9A /* Pods_NewsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3AD172EA443DA7498645FF /* Pods-NewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsTests/Pods-NewsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -370,6 +390,10 @@
 				AE48AC1B221AA41700FA2015 /* OfflineDownloadController.swift */,
 				AE5C1418221BACA100EF208D /* UserDetailViewController.swift */,
 				AE5C1419221BACA100EF208D /* UserDetailViewController.xib */,
+				AEEA869E221E348200BD0137 /* UserDetailBottomPushController.swift */,
+				AEEA86A0221E3BAB00BD0137 /* UserDetailBottomPopController.swift */,
+				AEEA86A6221E405000BD0137 /* UserDetailBottomPopController.storyboard */,
+				AEEA86AA221E4EE400BD0137 /* BottomPresentationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -380,6 +404,7 @@
 				AE48AC12221A4C6C00FA2015 /* MineCellModel.swift */,
 				AE48AC14221A4C9600FA2015 /* SettingModel.swift */,
 				AE0DEA5C221C3EDC00F9827E /* UserDetail.swift */,
+				AEEA86A8221E4B1700BD0137 /* PopAnimator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +426,11 @@
 				AE48AC1E221AA57200FA2015 /* OfflineDownloadCell.xib */,
 				AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */,
 				AE5C141E221BB64C00EF208D /* UserDetailHeaderView.xib */,
+				AEEA869C221D534800BD0137 /* UserDetailBottomView.swift */,
+				AE034B8D221E800500CE0EE5 /* NavigationBarView.swift */,
+				AE034B8F221E802400CE0EE5 /* NavigationBarView.xib */,
+				AE034B91221E9ABC00CE0EE5 /* RelationRecommandView.swift */,
+				AE034B93221E9ADF00CE0EE5 /* RelationRecommandView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -603,17 +633,20 @@
 				AE5C141F221BB64C00EF208D /* UserDetailHeaderView.xib in Resources */,
 				AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */,
 				AEDEA61A221444F9006074A1 /* LaunchScreen.storyboard in Resources */,
+				AE034B94221E9ADF00CE0EE5 /* RelationRecommandView.xib in Resources */,
 				AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */,
 				AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */,
 				AE48AC20221AA57200FA2015 /* OfflineDownloadCell.xib in Resources */,
 				AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */,
 				AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
+				AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */,
 				AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */,
 				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
 				AE46B9072217AFED006B75DD /* MineConcernCell.xib in Resources */,
 				AE48AC19221A519F00FA2015 /* SettingCell.xib in Resources */,
 				AE5C141B221BACA100EF208D /* UserDetailViewController.xib in Resources */,
+				AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */,
 				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -764,23 +797,30 @@
 				AEB9C7122215ADD300904DDE /* MyTabBar.swift in Sources */,
 				AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */,
 				AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */,
+				AEEA86A9221E4B1700BD0137 /* PopAnimator.swift in Sources */,
 				AE5C141A221BACA100EF208D /* UserDetailViewController.swift in Sources */,
 				AE48AC13221A4C6C00FA2015 /* MineCellModel.swift in Sources */,
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
+				AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */,
 				AEB9C70F2215ADD300904DDE /* MineViewController.swift in Sources */,
 				AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */,
 				AE46B8FF22179BCD006B75DD /* UIView.swift in Sources */,
 				AE4401012216B2160097DEA9 /* MineOtherCell.swift in Sources */,
 				AEB9C7102215ADD300904DDE /* MyTabBarController.swift in Sources */,
 				AE0DEA5D221C3EDC00F9827E /* UserDetail.swift in Sources */,
+				AEEA869D221D534800BD0137 /* UserDetailBottomView.swift in Sources */,
 				AE48AC1C221AA41700FA2015 /* OfflineDownloadController.swift in Sources */,
 				AE46B90122179C70006B75DD /* UITableView.swift in Sources */,
+				AE034B8E221E800500CE0EE5 /* NavigationBarView.swift in Sources */,
+				AE034B92221E9ABC00CE0EE5 /* RelationRecommandView.swift in Sources */,
 				AE1A4A972216550F004DFFB9 /* Const.swift in Sources */,
 				AE46B90D2217E29C006B75DD /* Theme.swift in Sources */,
 				AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */,
 				AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */,
+				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,
+				AEEA869F221E348200BD0137 /* UserDetailBottomPushController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

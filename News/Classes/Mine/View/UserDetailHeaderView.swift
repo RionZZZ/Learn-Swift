@@ -10,7 +10,7 @@ import UIKit
 import IBAnimatable
 import Kingfisher
 
-class UserDetailHeaderView: UIView {
+class UserDetailHeaderView: UIView, NibLoadable {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var backgroundTop: NSLayoutConstraint!
@@ -46,6 +46,13 @@ class UserDetailHeaderView: UIView {
     @IBOutlet weak var baseView: UIView!
 //    @IBOutlet weak var bottomScrollView: UIScrollView!
     
+    var previousButton = UIButton()
+    lazy var indicatorView: UIView = {
+        let indicatorView = UIView(frame: CGRect(x: (topTabButtonWidth - topTabindicatorWidth) * 0.5, y: topTabView.height - 2, width: topTabindicatorWidth, height: topTabindicatorHeight))
+        indicatorView.theme_backgroundColor = "colors.globalRedColor"
+        return indicatorView
+    }()
+    
     var userDetail: UserDetail? {
         didSet {
             backgroundImage.kf.setImage(with: URL(string: userDetail!.bg_img_url))
@@ -73,26 +80,51 @@ class UserDetailHeaderView: UIView {
                 unfoldButtonWidth.constant = 40
             }
             recommandWidth.constant = 0
-            recommandTrailing.constant = 10
+            recommandTrailing.constant = 15
             followersCountLabel.text = userDetail!.followersCount
             followingsCountLabel.text = userDetail!.followingsCount
+            if userDetail!.top_tab.count > 0 {
+                //添加按钮
+                for (index, value) in userDetail!.top_tab.enumerated() {
+                    let button = UIButton(frame: CGRect(x: CGFloat(index) * topTabButtonWidth, y: 0, width: topTabButtonWidth, height: scrollView.height))
+                    button.setTitle(value.show_name, for: .normal)
+                    button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+                    button.theme_setTitleColor("colors.black", forState: .normal)
+                    button.theme_setTitleColor("colors.globalRedColor", forState: .selected)
+                    button.addTarget(self, action: #selector(topTabButtonClick), for: .touchUpInside)
+                    scrollView.addSubview(button)
+                    if index == 0 {
+                        button.isSelected = true
+                        previousButton = button
+                    }
+                    if index == userDetail!.top_tab.count - 1 {
+                        scrollView.contentSize = CGSize(width: button.frame.maxX, height: scrollView.height)
+                    }
+                }
+                scrollView.addSubview(indicatorView)
+            } else {
+                topTabHeight.constant = 0
+                topTabView.isHidden = true
+            }
             layoutIfNeeded()
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        concernButton.setTitle("关注", for: .normal)
+        concernButton.setTitle("已关注", for: .selected)
     }
     
-    class func headerView() -> UserDetailHeaderView {
-        return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! UserDetailHeaderView
-    }
+//    class func headerView() -> UserDetailHeaderView {
+//        return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! UserDetailHeaderView
+//    }
     
     @IBAction func sendMailClick(_ sender: UIButton) {
     }
     
     @IBAction func concernButtonClick(_ sender: AnimatableButton) {
-        sender.isSelected = !sender.isSelected
         if sender.isSelected {
             //已经关注，要取消关注
             Network.relationUnfollow(user_id: userDetail!.user_id) { (_) in
@@ -100,7 +132,7 @@ class UserDetailHeaderView: UIView {
                 self.recommandButton.isHidden = true
                 self.recommandWidth.constant = 0
                 self.recommandButton.isSelected = false
-                self.recommandTrailing.constant = 0
+//                self.recommandTrailing.constant = 0
                 self.recommandViewHeight.constant = 0
                 UIView.animate(withDuration: 0.25, animations: {
                     self.recommandButton.imageView?.transform = .identity
@@ -116,7 +148,7 @@ class UserDetailHeaderView: UIView {
                 self.recommandButton.isHidden = false
                 self.recommandWidth.constant = 28
                 self.recommandButton.isSelected = false
-                self.recommandTrailing.constant = 15
+//                self.recommandTrailing.constant = 15
                 self.recommandViewHeight.constant = 230
                 UIView.animate(withDuration: 0.25, animations: {
                     self.layoutIfNeeded()
@@ -157,5 +189,14 @@ class UserDetailHeaderView: UIView {
         height = baseView.frame.maxY
     }
     
+    @objc func topTabButtonClick(button: UIButton) {
+        previousButton.isSelected = false
+        button.isSelected = !button.isSelected
+        UIView.animate(withDuration: 0.25, animations: {
+            self.indicatorView.centerX = button.centerX
+        }) { (_) in
+            self.previousButton = button
+        }
+    }
     
 }

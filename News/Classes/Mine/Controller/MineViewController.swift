@@ -16,7 +16,8 @@ class MineViewController: UITableViewController {
     var concerns = [MineConcernModel]()
     
     fileprivate lazy var headerView: NoLoginHeaderView = {
-        let headerView = NoLoginHeaderView.headerView()
+//        let headerView = NoLoginHeaderView.headerView()
+        let headerView = NoLoginHeaderView.loadViewFromNib()
         return headerView
     }()
     

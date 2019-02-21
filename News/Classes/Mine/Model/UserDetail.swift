@@ -60,7 +60,7 @@ struct UserDetail: HandyJSON {
         guard followers_count >= 10000 else {
             return String(describing: followers_count)
         }
-        return String(format: "%.1f万", followers_count / 10000)
+        return String(format: "%.1f万", CGFloat(followers_count) / 10000)
     }
     
     var followings_count: Int = 0 // 关注 3
@@ -68,7 +68,7 @@ struct UserDetail: HandyJSON {
         guard followers_count >= 10000 else {
             return String(describing: followings_count)
         }
-        return String(format: "%.1f万", followings_count / 10000)
+        return String(format: "%.1f万", CGFloat(followings_count) / 10000)
     }
     
     var media_type: Int = 0

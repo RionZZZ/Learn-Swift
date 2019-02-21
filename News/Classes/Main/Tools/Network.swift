@@ -207,6 +207,7 @@ extension NetworkProtocol {
         let url = BASE_URL + "/2/relation/follow/v2/?"
         let params = ["device_id": device_id, "iid": iid, "user_id": user_id] as [String : Any]
         Alamofire.request(url, parameters: params).responseJSON { res in
+            print(res)
             guard res.result.isSuccess else {
                 //提示网络错误
                 print("网络连接错误!!")
@@ -216,7 +217,11 @@ extension NetworkProtocol {
                 let json = JSON(value)
                 guard json["message"] == "success" else {
                     //提示接口错误
-                    print("接口调用错误!!")
+                    if let data = json["data"].dictionaryObject {
+                        SVProgressHUD.showInfo(withStatus: data["description"] as? String)
+                        SVProgressHUD.setForegroundColor(UIColor.white)
+                        SVProgressHUD.setBackgroundColor(UIColor(r: 0, g: 0, b: 0, alpha: 0.3))
+                    }
                     return
                 }
                 if let data = json["data"].dictionaryObject {
@@ -230,8 +235,8 @@ extension NetworkProtocol {
     
     //推荐关注
     static func loadRelationUserRecommand(user_id: Int, completionHandler: @escaping (_ concerns: [UserCard]) -> ()){
-        let url = BASE_URL + "/user/relation/user_recommand/v1/supplement_recommends/?"
-        let params = ["device_id": device_id, "iid": iid, "user_id": user_id, "scene": "follow", "source": "follow"] as [String : Any]
+        let url = BASE_URL + "/user/relation/user_recommend/v1/supplement_recommends/?"
+        let params = ["device_id": device_id, "iid": iid, "follow_user_id": user_id, "scene": "follow", "source": "follow"] as [String : Any]
         Alamofire.request(url, parameters: params).responseJSON { res in
             guard res.result.isSuccess else {
                 //提示网络错误

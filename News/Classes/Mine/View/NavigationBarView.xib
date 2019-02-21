@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NavigationBarView" customModule="News" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nj-yr-48i">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="kxr-0o-nWB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7du-ic-AUz">
+                    <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyl-94-CbJ">
+                            <rect key="frame" x="15" y="4" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="1AA-Up-8aM"/>
+                                <constraint firstAttribute="width" constant="36" id="OIh-L2-FOW"/>
+                            </constraints>
+                            <state key="normal" image="personal_home_back_white_24x24_"/>
+                            <connections>
+                                <action selector="BackButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZAj-Ev-G9h"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogW-P8-1M5">
+                            <rect key="frame" x="324" y="4" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="4cV-7f-yue"/>
+                                <constraint firstAttribute="width" constant="36" id="7uw-u2-Jo9"/>
+                            </constraints>
+                            <state key="normal" image="new_morewhite_titlebar_22x22_"/>
+                            <connections>
+                                <action selector="moreButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ak1-9j-6PC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ogW-P8-1M5" firstAttribute="centerY" secondItem="Wyl-94-CbJ" secondAttribute="centerY" id="6LM-We-eDL"/>
+                        <constraint firstAttribute="trailing" secondItem="ogW-P8-1M5" secondAttribute="trailing" constant="15" id="MWu-gL-VKC"/>
+                        <constraint firstItem="Wyl-94-CbJ" firstAttribute="centerY" secondItem="7du-ic-AUz" secondAttribute="centerY" id="MzB-HG-0mv"/>
+                        <constraint firstItem="Wyl-94-CbJ" firstAttribute="leading" secondItem="7du-ic-AUz" secondAttribute="leading" constant="15" id="hXx-xk-gn6"/>
+                        <constraint firstAttribute="height" constant="44" id="yPq-LT-nyt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3Nj-yr-48i" secondAttribute="trailing" id="EnE-DG-njq"/>
+                <constraint firstItem="7du-ic-AUz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FCa-UZ-7Lf"/>
+                <constraint firstItem="7du-ic-AUz" firstAttribute="top" secondItem="3Nj-yr-48i" secondAttribute="bottom" id="Rgs-tX-1cm"/>
+                <constraint firstItem="3Nj-yr-48i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cJr-vV-g3E"/>
+                <constraint firstItem="3Nj-yr-48i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="f4s-9n-0UK"/>
+                <constraint firstAttribute="trailing" secondItem="7du-ic-AUz" secondAttribute="trailing" id="fzr-w8-C66"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backButton" destination="Wyl-94-CbJ" id="QKr-ie-7kE"/>
+                <outlet property="moreButton" destination="ogW-P8-1M5" id="dBF-RV-tKV"/>
+                <outlet property="navigationBar" destination="7du-ic-AUz" id="9Cs-bq-gFD"/>
+                <outlet property="statusBar" destination="3Nj-yr-48i" id="o0I-qQ-2mO"/>
+            </connections>
+            <point key="canvasLocation" x="71.200000000000003" y="21.139430284857571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="new_morewhite_titlebar_22x22_" width="22" height="22"/>
+        <image name="personal_home_back_white_24x24_" width="24" height="24"/>
+    </resources>
+</document>

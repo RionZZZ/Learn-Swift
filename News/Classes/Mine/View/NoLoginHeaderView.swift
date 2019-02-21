@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 
-class NoLoginHeaderView: UIView {
+class NoLoginHeaderView: UIView, NibLoadable {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var mobileButton: UIButton!
@@ -22,9 +22,9 @@ class NoLoginHeaderView: UIView {
     @IBOutlet weak var dayOrNight: UIButton!
     @IBOutlet weak var bottomView: UIView!
     
-    class func headerView() -> NoLoginHeaderView {
-        return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! NoLoginHeaderView
-    }
+//    class func headerView() -> NoLoginHeaderView {
+//        return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.last as! NoLoginHeaderView
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
