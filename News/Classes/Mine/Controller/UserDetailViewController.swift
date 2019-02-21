@@ -85,7 +85,6 @@ extension UserDetailViewController: UserDetailBottomDelegate {
         let bottomPushVC = UserDetailBottomPushController()
         bottomPushVC.navigationItem.title = "网页浏览"
         if bottomTab.children.count == 0 {
-            print(bottomTab)
             //直接跳转
             bottomPushVC.url = bottomTab.value
             self.navigationController?.pushViewController(bottomPushVC, animated: true)

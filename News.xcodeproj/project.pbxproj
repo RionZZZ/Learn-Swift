@@ -14,6 +14,8 @@
 		AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE034B8F221E802400CE0EE5 /* NavigationBarView.xib */; };
 		AE034B92221E9ABC00CE0EE5 /* RelationRecommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE034B91221E9ABC00CE0EE5 /* RelationRecommandView.swift */; };
 		AE034B94221E9ADF00CE0EE5 /* RelationRecommandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE034B93221E9ADF00CE0EE5 /* RelationRecommandView.xib */; };
+		AE034B97221E9F4500CE0EE5 /* RelationRecommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE034B95221E9F4500CE0EE5 /* RelationRecommandCell.swift */; };
+		AE034B98221E9F4500CE0EE5 /* RelationRecommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE034B96221E9F4500CE0EE5 /* RelationRecommandCell.xib */; };
 		AE0DEA5D221C3EDC00F9827E /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0DEA5C221C3EDC00F9827E /* UserDetail.swift */; };
 		AE1A4A972216550F004DFFB9 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A962216550F004DFFB9 /* Const.swift */; };
 		AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9C221655F0004DFFB9 /* UIColor.swift */; };
@@ -99,6 +101,8 @@
 		AE034B8F221E802400CE0EE5 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
 		AE034B91221E9ABC00CE0EE5 /* RelationRecommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationRecommandView.swift; sourceTree = "<group>"; };
 		AE034B93221E9ADF00CE0EE5 /* RelationRecommandView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationRecommandView.xib; sourceTree = "<group>"; };
+		AE034B95221E9F4500CE0EE5 /* RelationRecommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationRecommandCell.swift; sourceTree = "<group>"; };
+		AE034B96221E9F4500CE0EE5 /* RelationRecommandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationRecommandCell.xib; sourceTree = "<group>"; };
 		AE0DEA5C221C3EDC00F9827E /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		AE1A4A962216550F004DFFB9 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		AE1A4A9C221655F0004DFFB9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -431,6 +435,8 @@
 				AE034B8F221E802400CE0EE5 /* NavigationBarView.xib */,
 				AE034B91221E9ABC00CE0EE5 /* RelationRecommandView.swift */,
 				AE034B93221E9ADF00CE0EE5 /* RelationRecommandView.xib */,
+				AE034B95221E9F4500CE0EE5 /* RelationRecommandCell.swift */,
+				AE034B96221E9F4500CE0EE5 /* RelationRecommandCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */,
 				AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
+				AE034B98221E9F4500CE0EE5 /* RelationRecommandCell.xib in Resources */,
 				AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */,
 				AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */,
 				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
@@ -816,6 +823,7 @@
 				AE1A4A972216550F004DFFB9 /* Const.swift in Sources */,
 				AE46B90D2217E29C006B75DD /* Theme.swift in Sources */,
 				AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */,
+				AE034B97221E9F4500CE0EE5 /* RelationRecommandCell.swift in Sources */,
 				AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */,
 				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,

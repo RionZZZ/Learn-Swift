@@ -207,7 +207,6 @@ extension NetworkProtocol {
         let url = BASE_URL + "/2/relation/follow/v2/?"
         let params = ["device_id": device_id, "iid": iid, "user_id": user_id] as [String : Any]
         Alamofire.request(url, parameters: params).responseJSON { res in
-            print(res)
             guard res.result.isSuccess else {
                 //提示网络错误
                 print("网络连接错误!!")
@@ -250,7 +249,7 @@ extension NetworkProtocol {
                     print("接口调用错误!!")
                     return
                 }
-                if let user_cards = json["userCards"].arrayObject {
+                if let user_cards = json["user_cards"].arrayObject {
                     completionHandler(user_cards.compactMap({
                         UserCard.deserialize(from: $0 as? NSDictionary)
                     }))

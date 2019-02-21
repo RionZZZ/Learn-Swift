@@ -195,7 +195,11 @@ struct UserCardUserInfo: HandyJSON {
     
     var schema: String = ""
     
-    var user_auth_info = UserAuthInfo()
+    var user_auth_info: String = ""
+    
+    var userAuthInfo : UserAuthInfo? {
+        return UserAuthInfo.deserialize(from: user_auth_info )
+    }
 }
 
 // MARK: 相关推荐的用户是否关注模型

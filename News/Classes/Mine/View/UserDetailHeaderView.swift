@@ -110,6 +110,12 @@ class UserDetailHeaderView: UIView, NibLoadable {
         }
     }
     
+    //推荐列表
+    lazy var relationRecommand: RelationRecommandView = {
+        let relationRecommand = RelationRecommandView.loadViewFromNib()
+        return relationRecommand
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -154,8 +160,9 @@ class UserDetailHeaderView: UIView, NibLoadable {
                     self.layoutIfNeeded()
                 }, completion: { (_) in
                     self.resetLayout()
-                    Network.loadRelationUserRecommand(user_id: self.userDetail!.user_id, completionHandler: { (UserCard) in
-                        
+                    Network.loadRelationUserRecommand(user_id: self.userDetail!.user_id, completionHandler: { (userCards) in
+                        self.recommandView.addSubview(self.relationRecommand)
+                        self.relationRecommand.userCards = userCards
                     })
                 })
             }
