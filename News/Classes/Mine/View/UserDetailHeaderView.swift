@@ -119,6 +119,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        backgroundTop.constant = -statusBarHeight
         concernButton.setTitle("关注", for: .normal)
         concernButton.setTitle("已关注", for: .selected)
     }
@@ -172,6 +173,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
     @IBAction func recommandButtonClick(_ sender: AnimatableButton) {
         sender.isSelected = !sender.isSelected
         recommandViewHeight.constant = sender.isSelected ? 0 : 230
+        relationRecommand.labelHeight.constant = sender.isSelected ? 0 : 32
         UIView.animate(withDuration: 0.25, animations: {
             sender.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(sender.isSelected ? Double.pi : 0))
             self.layoutIfNeeded()

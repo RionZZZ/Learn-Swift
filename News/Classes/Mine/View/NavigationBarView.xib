@@ -47,13 +47,44 @@
                                 <action selector="moreButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ak1-9j-6PC"/>
                             </connections>
                         </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zw-pv-4TL">
+                            <rect key="frame" x="152.5" y="22" width="70" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="VAf-Y8-r29"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlN-9r-1dC" customClass="AnimatableButton" customModule="IBAnimatable">
+                            <rect key="frame" x="232.5" y="8" width="72" height="28"/>
+                            <color key="backgroundColor" red="0.90196078430000004" green="0.3921568627" blue="0.37254901959999998" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="72" id="rYU-Ce-9ME"/>
+                                <constraint firstAttribute="height" constant="28" id="wq7-dR-N6K"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="关注"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="ConcernButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="mSf-Zb-FpP"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="ogW-P8-1M5" firstAttribute="centerY" secondItem="Wyl-94-CbJ" secondAttribute="centerY" id="6LM-We-eDL"/>
                         <constraint firstAttribute="trailing" secondItem="ogW-P8-1M5" secondAttribute="trailing" constant="15" id="MWu-gL-VKC"/>
                         <constraint firstItem="Wyl-94-CbJ" firstAttribute="centerY" secondItem="7du-ic-AUz" secondAttribute="centerY" id="MzB-HG-0mv"/>
+                        <constraint firstItem="tlN-9r-1dC" firstAttribute="centerY" secondItem="8Zw-pv-4TL" secondAttribute="centerY" id="PLi-eU-giv"/>
+                        <constraint firstItem="tlN-9r-1dC" firstAttribute="leading" secondItem="8Zw-pv-4TL" secondAttribute="trailing" constant="10" id="cBC-uI-NmT"/>
+                        <constraint firstItem="8Zw-pv-4TL" firstAttribute="centerX" secondItem="7du-ic-AUz" secondAttribute="centerX" id="cct-2e-qyA"/>
                         <constraint firstItem="Wyl-94-CbJ" firstAttribute="leading" secondItem="7du-ic-AUz" secondAttribute="leading" constant="15" id="hXx-xk-gn6"/>
+                        <constraint firstItem="8Zw-pv-4TL" firstAttribute="centerY" secondItem="7du-ic-AUz" secondAttribute="centerY" id="pdJ-ag-veq"/>
                         <constraint firstAttribute="height" constant="44" id="yPq-LT-nyt"/>
                     </constraints>
                 </view>
@@ -70,9 +101,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="backButton" destination="Wyl-94-CbJ" id="QKr-ie-7kE"/>
+                <outlet property="concernButton" destination="tlN-9r-1dC" id="Jeb-lU-aJc"/>
                 <outlet property="moreButton" destination="ogW-P8-1M5" id="dBF-RV-tKV"/>
                 <outlet property="navigationBar" destination="7du-ic-AUz" id="9Cs-bq-gFD"/>
                 <outlet property="statusBar" destination="3Nj-yr-48i" id="o0I-qQ-2mO"/>
+                <outlet property="titleLabel" destination="8Zw-pv-4TL" id="KdR-Ay-ypE"/>
             </connections>
             <point key="canvasLocation" x="71.200000000000003" y="21.139430284857571"/>
         </view>

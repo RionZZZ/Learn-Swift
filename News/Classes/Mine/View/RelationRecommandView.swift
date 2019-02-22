@@ -11,6 +11,7 @@ import UIKit
 class RelationRecommandView: UIView, NibLoadable {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var labelHeight: NSLayoutConstraint!
     
     var userCards = [UserCard]()
     
@@ -23,6 +24,11 @@ class RelationRecommandView: UIView, NibLoadable {
         collectionView.dataSource = self
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        width = screenWidth
+//        backgroundColor = UIColor(r: 235, g: 235, b: 235)
+    }
 }
 
 extension RelationRecommandView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -44,6 +50,7 @@ class RelationRecommandFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         
+        scrollDirection = .horizontal
         itemSize = CGSize(width: 142, height: 190)
         minimumLineSpacing = 10
         sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)

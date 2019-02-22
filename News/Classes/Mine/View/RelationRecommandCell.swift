@@ -25,6 +25,8 @@ class RelationRecommandCell: UICollectionViewCell, RegisterCellOrNib {
             avatarImage.kf.setImage(with: URL(string: userCard!.user.info.avatar_url)!)
             vip.isHidden = userCard!.user.info.user_auth_info == ""
             reasonLabel.text = userCard!.recommend_reason
+            concernButton.setTitle("关注", for: .normal)
+            concernButton.setTitle("已关注", for: .selected)
         }
     }
     

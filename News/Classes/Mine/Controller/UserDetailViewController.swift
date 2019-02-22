@@ -51,6 +51,10 @@ class UserDetailViewController: UIViewController {
         scrollView.delegate = self
         scrollView.addSubview(headerView)
         view.addSubview(barView)
+        //返回方法
+        barView.goBackClick = {
+            self.navigationController?.popViewController(animated: true)
+        }
         scrollView.contentSize = CGSize(width: screenWidth, height: 1000)
         bottomViewBottom.constant = isBigPhone ? safeAreaBottom! : 0
         view.layoutIfNeeded()
@@ -58,6 +62,7 @@ class UserDetailViewController: UIViewController {
         Network.loadUserDetail(user_id: userId) { (userDetail) in
             self.userDetail = userDetail
             self.headerView.userDetail = userDetail
+            self.barView.userDetail = userDetail
             if userDetail.bottom_tab.count == 0 {
                 self.bottomViewBottom.constant = 0
                 self.view.layoutIfNeeded()
@@ -116,14 +121,15 @@ extension UserDetailViewController: UserDetailBottomDelegate {
 extension UserDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
-        if offsetY < -44 {
+        print(offsetY)
+        if offsetY < -statusBarHeight {
             //图片拉伸，粘住顶部
             let totalOffset = UserDetailHeaderBGHeight + abs(offsetY)
             let f = totalOffset / UserDetailHeaderBGHeight
             headerView.backgroundImage.frame = CGRect(x: -screenWidth * (f - 1), y: offsetY, width: screenWidth * f, height: totalOffset)
             barView.backgroundColor = UIColor(white: 1, alpha: 0)
         } else {
-            var alpha = (offsetY + 44) / (146 - 88)
+            var alpha = (offsetY + statusBarHeight) / (146 - 88)
             alpha = min(alpha, 1)
             barView.backgroundColor = UIColor(white: 1, alpha: alpha)
             if (alpha == 1) {
@@ -136,6 +142,22 @@ extension UserDetailViewController: UIScrollViewDelegate {
                 barView.backButton.theme_setImage("images.personal_home_back_white", forState: .normal)
                 barView.moreButton.theme_setImage("images.new_morewhite_titlebar", forState: .normal)
             }
+        }
+        
+        //14 --> 导航栏距离图片底部
+        //15 --> 关注按钮距离导航栏底部
+        //14 --> 关注按钮高度的一半
+        var concernAlpha = offsetY / (14 + 15 + 28)
+        if offsetY >= 43 {
+            concernAlpha = min(concernAlpha, 1)
+            barView.titleLabel.isHidden = false
+            barView.concernButton.isHidden = false
+            barView.titleLabel.textColor = UIColor(r: 0, g: 0, b: 0, alpha: concernAlpha)
+            barView.concernButton.alpha = concernAlpha
+        } else {
+            concernAlpha = min(0, concernAlpha)
+            barView.titleLabel.textColor = UIColor(r: 0, g: 0, b: 0, alpha: concernAlpha)
+            barView.concernButton.alpha = concernAlpha
         }
     }
 }

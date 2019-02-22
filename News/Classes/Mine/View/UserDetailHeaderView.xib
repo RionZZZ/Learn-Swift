@@ -17,13 +17,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper_profile_night" translatesAutoresizingMaskIntoConstraints="NO" id="QJF-N5-CWu">
-                    <rect key="frame" x="0.0" y="-24" width="375" height="146"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="146" id="ozX-7X-oZi"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEV-L3-MuO">
-                    <rect key="frame" x="0.0" y="122" width="375" height="391"/>
+                    <rect key="frame" x="0.0" y="146" width="375" height="367"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dQ1-et-X3H" customClass="AnimatableImageView" customModule="IBAnimatable">
                             <rect key="frame" x="15" y="-36" width="72" height="72"/>
@@ -271,8 +271,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="QJF-N5-CWu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-44" id="53E-8a-quF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QJF-N5-CWu" secondAttribute="trailing" id="B6Y-HI-6t3"/>
+                <constraint firstItem="QJF-N5-CWu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ifk-3f-oix"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fEV-L3-MuO" secondAttribute="bottom" id="Ral-bj-bcF"/>
                 <constraint firstItem="fEV-L3-MuO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ser-vI-9gM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fEV-L3-MuO" secondAttribute="trailing" id="jLA-Td-6Ue"/>
@@ -287,7 +287,7 @@
                 <outlet property="areaButtonTop" destination="WGq-WB-rvf" id="Op1-oC-2mt"/>
                 <outlet property="avatorImage" destination="dQ1-et-X3H" id="A0K-6b-89a"/>
                 <outlet property="backgroundImage" destination="QJF-N5-CWu" id="twh-kt-kqy"/>
-                <outlet property="backgroundTop" destination="53E-8a-quF" id="1Ew-1L-8ag"/>
+                <outlet property="backgroundTop" destination="Ifk-3f-oix" id="Qr5-g1-gS1"/>
                 <outlet property="baseView" destination="fEV-L3-MuO" id="nRg-ig-k7C"/>
                 <outlet property="concernButton" destination="jfy-JA-LGl" id="UrY-ds-PK7"/>
                 <outlet property="descriptionLabel" destination="n0z-CT-qgv" id="fWA-9v-uoF"/>
