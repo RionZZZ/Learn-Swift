@@ -49,27 +49,37 @@ class UserDetailViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.delegate = self
-        scrollView.addSubview(headerView)
+//        scrollView.addSubview(headerView)
         view.addSubview(barView)
         //返回方法
-        barView.goBackClick = {
-            self.navigationController?.popViewController(animated: true)
+        barView.goBackClick = { [weak self] in
+            self!.navigationController?.popViewController(animated: true)
         }
-        scrollView.contentSize = CGSize(width: screenWidth, height: 1000)
+//        scrollView.contentSize = CGSize(width: screenWidth, height: 1000)
         bottomViewBottom.constant = isBigPhone ? safeAreaBottom! : 0
         view.layoutIfNeeded()
         
+        //用户详情数据
         Network.loadUserDetail(user_id: userId) { (userDetail) in
-            self.userDetail = userDetail
-            self.headerView.userDetail = userDetail
-            self.barView.userDetail = userDetail
-            if userDetail.bottom_tab.count == 0 {
-                self.bottomViewBottom.constant = 0
-                self.view.layoutIfNeeded()
-            } else {
-                self.bottomView.addSubview(self.footerView)
-                self.footerView.bottomTabs = userDetail.bottom_tab
-            }
+            //用户动态列表
+            Network.loadUserDetailDongtai(user_id: self.userId, completionHandler: { (dongtais) in
+                self.headerView.dongtais = dongtais
+                
+                self.scrollView.addSubview(self.headerView)
+                self.userDetail = userDetail
+                self.headerView.userDetail = userDetail
+                self.barView.userDetail = userDetail
+                if userDetail.bottom_tab.count == 0 {
+                    self.headerView.height = 969 - 44
+                    self.bottomViewBottom.constant = 0
+                    self.view.layoutIfNeeded()
+                } else {
+                    self.headerView.height = 969
+                    self.bottomView.addSubview(self.footerView)
+                    self.footerView.bottomTabs = userDetail.bottom_tab
+                }
+                self.scrollView.contentSize = CGSize(width: screenWidth, height: self.headerView.height)
+            })
         }
     }
     
@@ -99,9 +109,9 @@ extension UserDetailViewController: UserDetailBottomDelegate {
             let popVC = storyboard.instantiateViewController(withIdentifier: "\(UserDetailBottomPopController.self)") as! UserDetailBottomPopController
             popVC.tabChildren = bottomTab.children
             popVC.modalPresentationStyle = .custom
-            popVC.didSelectedChild = {
+            popVC.didSelectedChild = { [weak self] in
                 bottomPushVC.url = $0.value
-                self.navigationController?.pushViewController(bottomPushVC, animated: true)
+                self!.navigationController?.pushViewController(bottomPushVC, animated: true)
             }
             let popAnimator = PopAnimator()
             //转换frame
@@ -121,13 +131,18 @@ extension UserDetailViewController: UserDetailBottomDelegate {
 extension UserDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
-        print(offsetY)
+//        print(offsetY)
         if offsetY < -statusBarHeight {
             //图片拉伸，粘住顶部
             let totalOffset = UserDetailHeaderBGHeight + abs(offsetY)
             let f = totalOffset / UserDetailHeaderBGHeight
             headerView.backgroundImage.frame = CGRect(x: -screenWidth * (f - 1), y: offsetY, width: screenWidth * f, height: totalOffset)
             barView.backgroundColor = UIColor(white: 1, alpha: 0)
+        } else if offsetY == 0 {
+            for subview in headerView.bottomScrollView.subviews {
+                let tableview = subview as! UITableView
+                tableview.isScrollEnabled = false
+            }
         } else {
             var alpha = (offsetY + statusBarHeight) / (146 - 88)
             alpha = min(alpha, 1)
@@ -142,22 +157,34 @@ extension UserDetailViewController: UIScrollViewDelegate {
                 barView.backButton.theme_setImage("images.personal_home_back_white", forState: .normal)
                 barView.moreButton.theme_setImage("images.new_morewhite_titlebar", forState: .normal)
             }
-        }
-        
-        //14 --> 导航栏距离图片底部
-        //15 --> 关注按钮距离导航栏底部
-        //14 --> 关注按钮高度的一半
-        var concernAlpha = offsetY / (14 + 15 + 28)
-        if offsetY >= 43 {
-            concernAlpha = min(concernAlpha, 1)
-            barView.titleLabel.isHidden = false
-            barView.concernButton.isHidden = false
-            barView.titleLabel.textColor = UIColor(r: 0, g: 0, b: 0, alpha: concernAlpha)
-            barView.concernButton.alpha = concernAlpha
-        } else {
-            concernAlpha = min(0, concernAlpha)
-            barView.titleLabel.textColor = UIColor(r: 0, g: 0, b: 0, alpha: concernAlpha)
-            barView.concernButton.alpha = concernAlpha
+            
+            //14 --> 导航栏距离图片底部
+            //15 --> 关注按钮距离导航栏底部
+            //14 --> 关注按钮高度的一半
+            var concernAlpha = offsetY / (14 + 15 + 28)
+            if offsetY >= 43 {
+                concernAlpha = min(concernAlpha, 1)
+                barView.titleLabel.isHidden = false
+                barView.concernButton.isHidden = false
+                barView.titleLabel.textColor = UIColor(r: 0, g: 0, b: 0, alpha: concernAlpha)
+                barView.concernButton.alpha = concernAlpha
+            } else {
+                concernAlpha = min(0, concernAlpha)
+                barView.titleLabel.textColor = UIColor(r: 0, g: 0, b: 0, alpha: concernAlpha)
+                barView.concernButton.alpha = concernAlpha
+            }
+            
+            //设置headerview的topTabView黏住顶部
+            if offsetY >= (14 + headerView.topTabView.frame.minY) {//14 + 201
+                headerView.y = offsetY - (14 + headerView.topTabView.frame.minY)
+                for subview in headerView.bottomScrollView.subviews {
+                    let tableview = subview as! UITableView
+                    tableview.isScrollEnabled = true
+                }
+            } else {
+                headerView.y = 0
+            }
+            
         }
     }
 }

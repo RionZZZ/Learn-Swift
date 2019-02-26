@@ -44,7 +44,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
     @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var baseView: UIView!
-//    @IBOutlet weak var bottomScrollView: UIScrollView!
+    @IBOutlet weak var bottomScrollView: UIScrollView!
     
     var previousButton = UIButton()
     lazy var indicatorView: UIView = {
@@ -84,9 +84,10 @@ class UserDetailHeaderView: UIView, NibLoadable {
             followersCountLabel.text = userDetail!.followersCount
             followingsCountLabel.text = userDetail!.followingsCount
             if userDetail!.top_tab.count > 0 {
-                //添加按钮
+                //添加按钮和tabview
                 for (index, value) in userDetail!.top_tab.enumerated() {
                     let button = UIButton(frame: CGRect(x: CGFloat(index) * topTabButtonWidth, y: 0, width: topTabButtonWidth, height: scrollView.height))
+                    button.tag = index
                     button.setTitle(value.show_name, for: .normal)
                     button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
                     button.theme_setTitleColor("colors.black", forState: .normal)
@@ -97,8 +98,21 @@ class UserDetailHeaderView: UIView, NibLoadable {
                         button.isSelected = true
                         previousButton = button
                     }
+                    
+                    //tabview
+                    let tabview = UITableView(frame: CGRect(x: CGFloat(index) * screenWidth, y: 0, width: screenWidth, height: bottomScrollView.height))
+                    tabview._registerCell(cell: UserDetailDongtaiCell.self)
+                    tabview.delegate = self
+                    tabview.dataSource = self
+                    tabview.rowHeight = 130
+                    tabview.isScrollEnabled = false
+                    tabview.showsVerticalScrollIndicator = false
+                    tabview.tableFooterView = UIView()
+                    bottomScrollView.addSubview(tabview)
+                    
                     if index == userDetail!.top_tab.count - 1 {
                         scrollView.contentSize = CGSize(width: button.frame.maxX, height: scrollView.height)
+                        bottomScrollView.contentSize = CGSize(width: tabview.frame.maxX, height: bottomScrollView.height)
                     }
                 }
                 scrollView.addSubview(indicatorView)
@@ -116,12 +130,27 @@ class UserDetailHeaderView: UIView, NibLoadable {
         return relationRecommand
     }()
     
+    //动态数据列表
+    var dongtais = [UserDetailDongtai]() {
+        didSet {
+            if bottomScrollView.subviews.count > 0 {
+                let tabview = bottomScrollView.subviews[0] as! UITableView
+                tabview.reloadData()
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         backgroundTop.constant = -statusBarHeight
         concernButton.setTitle("关注", for: .normal)
         concernButton.setTitle("已关注", for: .selected)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        width = screenWidth
     }
     
 //    class func headerView() -> UserDetailHeaderView {
@@ -145,7 +174,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
                     self.recommandButton.imageView?.transform = .identity
                     self.layoutIfNeeded()
                 }, completion: { (_) in
-                    self.resetLayout()
+//                    self.resetLayout()
                 })
             }
         } else {
@@ -160,7 +189,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
                 UIView.animate(withDuration: 0.25, animations: {
                     self.layoutIfNeeded()
                 }, completion: { (_) in
-                    self.resetLayout()
+//                    self.resetLayout()
                     Network.loadRelationUserRecommand(user_id: self.userDetail!.user_id, completionHandler: { (userCards) in
                         self.recommandView.addSubview(self.relationRecommand)
                         self.relationRecommand.userCards = userCards
@@ -178,7 +207,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
             sender.imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(sender.isSelected ? Double.pi : 0))
             self.layoutIfNeeded()
         }) { (_) in
-            self.resetLayout()
+//            self.resetLayout()
         }
     }
     
@@ -189,22 +218,45 @@ class UserDetailHeaderView: UIView, NibLoadable {
         UIView.animate(withDuration: 0.25, animations: {
             self.layoutIfNeeded()
         }) { (_) in
-            self.resetLayout()
+//            self.resetLayout()
         }
     }
     
-    private func resetLayout() {
-        baseView.height = topTabView.frame.maxY
-        height = baseView.frame.maxY
-    }
+//    private func resetLayout() {
+//        baseView.height = topTabView.frame.maxY
+//        height = baseView.frame.maxY
+//    }
     
     @objc func topTabButtonClick(button: UIButton) {
         previousButton.isSelected = false
         button.isSelected = !button.isSelected
         UIView.animate(withDuration: 0.25, animations: {
             self.indicatorView.centerX = button.centerX
+            self.bottomScrollView.contentOffset = CGPoint(x: CGFloat(button.tag) * screenWidth, y: 0)
         }) { (_) in
             self.previousButton = button
+        }
+    }
+    
+}
+
+extension UserDetailHeaderView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dongtais.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView._dequeueReusableCell(indexPath: indexPath) as UserDetailDongtaiCell
+        cell.dongtai = dongtais[indexPath.row]
+        return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0 {
+            for subview in bottomScrollView.subviews {
+                let tableview = subview as! UITableView
+                tableview.isScrollEnabled = false
+            }
         }
     }
     

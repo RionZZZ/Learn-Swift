@@ -38,6 +38,7 @@ class NavigationBarView: UIView, NibLoadable {
     override func layoutSubviews() {
         super.layoutSubviews()
         height = navigationBar.frame.maxY
+        width = screenWidth
     }
     
     @IBAction func BackButtonClick(_ sender: UIButton) {

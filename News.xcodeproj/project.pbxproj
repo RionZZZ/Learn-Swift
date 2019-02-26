@@ -71,6 +71,8 @@
 		AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEEA86A6221E405000BD0137 /* UserDetailBottomPopController.storyboard */; };
 		AEEA86A9221E4B1700BD0137 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEA86A8221E4B1700BD0137 /* PopAnimator.swift */; };
 		AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEA86AA221E4EE400BD0137 /* BottomPresentationController.swift */; };
+		AEFD90472223C2A6002AC12B /* UserDetailDongtaiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFD90452223C2A6002AC12B /* UserDetailDongtaiCell.swift */; };
+		AEFD90482223C2A6002AC12B /* UserDetailDongtaiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFD90462223C2A6002AC12B /* UserDetailDongtaiCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +166,8 @@
 		AEEA86A6221E405000BD0137 /* UserDetailBottomPopController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetailBottomPopController.storyboard; sourceTree = "<group>"; };
 		AEEA86A8221E4B1700BD0137 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		AEEA86AA221E4EE400BD0137 /* BottomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPresentationController.swift; sourceTree = "<group>"; };
+		AEFD90452223C2A6002AC12B /* UserDetailDongtaiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailDongtaiCell.swift; sourceTree = "<group>"; };
+		AEFD90462223C2A6002AC12B /* UserDetailDongtaiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailDongtaiCell.xib; sourceTree = "<group>"; };
 		B6F5A65223178E2789774493 /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Pods/Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
 		C7198029ECAEE2BED2C33B9A /* Pods_NewsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3AD172EA443DA7498645FF /* Pods-NewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsTests/Pods-NewsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -437,6 +441,8 @@
 				AE034B93221E9ADF00CE0EE5 /* RelationRecommandView.xib */,
 				AE034B95221E9F4500CE0EE5 /* RelationRecommandCell.swift */,
 				AE034B96221E9F4500CE0EE5 /* RelationRecommandCell.xib */,
+				AEFD90452223C2A6002AC12B /* UserDetailDongtaiCell.swift */,
+				AEFD90462223C2A6002AC12B /* UserDetailDongtaiCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -650,6 +656,7 @@
 				AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */,
 				AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */,
 				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
+				AEFD90482223C2A6002AC12B /* UserDetailDongtaiCell.xib in Resources */,
 				AE46B9072217AFED006B75DD /* MineConcernCell.xib in Resources */,
 				AE48AC19221A519F00FA2015 /* SettingCell.xib in Resources */,
 				AE5C141B221BACA100EF208D /* UserDetailViewController.xib in Resources */,
@@ -828,6 +835,7 @@
 				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,
+				AEFD90472223C2A6002AC12B /* UserDetailDongtaiCell.swift in Sources */,
 				AEEA869F221E348200BD0137 /* UserDetailBottomPushController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

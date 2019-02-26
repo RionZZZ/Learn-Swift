@@ -20,7 +20,7 @@ class UserDetailBottomPopController: UIViewController, UITableViewDelegate, UITa
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableView.self, forCellReuseIdentifier: "\(UITableView.self)")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "\(UITableViewCell.self)")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +28,7 @@ class UserDetailBottomPopController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "\(UITableView.self)", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(UITableViewCell.self)", for: indexPath)
         cell.selectionStyle = .none
         let child = tabChildren[indexPath.row]
         cell.textLabel?.text = child.name

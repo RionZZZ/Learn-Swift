@@ -33,6 +33,8 @@ protocol NetworkProtocol {
     //推荐关注
     static func loadRelationUserRecommand(user_id: Int, completionHandler: @escaping (_ concerns: [UserCard]) -> ())
     
+    //用户动态表格
+    static func loadUserDetailDongtai(user_id: Int, completionHandler: @escaping (_ dongtais: [UserDetailDongtai])  -> ())
 }
 
 extension NetworkProtocol {
@@ -252,6 +254,70 @@ extension NetworkProtocol {
                 if let user_cards = json["user_cards"].arrayObject {
                     completionHandler(user_cards.compactMap({
                         UserCard.deserialize(from: $0 as? NSDictionary)
+                    }))
+                }
+            }
+            
+        }
+    }
+    
+    //用户动态表格
+    static func loadUserDetailDongtai(user_id: Int, completionHandler: @escaping (_ dongtais: [UserDetailDongtai])  -> ()){
+        let url = BASE_URL + "/dongtai/list/v15/?"
+        let params = ["user_id": user_id]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    //提示接口错误
+                    print("接口调用错误!!")
+                    return
+                }
+                if let data = json["data"].dictionary {
+                    if let datas = data["data"]?.arrayObject {
+                        completionHandler(datas.compactMap({
+                            UserDetailDongtai.deserialize(from: $0 as? NSDictionary)
+                        }))
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    //用户详情文章
+    static func loadUserDetailArticle(user_id: Int, completionHandler: @escaping (_ articles: [UserDetailDongtai])  -> ()){
+        let url = BASE_URL + "/pgc/ma/?"
+        let params = ["uid": user_id,
+                      "page_type": 1,
+                      "media_id": user_id,
+                      "output": "json",
+                      "is_json": 1,
+                      "from": "user_profile_app",
+                      "version": 2,
+                      "as": "A1157A8297BEED7",
+                      "cp": "59549FCDF1885E1"] as [String: Any]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    //提示接口错误
+                    print("接口调用错误!!")
+                    return
+                }
+                if let data = json["data"].arrayObject {
+                    completionHandler(data.compactMap({
+                        UserDetailDongtai.deserialize(from: $0 as? NSDictionary)
                     }))
                 }
             }

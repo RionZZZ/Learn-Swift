@@ -27,6 +27,7 @@ class UserDetailBottomView: UIView {
                 button.theme_setImage("images.tabbar-options", forState: .normal)
                 //图文间距
                 button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+                button.tag = index
                 button.addTarget(self, action: #selector(bottomTabButtonClick), for: .touchUpInside)
                 addSubview(button)
                 //分割线
@@ -51,5 +52,9 @@ class UserDetailBottomView: UIView {
     @objc func bottomTabButtonClick(button: UIButton) {
         delegate?.bottomView(clicked: button, bottomTab: bottomTabs[button.tag])
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        width = screenWidth
+    }
 }
