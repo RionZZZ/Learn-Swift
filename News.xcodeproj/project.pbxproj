@@ -24,6 +24,11 @@
 		AE22DC3B221AE7D5000C1E20 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE22DC3A221AE7D5000C1E20 /* libsqlite3.0.tbd */; };
 		AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */; };
 		AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */; };
+		AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B692224F09C00CC8F25 /* Calculate.swift */; };
+		AE375B6C2225104200CC8F25 /* PostVideoOrArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */; };
+		AE375B6E2225105100CC8F25 /* PostVideoOrArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */; };
+		AE375B71222540BB00CC8F25 /* DongtaiCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B6F222540BB00CC8F25 /* DongtaiCollectionCell.swift */; };
+		AE375B72222540BB00CC8F25 /* DongtaiCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE375B70222540BB00CC8F25 /* DongtaiCollectionCell.xib */; };
 		AE4401012216B2160097DEA9 /* MineOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */; };
 		AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4401002216B2160097DEA9 /* MineOtherCell.xib */; };
 		AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */; };
@@ -113,6 +118,11 @@
 		AE22DC3A221AE7D5000C1E20 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
 		AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
+		AE375B692224F09C00CC8F25 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
+		AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoOrArticleView.swift; sourceTree = "<group>"; };
+		AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoOrArticleView.xib; sourceTree = "<group>"; };
+		AE375B6F222540BB00CC8F25 /* DongtaiCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionCell.swift; sourceTree = "<group>"; };
+		AE375B70222540BB00CC8F25 /* DongtaiCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiCollectionCell.xib; sourceTree = "<group>"; };
 		AE4400FF2216B2160097DEA9 /* MineOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOtherCell.swift; sourceTree = "<group>"; };
 		AE4401002216B2160097DEA9 /* MineOtherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineOtherCell.xib; sourceTree = "<group>"; };
 		AE46B8FA22170300006B75DD /* MineFirstSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineFirstSectionCell.swift; sourceTree = "<group>"; };
@@ -243,6 +253,7 @@
 				AE1A4A9F221661B8004DFFB9 /* Network.swift */,
 				AE46B90C2217E29C006B75DD /* Theme.swift */,
 				AE22DC38221AE786000C1E20 /* SQLite.swift */,
+				AE375B692224F09C00CC8F25 /* Calculate.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -443,6 +454,10 @@
 				AE034B96221E9F4500CE0EE5 /* RelationRecommandCell.xib */,
 				AEFD90452223C2A6002AC12B /* UserDetailDongtaiCell.swift */,
 				AEFD90462223C2A6002AC12B /* UserDetailDongtaiCell.xib */,
+				AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */,
+				AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */,
+				AE375B6F222540BB00CC8F25 /* DongtaiCollectionCell.swift */,
+				AE375B70222540BB00CC8F25 /* DongtaiCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -658,7 +673,9 @@
 				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
 				AEFD90482223C2A6002AC12B /* UserDetailDongtaiCell.xib in Resources */,
 				AE46B9072217AFED006B75DD /* MineConcernCell.xib in Resources */,
+				AE375B6E2225105100CC8F25 /* PostVideoOrArticleView.xib in Resources */,
 				AE48AC19221A519F00FA2015 /* SettingCell.xib in Resources */,
+				AE375B72222540BB00CC8F25 /* DongtaiCollectionCell.xib in Resources */,
 				AE5C141B221BACA100EF208D /* UserDetailViewController.xib in Resources */,
 				AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */,
 				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
@@ -832,10 +849,13 @@
 				AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */,
 				AE034B97221E9F4500CE0EE5 /* RelationRecommandCell.swift in Sources */,
 				AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */,
+				AE375B71222540BB00CC8F25 /* DongtaiCollectionCell.swift in Sources */,
 				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,
 				AEFD90472223C2A6002AC12B /* UserDetailDongtaiCell.swift in Sources */,
+				AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */,
+				AE375B6C2225104200CC8F25 /* PostVideoOrArticleView.swift in Sources */,
 				AEEA869F221E348200BD0137 /* UserDetailBottomPushController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

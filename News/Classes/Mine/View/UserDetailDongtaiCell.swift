@@ -20,6 +20,10 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentHeight: NSLayoutConstraint!
+    @IBOutlet weak var allContent: UILabel!
+    @IBOutlet weak var middleView: UIView!
     
     var dongtai: UserDetailDongtai? {
         didSet {
@@ -28,9 +32,51 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
             modifyTimeLabel.text = "· \(dongtai!.create_time)"
             likeButton.setTitle("\(dongtai!.comment_count)", for: .normal)
             forwardButton.setTitle("\(dongtai!.forward_count)", for: .normal)
+            bottomLabel.text = ("\(dongtai!.read_count)") + "人阅读"
+            contentLabel.text = dongtai!.content
+            contentHeight.constant = dongtai!.contentH
+            allContent.isHidden = dongtai!.contentH != 110
+            //防止cell重用机制，导致数据错乱
+            if middleView.contains(postVideoOrArticle) {
+                postVideoOrArticle.removeFromSuperview()
+            }
+            if middleView.contains(collectionView) {
+                collectionView.removeFromSuperview()
+            }
+            
+            switch dongtai!.item_type {
+            case .postVideoOrArticle: //文章或视频
+                middleView.addSubview(postVideoOrArticle)
+                postVideoOrArticle.frame = CGRect(x: 0, y: 0, width: screenWidth - 30, height: middleView.height)
+                postVideoOrArticle.group = dongtai!.group
+            case .postContent: //文字内容
+                middleView.addSubview(collectionView)
+                collectionView.frame = CGRect(x: 0, y: 0, width: dongtai!.collectionViewW, height: dongtai!.collectionViewH)
+                collectionView.reloadData()
+            case .commentOrQuoteContent: //引用或评论
+                break
+            default:
+                break
+            }
         }
     }
-
+    
+    private lazy var postVideoOrArticle: PostVideoOrArticleView = {
+        let view = PostVideoOrArticleView.loadViewFromNib()
+        return view
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: DongtaiCollectionFlowLayout())
+        collection._registerCell(cell: DongtaiCollectionCell.self)
+        collection.delegate = self
+        collection.dataSource = self
+        collection.showsVerticalScrollIndicator = false
+        collection.showsHorizontalScrollIndicator = false
+        collection.isScrollEnabled = false
+        collection.theme_backgroundColor = "colors.cellBackgroundColor"
+        return collection
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,4 +92,30 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
 
     }
     
+}
+
+extension UserDetailDongtaiCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dongtai!.thumb_image_list.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView._dequeueReusableCell(indexPath: indexPath) as DongtaiCollectionCell
+        cell.thumbImage = dongtai!.thumb_image_list[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return Calculate.collectionCellSize(dongtai!.thumb_image_list.count)
+    }
+    
+}
+
+
+class DongtaiCollectionFlowLayout: UICollectionViewFlowLayout {
+    override func prepare() {
+        super.prepare()
+        minimumLineSpacing = 5
+        minimumInteritemSpacing = 5
+    }
 }

@@ -104,7 +104,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
                     tabview._registerCell(cell: UserDetailDongtaiCell.self)
                     tabview.delegate = self
                     tabview.dataSource = self
-                    tabview.rowHeight = 130
+//                    tabview.rowHeight = 130
                     tabview.isScrollEnabled = false
                     tabview.showsVerticalScrollIndicator = false
                     tabview.tableFooterView = UIView()
@@ -258,6 +258,11 @@ extension UserDetailHeaderView: UITableViewDelegate, UITableViewDataSource {
                 tableview.isScrollEnabled = false
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let dongtai = dongtais[indexPath.row]
+        return dongtai.cellHeight
     }
     
 }

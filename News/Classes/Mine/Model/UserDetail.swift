@@ -257,19 +257,19 @@ struct UserDetailDongtai: HandyJSON {
 //    }
     
     /// cell 的高度
-//    var cellHeight: CGFloat {
-//        // 顶部分割线 5，头像用户名 45，底部 55， 中间部分上下间距 5
-//        var height: CGFloat = 115.0 + contentH
-//        switch item_type {
-//        case .postVideoOrArticle, .postVideo, .answerQuestion, .proposeQuestion, .forwardArticle, .postContentAndVideo:   // 发布了视频和文章,提出了问题,回答了问题
-//            height += 60
-//        case .postContent, .postSmallVideo:   // 发布了文字内容
-//            height += (thumb_image_list.count == 0 ? 0 : collectionViewH)
-//        case .commentOrQuoteContent, .commentOrQuoteOthers:   // 引用或者评论别人的内容
-//            height += origin_thread.height
-//        }
-//        return height
-//    }
+    var cellHeight: CGFloat {
+        // 顶部分割线 5，头像用户名 45，底部 55， 中间部分上下间距 5
+        var height: CGFloat = 115.0 + contentH
+        switch item_type {
+        case .postVideoOrArticle, .postVideo, .answerQuestion, .proposeQuestion, .forwardArticle, .postContentAndVideo:   // 发布了视频和文章,提出了问题,回答了问题
+            height += 60
+        case .postContent, .postSmallVideo:   // 发布了文字内容
+            height += collectionViewH
+        case .commentOrQuoteContent, .commentOrQuoteOthers:   // 引用或者评论别人的内容
+            height += 0
+        }
+        return height
+    }
     
     var isDongtaiDetail = false
     
@@ -279,14 +279,14 @@ struct UserDetailDongtai: HandyJSON {
 //    }
     
     /// collectionView 高度
-//    var collectionViewH: CGFloat {
-//        return Calculate.collectionViewHeight(thumb_image_list.count)
-//    }
+    var collectionViewH: CGFloat {
+        return Calculate.collectionViewHeight(thumb_image_list.count)
+    }
     
     /// collectionView 宽度
-//    var collectionViewW: CGFloat {
-//        return isDongtaiDetail ? (screenWidth - 30) : Calculate.collectionViewWidth(thumb_image_list.count)
-//    }
+    var collectionViewW: CGFloat {
+        return Calculate.collectionViewWidth(thumb_image_list.count)
+    }
     
     var rich_content: String = ""
     // 用户数组
@@ -304,10 +304,10 @@ struct UserDetailDongtai: HandyJSON {
 //        return Calculate.textHeight(text: content, fontSize: 17, width: screenWidth - 30.0)
 //    }
     
-//    var contentH: CGFloat {
-//        let height = Calculate.textHeight(text: content, fontSize: 17, width: screenWidth - 30.0)
-//        return height >= 110 ? 110 : height
-//    }
+    var contentH: CGFloat {
+        let height = content.boundingRect(with: CGSize(width: screenWidth - 30, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [.font: UIFont.systemFont(ofSize: 17)], context: nil).size.height + 5
+        return height >= 110 ? 110 : height
+    }
     
     /// 富文本内容高度
 //    var attributedCntentHeight: CGFloat {
