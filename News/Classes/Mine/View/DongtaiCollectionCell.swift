@@ -22,7 +22,6 @@ class DongtaiCollectionCell: UICollectionViewCell, RegisterCellOrNib {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

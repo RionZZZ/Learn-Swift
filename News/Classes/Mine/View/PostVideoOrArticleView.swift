@@ -23,6 +23,7 @@ class PostVideoOrArticleView: UIView, NibLoadable {
                 iconButton.setImage(nil, for: .normal)
             case .postVideo:
                 iconButton.setImage(UIImage(named: "smallvideo_all_32x32_"), for: .normal)
+            
             }
         }
     }
@@ -32,6 +33,11 @@ class PostVideoOrArticleView: UIView, NibLoadable {
     }
 
     @IBAction func coverButtonClick(_ sender: UIButton) {
+    }
+    
+    override func layoutSubviews() {
+        super .layoutSubviews()
+        width = screenWidth - 30
     }
     
     

@@ -102,7 +102,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAl-8h-NuO" customClass="AnimatableView" customModule="IBAnimatable">
                                 <rect key="frame" x="30" y="178.5" width="315" height="44"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eua-En-0Df">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eua-En-0Df">
                                         <rect key="frame" x="220" y="0.0" width="95" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36W-co-zyQ">

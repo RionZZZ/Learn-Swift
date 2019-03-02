@@ -57,6 +57,10 @@
 		AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */; };
 		AE5C141F221BB64C00EF208D /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5C141E221BB64C00EF208D /* UserDetailHeaderView.xib */; };
 		AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE89A51A221571B5007FF80F /* Assets.xcassets */; };
+		AEA8CC3A222A65A80055B021 /* DongtaiOriginalThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8CC39222A65A80055B021 /* DongtaiOriginalThreadView.swift */; };
+		AEA8CC3E222A6D7C0055B021 /* DongtaiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */; };
+		AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */; };
+		AEA8CC46222A83360055B021 /* DongtaiOriginalThreadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA8CC45222A83360055B021 /* DongtaiOriginalThreadView.xib */; };
 		AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */; };
 		AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F32215ADD300904DDE /* VideoViewController.swift */; };
 		AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F82215ADD300904DDE /* HuoshanViewController.swift */; };
@@ -151,6 +155,10 @@
 		AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
 		AE5C141E221BB64C00EF208D /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
 		AE89A51A221571B5007FF80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEA8CC39222A65A80055B021 /* DongtaiOriginalThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiOriginalThreadView.swift; sourceTree = "<group>"; };
+		AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionView.swift; sourceTree = "<group>"; };
+		AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DongtaiCollectionView.xib; sourceTree = "<group>"; };
+		AEA8CC45222A83360055B021 /* DongtaiOriginalThreadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiOriginalThreadView.xib; sourceTree = "<group>"; };
 		AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F32215ADD300904DDE /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F82215ADD300904DDE /* HuoshanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuoshanViewController.swift; sourceTree = "<group>"; };
@@ -458,6 +466,10 @@
 				AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */,
 				AE375B6F222540BB00CC8F25 /* DongtaiCollectionCell.swift */,
 				AE375B70222540BB00CC8F25 /* DongtaiCollectionCell.xib */,
+				AEA8CC39222A65A80055B021 /* DongtaiOriginalThreadView.swift */,
+				AEA8CC45222A83360055B021 /* DongtaiOriginalThreadView.xib */,
+				AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */,
+				AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -661,6 +673,7 @@
 				AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */,
 				AEDEA61A221444F9006074A1 /* LaunchScreen.storyboard in Resources */,
 				AE034B94221E9ADF00CE0EE5 /* RelationRecommandView.xib in Resources */,
+				AEA8CC46222A83360055B021 /* DongtaiOriginalThreadView.xib in Resources */,
 				AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */,
 				AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */,
 				AE48AC20221AA57200FA2015 /* OfflineDownloadCell.xib in Resources */,
@@ -679,6 +692,7 @@
 				AE5C141B221BACA100EF208D /* UserDetailViewController.xib in Resources */,
 				AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */,
 				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
+				AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,9 +860,11 @@
 				AE034B92221E9ABC00CE0EE5 /* RelationRecommandView.swift in Sources */,
 				AE1A4A972216550F004DFFB9 /* Const.swift in Sources */,
 				AE46B90D2217E29C006B75DD /* Theme.swift in Sources */,
+				AEA8CC3A222A65A80055B021 /* DongtaiOriginalThreadView.swift in Sources */,
 				AE46B8FC22170300006B75DD /* MineFirstSectionCell.swift in Sources */,
 				AE034B97221E9F4500CE0EE5 /* RelationRecommandCell.swift in Sources */,
 				AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */,
+				AEA8CC3E222A6D7C0055B021 /* DongtaiCollectionView.swift in Sources */,
 				AE375B71222540BB00CC8F25 /* DongtaiCollectionCell.swift in Sources */,
 				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,

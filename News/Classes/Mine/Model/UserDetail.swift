@@ -33,7 +33,7 @@ struct UserDetail: HandyJSON {
     var description: String = "" // 考研规划“神嘴”张雪峰老师。
     // screeenWidth - (15 + 15 + 40 + 5)
     var descriptionHeight: CGFloat? {
-        return description.boundingRect(with: CGSize(width: screenWidth - 30, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes:[.font: UIFont.systemFont(ofSize:13)], context: nil).size.height + 5
+        return Calculate.textHeight(text: description, fontSize: 13, width: screenWidth - 30)
     }
     
     var apply_auth_url: String = "" // sslocal://apply_user_auth_info
@@ -266,7 +266,7 @@ struct UserDetailDongtai: HandyJSON {
         case .postContent, .postSmallVideo:   // 发布了文字内容
             height += collectionViewH
         case .commentOrQuoteContent, .commentOrQuoteOthers:   // 引用或者评论别人的内容
-            height += 0
+            height += origin_thread.height
         }
         return height
     }
@@ -305,9 +305,14 @@ struct UserDetailDongtai: HandyJSON {
 //    }
     
     var contentH: CGFloat {
-        let height = content.boundingRect(with: CGSize(width: screenWidth - 30, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [.font: UIFont.systemFont(ofSize: 17)], context: nil).size.height + 5
+        let height = Calculate.textHeight(text: content, fontSize: 17, width: screenWidth - 30)
         return height >= 110 ? 110 : height
     }
+    
+//    var contentH: CGFloat {
+//        let height = content.boundingRect(with: CGSize(width: screenWidth - 30, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [.font: UIFont.systemFont(ofSize: 17)], context: nil).size.height + 5
+//        return height >= 110 ? 110 : height
+//    }
     
     /// 富文本内容高度
 //    var attributedCntentHeight: CGFloat {
@@ -688,16 +693,16 @@ struct DongtaiPosition: HandyJSON {
 // MARK: 引用内容
 struct DongtaiOriginThread: HandyJSON {
     /// cell 的高度
-//    var height: CGFloat { return 20 + contentH + ((delete || !show_origin) ? 0 : collectionViewH) }
-//    var detailHeight: CGFloat { return 20 + contentH + ((delete || !show_origin) ? 0 : detailCollectionViewH) }
+    var height: CGFloat {
+        return 20 + contentH + collectionViewH
+    }
+//    var detailHeight: CGFloat { return 20 + contentH + detailCollectionViewH }
     
     var content: String = ""
-//    var contentH: CGFloat {
-//        if !show_origin || delete { return 40 }
-//        let nameAndContent = (user.screen_name == "" ? "" : "\(user.screen_name):") + content
-//        let height = Calculate.textHeight(text: nameAndContent, fontSize: 17, width: screenWidth - 30.0) + 5.0
-//        return height >= 120 ? 120 : height
-//    }
+    var contentH: CGFloat {
+        let height = Calculate.textHeight(text: content, fontSize: 17, width: screenWidth - 30)
+        return height >= 110 ? 110 : height
+    }
 //    var attributedContent: NSAttributedString {
 //        let emojimanager = EmojiManager()
 //        let mutableAtttributedString = NSMutableAttributedString(string: (user.screen_name == "" ? "" : "\(user.screen_name):"), attributes: [.foregroundColor: UIColor.blueFontColor()])
@@ -713,9 +718,9 @@ struct DongtaiOriginThread: HandyJSON {
 //    }
     
     /// collectionView 高度
-//    var collectionViewH: CGFloat {
-//        return Calculate.collectionViewHeight(thumb_image_list.count)
-//    }
+    var collectionViewH: CGFloat {
+        return Calculate.collectionViewHeight(thumb_image_list.count)
+    }
     
     /// collectionView 宽度
 //    var collectionViewW: CGFloat {

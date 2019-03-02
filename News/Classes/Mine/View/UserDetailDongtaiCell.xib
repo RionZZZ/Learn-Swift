@@ -140,7 +140,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okt-7r-q2L">
                         <rect key="frame" x="0.0" y="50" width="320" height="31.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f0-rI-Dn5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f0-rI-Dn5">
                                 <rect key="frame" x="15" y="0.0" width="290" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="HwF-uL-vw4"/>
@@ -160,20 +160,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgG-hj-1sh">
-                                <rect key="frame" x="15" y="0.0" width="290" height="31.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="31.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UgG-hj-1sh" firstAttribute="leading" secondItem="Okt-7r-q2L" secondAttribute="leading" constant="15" id="0ph-Xk-FvM"/>
+                            <constraint firstItem="UgG-hj-1sh" firstAttribute="leading" secondItem="Okt-7r-q2L" secondAttribute="leading" id="0ph-Xk-FvM"/>
                             <constraint firstItem="5f0-rI-Dn5" firstAttribute="leading" secondItem="Okt-7r-q2L" secondAttribute="leading" constant="15" id="5Pv-lp-Dbg"/>
                             <constraint firstAttribute="bottom" secondItem="UgG-hj-1sh" secondAttribute="bottom" id="Gj7-5K-OFc"/>
                             <constraint firstItem="UgG-hj-1sh" firstAttribute="top" secondItem="5f0-rI-Dn5" secondAttribute="bottom" id="IjA-re-sDW"/>
                             <constraint firstAttribute="trailing" secondItem="5f0-rI-Dn5" secondAttribute="trailing" constant="15" id="KPP-PR-PPp"/>
                             <constraint firstItem="Ak0-gN-4af" firstAttribute="trailing" secondItem="5f0-rI-Dn5" secondAttribute="trailing" id="NaC-st-bkY"/>
                             <constraint firstItem="5f0-rI-Dn5" firstAttribute="top" secondItem="Okt-7r-q2L" secondAttribute="top" id="ORo-2g-ohN"/>
-                            <constraint firstAttribute="trailing" secondItem="UgG-hj-1sh" secondAttribute="trailing" constant="15" id="hGW-b3-HjR"/>
+                            <constraint firstAttribute="trailing" secondItem="UgG-hj-1sh" secondAttribute="trailing" id="hGW-b3-HjR"/>
                             <constraint firstItem="Ak0-gN-4af" firstAttribute="bottom" secondItem="5f0-rI-Dn5" secondAttribute="bottom" id="lBK-Zj-40i"/>
                         </constraints>
                     </view>

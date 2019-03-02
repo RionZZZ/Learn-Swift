@@ -43,17 +43,23 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
             if middleView.contains(collectionView) {
                 collectionView.removeFromSuperview()
             }
+            if middleView.contains(originalThreadView) {
+                originalThreadView.removeFromSuperview()
+            }
             
             switch dongtai!.item_type {
             case .postVideoOrArticle: //文章或视频
                 middleView.addSubview(postVideoOrArticle)
-                postVideoOrArticle.frame = CGRect(x: 0, y: 0, width: screenWidth - 30, height: middleView.height)
                 postVideoOrArticle.group = dongtai!.group
+                postVideoOrArticle.frame = CGRect(x: 15, y: 0, width: screenWidth - 30, height: middleView.height)
             case .postContent: //文字内容
                 middleView.addSubview(collectionView)
-                collectionView.frame = CGRect(x: 0, y: 0, width: dongtai!.collectionViewW, height: dongtai!.collectionViewH)
-                collectionView.reloadData()
+                collectionView.frame = CGRect(x: 15, y: 0, width: dongtai!.collectionViewW, height: dongtai!.collectionViewH)
+                collectionView.thumbImageList = dongtai!.thumb_image_list
             case .commentOrQuoteContent: //引用或评论
+                middleView.addSubview(originalThreadView)
+                originalThreadView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: dongtai!.origin_thread.height)
+                originalThreadView.originThread = dongtai!.origin_thread
                 break
             default:
                 break
@@ -66,16 +72,25 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
         return view
     }()
     
-    lazy var collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: DongtaiCollectionFlowLayout())
-        collection._registerCell(cell: DongtaiCollectionCell.self)
-        collection.delegate = self
-        collection.dataSource = self
-        collection.showsVerticalScrollIndicator = false
-        collection.showsHorizontalScrollIndicator = false
-        collection.isScrollEnabled = false
-        collection.theme_backgroundColor = "colors.cellBackgroundColor"
+    private lazy var collectionView: DongtaiCollectionView = {
+        let collection = DongtaiCollectionView.loadViewFromNib()
         return collection
+    }()
+//    private lazy var collectionView: UICollectionView = {
+//        let collection = UICollectionView(frame: .zero, collectionViewLayout: DongtaiCollectionFlowLayout())
+//        collection._registerCell(cell: DongtaiCollectionCell.self)
+//        collection.delegate = self
+//        collection.dataSource = self
+//        collection.showsVerticalScrollIndicator = false
+//        collection.showsHorizontalScrollIndicator = false
+//        collection.isScrollEnabled = false
+//        collection.theme_backgroundColor = "colors.cellBackgroundColor"
+//        return collection
+//    }()
+    
+    private lazy var originalThreadView: DongtaiOriginalThreadView = {
+        let view = DongtaiOriginalThreadView.loadViewFromNib()
+        return view
     }()
 
     override func awakeFromNib() {
@@ -94,28 +109,28 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
     
 }
 
-extension UserDetailDongtaiCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dongtai!.thumb_image_list.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView._dequeueReusableCell(indexPath: indexPath) as DongtaiCollectionCell
-        cell.thumbImage = dongtai!.thumb_image_list[indexPath.row]
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return Calculate.collectionCellSize(dongtai!.thumb_image_list.count)
-    }
-    
-}
+//extension UserDetailDongtaiCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return dongtai!.thumb_image_list.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView._dequeueReusableCell(indexPath: indexPath) as DongtaiCollectionCell
+//        cell.thumbImage = dongtai!.thumb_image_list[indexPath.row]
+//        return cell
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return Calculate.collectionCellSize(dongtai!.thumb_image_list.count)
+//    }
+//    
+//}
 
 
-class DongtaiCollectionFlowLayout: UICollectionViewFlowLayout {
-    override func prepare() {
-        super.prepare()
-        minimumLineSpacing = 5
-        minimumInteritemSpacing = 5
-    }
-}
+//class DongtaiCollectionFlowLayout: UICollectionViewFlowLayout {
+//    override func prepare() {
+//        super.prepare()
+//        minimumLineSpacing = 5
+//        minimumInteritemSpacing = 5
+//    }
+//}
