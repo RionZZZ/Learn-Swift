@@ -32,8 +32,10 @@ class MyTabBarController: UITabBarController {
                     setNightChild(controller: child, imageName: "video")
                 case "小火山":
                     setNightChild(controller: child, imageName: "huoshan")
-                case "未登陆":
-                    setNightChild(controller: child, imageName: "no_login")
+//                case "未登陆":
+//                    setNightChild(controller: child, imageName: "no_login")
+                case "微头条":
+                    setNightChild(controller: child, imageName: "weitoutiao")
                 default:
                     break
                 }
@@ -48,8 +50,10 @@ class MyTabBarController: UITabBarController {
                     setDayChild(controller: child, imageName: "video")
                 case "小火山":
                     setDayChild(controller: child, imageName: "huoshan")
-                case "未登陆":
-                    setDayChild(controller: child, imageName: "no_login")
+//                case "未登陆":
+//                    setDayChild(controller: child, imageName: "no_login")
+                case "微头条":
+                    setDayChild(controller: child, imageName: "weitoutiao")
                 default:
                     break
                 }
@@ -89,8 +93,9 @@ class MyTabBarController: UITabBarController {
     private func addChildCtrls() {
         setChild(HomeViewController(), title: "首页", imageName: "home")
         setChild(VideoViewController(), title: "视频", imageName: "video")
+        setChild(WeiViewController(), title: "微头条", imageName: "weitoutiao")
         setChild(HuoshanViewController(), title: "小火山", imageName: "huoshan")
-        setChild(MineViewController(), title: "未登陆", imageName: "no_login")
+//        setChild(MineViewController(), title: "未登陆", imageName: "no_login")
         
         //tabBar是readonly属性，通过KVC把属性更改
         setValue(MyTabBar(), forKey: "tabBar")

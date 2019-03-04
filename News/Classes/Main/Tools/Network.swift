@@ -35,6 +35,9 @@ protocol NetworkProtocol {
     
     //用户动态表格
     static func loadUserDetailDongtai(user_id: Int, completionHandler: @escaping (_ dongtais: [UserDetailDongtai])  -> ())
+    
+    //首页顶部搜索内容
+    static func loadHomeSearchSuggest(completionHandler: @escaping (_ suggestInfo: String) -> ())
 }
 
 extension NetworkProtocol {
@@ -319,6 +322,31 @@ extension NetworkProtocol {
                     completionHandler(data.compactMap({
                         UserDetailDongtai.deserialize(from: $0 as? NSDictionary)
                     }))
+                }
+            }
+            
+        }
+    }
+    
+    //首页顶部搜索内容
+    static func loadHomeSearchSuggest(completionHandler: @escaping (_ suggestInfo: String) -> ()){
+        let url = BASE_URL + "/search/suggest/homepage_suggest/?"
+        let params = ["device_id": device_id, "iid": iid]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    //提示接口错误
+                    print("接口调用错误!!")
+                    return
+                }
+                if let data = json["data"].dictionary {
+                    completionHandler(data["homepage_search_suggest"]!.string!)
                 }
             }
             

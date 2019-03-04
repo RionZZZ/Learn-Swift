@@ -45,8 +45,5 @@ extension HomeViewController {
         navigationBar.didSelectedAvatar = { [weak self] in
             self!.navigationController?.pushViewController(MineViewController(), animated: true)
         }
-        //        navigationBar.didSelectedSearch = { [weak self] in
-        //
-        //        }
     }
 }

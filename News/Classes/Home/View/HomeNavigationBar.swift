@@ -31,6 +31,10 @@ class HomeNavigationBar: UIView, NibLoadable {
         
         avatarButton.theme_setImage("images.homeHead", forState: .normal)
         avatarButton.theme_setImage("images.homeHead", forState: .highlighted)
+        
+        Network.loadHomeSearchSuggest { (suggestInfo) in
+            self.searchButton.setTitle(suggestInfo, for: .normal)
+        }
     }
     
     //控件的固有属性大小

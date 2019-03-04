@@ -28,6 +28,8 @@
 		AE2EA179222CC443003FDEB1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA178222CC443003FDEB1 /* Date.swift */; };
 		AE2EA17B222CF772003FDEB1 /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA17A222CF772003FDEB1 /* HomeNavigationBar.swift */; };
 		AE2EA17D222CF783003FDEB1 /* HomeNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2EA17C222CF783003FDEB1 /* HomeNavigationBar.xib */; };
+		AE2EA18C222D1D77003FDEB1 /* WeiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA18A222D1D77003FDEB1 /* WeiViewController.swift */; };
+		AE2EA18D222D1D77003FDEB1 /* WeiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2EA18B222D1D77003FDEB1 /* WeiViewController.xib */; };
 		AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B692224F09C00CC8F25 /* Calculate.swift */; };
 		AE375B6C2225104200CC8F25 /* PostVideoOrArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */; };
 		AE375B6E2225105100CC8F25 /* PostVideoOrArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */; };
@@ -130,6 +132,8 @@
 		AE2EA178222CC443003FDEB1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AE2EA17A222CF772003FDEB1 /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 		AE2EA17C222CF783003FDEB1 /* HomeNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNavigationBar.xib; sourceTree = "<group>"; };
+		AE2EA18A222D1D77003FDEB1 /* WeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiViewController.swift; sourceTree = "<group>"; };
+		AE2EA18B222D1D77003FDEB1 /* WeiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeiViewController.xib; sourceTree = "<group>"; };
 		AE375B692224F09C00CC8F25 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoOrArticleView.swift; sourceTree = "<group>"; };
 		AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoOrArticleView.xib; sourceTree = "<group>"; };
@@ -292,6 +296,39 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		AE2EA17E222D1B45003FDEB1 /* Wei */ = {
+			isa = PBXGroup;
+			children = (
+				AE2EA17F222D1B45003FDEB1 /* Controller */,
+				AE2EA181222D1B45003FDEB1 /* Model */,
+				AE2EA182222D1B46003FDEB1 /* View */,
+			);
+			path = Wei;
+			sourceTree = "<group>";
+		};
+		AE2EA17F222D1B45003FDEB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE2EA18A222D1D77003FDEB1 /* WeiViewController.swift */,
+				AE2EA18B222D1D77003FDEB1 /* WeiViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AE2EA181222D1B45003FDEB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AE2EA182222D1B46003FDEB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AE46B90E2217E4AC006B75DD /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +347,7 @@
 				AEB9C6F12215ADD300904DDE /* Video */,
 				AEB9C6F62215ADD300904DDE /* Huoshan */,
 				AEB9C6FE2215ADD300904DDE /* Mine */,
+				AE2EA17E222D1B45003FDEB1 /* Wei */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -710,6 +748,7 @@
 				AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
 				AE034B98221E9F4500CE0EE5 /* RelationRecommandCell.xib in Resources */,
+				AE2EA18D222D1D77003FDEB1 /* WeiViewController.xib in Resources */,
 				AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */,
 				AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */,
 				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
@@ -866,6 +905,7 @@
 				AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */,
 				AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */,
 				AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */,
+				AE2EA18C222D1D77003FDEB1 /* WeiViewController.swift in Sources */,
 				AED17667221AA83A00789669 /* HomeNewsTitleModel.swift in Sources */,
 				AE46B9092217C82C006B75DD /* NoLoginHeaderView.swift in Sources */,
 				AE46B9062217AFED006B75DD /* MineConcernCell.swift in Sources */,

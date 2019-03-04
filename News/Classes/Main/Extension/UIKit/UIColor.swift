@@ -18,5 +18,9 @@ extension UIColor {
         return UIColor(r: 247, g: 248, b: 249)
     }
     
+    class func grayColor113() -> UIColor {
+        return UIColor(r: 113, g: 113, b: 113)
+    }
+    
 }
 
