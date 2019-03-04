@@ -24,6 +24,8 @@
 		AE22DC3B221AE7D5000C1E20 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE22DC3A221AE7D5000C1E20 /* libsqlite3.0.tbd */; };
 		AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */; };
 		AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */; };
+		AE2EA177222CC04F003FDEB1 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA176222CC04F003FDEB1 /* Int.swift */; };
+		AE2EA179222CC443003FDEB1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA178222CC443003FDEB1 /* Date.swift */; };
 		AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B692224F09C00CC8F25 /* Calculate.swift */; };
 		AE375B6C2225104200CC8F25 /* PostVideoOrArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */; };
 		AE375B6E2225105100CC8F25 /* PostVideoOrArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */; };
@@ -122,6 +124,8 @@
 		AE22DC3A221AE7D5000C1E20 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
 		AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
+		AE2EA176222CC04F003FDEB1 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		AE2EA178222CC443003FDEB1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AE375B692224F09C00CC8F25 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoOrArticleView.swift; sourceTree = "<group>"; };
 		AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoOrArticleView.xib; sourceTree = "<group>"; };
@@ -247,10 +251,8 @@
 		AE1A4A9B221655F0004DFFB9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AE1A4A9C221655F0004DFFB9 /* UIColor.swift */,
-				AE46B8FE22179BCD006B75DD /* UIView.swift */,
-				AE46B90022179C70006B75DD /* UITableView.swift */,
-				AE46B90222179EB9006B75DD /* UICollectionView.swift */,
+				AE2EA175222CC039003FDEB1 /* Foundation */,
+				AE2EA174222CC014003FDEB1 /* UIKit */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -264,6 +266,26 @@
 				AE375B692224F09C00CC8F25 /* Calculate.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		AE2EA174222CC014003FDEB1 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A4A9C221655F0004DFFB9 /* UIColor.swift */,
+				AE46B8FE22179BCD006B75DD /* UIView.swift */,
+				AE46B90022179C70006B75DD /* UITableView.swift */,
+				AE46B90222179EB9006B75DD /* UICollectionView.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		AE2EA175222CC039003FDEB1 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				AE2EA176222CC04F003FDEB1 /* Int.swift */,
+				AE2EA178222CC443003FDEB1 /* Date.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		AE46B90E2217E4AC006B75DD /* Theme */ = {
@@ -844,6 +866,7 @@
 				AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */,
 				AEEA86A9221E4B1700BD0137 /* PopAnimator.swift in Sources */,
 				AE5C141A221BACA100EF208D /* UserDetailViewController.swift in Sources */,
+				AE2EA179222CC443003FDEB1 /* Date.swift in Sources */,
 				AE48AC13221A4C6C00FA2015 /* MineCellModel.swift in Sources */,
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
 				AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */,
@@ -869,6 +892,7 @@
 				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,
+				AE2EA177222CC04F003FDEB1 /* Int.swift in Sources */,
 				AEFD90472223C2A6002AC12B /* UserDetailDongtaiCell.swift in Sources */,
 				AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */,
 				AE375B6C2225104200CC8F25 /* PostVideoOrArticleView.swift in Sources */,

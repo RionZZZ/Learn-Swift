@@ -57,18 +57,12 @@ struct UserDetail: HandyJSON {
     
     var followers_count: Int = 0// 粉丝 470837
     var followersCount: String? {
-        guard followers_count >= 10000 else {
-            return String(describing: followers_count)
-        }
-        return String(format: "%.1f万", CGFloat(followers_count) / 10000)
+        return followers_count.convertString()
     }
     
     var followings_count: Int = 0 // 关注 3
     var followingsCount: String? {
-        guard followers_count >= 10000 else {
-            return String(describing: followings_count)
-        }
-        return String(format: "%.1f万", CGFloat(followings_count) / 10000)
+        return followings_count.convertString()
     }
     
     var media_type: Int = 0
@@ -331,21 +325,21 @@ struct UserDetailDongtai: HandyJSON {
     var item_type: DongtaiItemType = .postContent
     
     var create_time: TimeInterval = 0
-//    var createTime: String { return create_time.convertString() }
+    var createTime: String { return create_time.convertString() }
     
     var comment_count: Int = 0
-//    var commentCount: String { return comment_count.convertString() }
+    var commentCount: String { return comment_count.convertString() }
     
     var digg_count: Int = 0
-//    var diggCount: String { return digg_count.convertString() }
+    var diggCount: String { return digg_count.convertString() }
     
     var forward_num: Int = 0
     
     var forward_count: Int = 0
-//    var forwardCount: String { return forward_count.convertString() }
+    var forwardCount: String { return forward_count.convertString() }
     
     var read_count: Int = 0
-//    var readCount: String { return read_count.convertString() }
+    var readCount: String { return read_count.convertString() }
     
     var is_admin: Int = 0
     
@@ -536,9 +530,9 @@ struct DongtaiCommentBase: HandyJSON {
     var group_id: Int = 0
     var share = CommentBaseShare()
     var create_time: TimeInterval = 0
-//    var createTime: String {
-//        return create_time.convertString()
-//    }
+    var createTime: String {
+        return create_time.convertString()
+    }
     var content_rich_span: String = ""
     var detail_schema: String = ""
     var repost_params = RepostParam()
@@ -591,14 +585,14 @@ struct CommentBaseUserInfoMedal: HandyJSON {
 
 struct CommentBaseRelationCount: HandyJSON {
     var followings_count: Int = 0
-//    var followingsCount: String {
-//        return followings_count.convertString()
-//    }
+    var followingsCount: String {
+        return followings_count.convertString()
+    }
     
     var followers_count: Int = 0
-//    var followersCount: String {
-//        return followers_count.convertString()
-//    }
+    var followersCount: String {
+        return followers_count.convertString()
+    }
 }
 
 struct CommentBaseBlock: HandyJSON {
@@ -609,36 +603,36 @@ struct CommentBaseBlock: HandyJSON {
 struct CommentBaseAction: HandyJSON {
     var user_repin: Int = 0
     var bury_count: Int = 0
-//    var buryCount: String {
-//        return bury_count.convertString()
-//    }
+    var buryCount: String {
+        return bury_count.convertString()
+    }
     
     var forward_count: Int = 0
-//    var forwardCount: String {
-//        return forward_count.convertString()
-//    }
+    var forwardCount: String {
+        return forward_count.convertString()
+    }
     var comment_count: Int = 0
-//    var commentCount: String {
-//        return comment_count.convertString()
-//    }
+    var commentCount: String {
+        return comment_count.convertString()
+    }
     var user_bury: Int = 0
-//    var userBury: String {
-//        return user_bury.convertString()
-//    }
+    var userBury: String {
+        return user_bury.convertString()
+    }
     var digg_count: Int = 0
-//    var diggCount: String {
-//        return digg_count.convertString()
-//    }
+    var diggCount: String {
+        return digg_count.convertString()
+    }
     var user_digg: Bool = false
     
     var read_count: Int = 0
-//    var readCount: String {
-//        return read_count.convertString()
-//    }
+    var readCount: String {
+        return read_count.convertString()
+    }
     var play_count: Int = 0
-//    var playCount: String {
-//        return play_count.convertString()
-//    }
+    var playCount: String {
+        return play_count.convertString()
+    }
 }
 
 
@@ -846,14 +840,14 @@ struct DongtaiComment: HandyJSON {
     var is_followed = false
     var user_bury: Int = 0
     var create_time: TimeInterval = 0
-//    var createTime: String { return create_time.convertString() }
+    var createTime: String { return create_time.convertString() }
     
     var reply_count: Int = 0
     var digg_count: Int = 0
-//    var diggCount: String { return digg_count.convertString() }
+    var diggCount: String { return digg_count.convertString() }
     var score: Float = 0.0
     var bury_count: Int = 0
-//    var buryCount: String { return bury_count.convertString()}
+    var buryCount: String { return bury_count.convertString()}
     var reply_list = [DongtaiReplyList]()
     var verified_reason: String = ""
     var is_pgc_author = false
@@ -1005,9 +999,9 @@ struct DongtaiUser: HandyJSON {
     var medals = [Any]()
     
     var followers_count: Int = 0
-//    var followersCount: String { return followers_count.convertString() }
+    var followersCount: String { return followers_count.convertString() }
     var followings_count: Int = 0
-//    var followingsCount: String { return followings_count.convertString() }
+    var followingsCount: String { return followings_count.convertString() }
     var name: String = ""
     var desc: String = ""
     var is_following: Int = 0
@@ -1227,10 +1221,10 @@ struct UserDetailArticleImageList: HandyJSON {
 
 struct UserDetailWenda: HandyJSON {
     /// cell 的高度
-//    var cellHeight: CGFloat {
-//        // 10 + question.titleH! + 5 + 10 + 10 + 5
-//        return 40 + question.titleH + answer.content_abstract.textHeight
-//    }
+    var cellHeight: CGFloat {
+        // 10 + question.titleH! + 5 + 10 + 10 + 5
+        return 40 + question.titleH + answer.content_abstract.textHeight
+    }
     var answer: UserDetailAnswer!
     var question: UserDetailQuestion!
 }
@@ -1242,9 +1236,9 @@ struct UserDetailQuestion: HandyJSON {
     var nice_ans_count: Int = 0
     var tag_id: Int = 0
     var title: String = ""
-//    var titleH: CGFloat {
-//        return Calculate.textHeight(text: title, fontSize: 17, width: screenWidth - 30.0) + 5
-//    }
+    var titleH: CGFloat {
+        return Calculate.textHeight(text: title, fontSize: 17, width: screenWidth - 30.0) + 5
+    }
     
     var create_time: Int = 0
     var normal_ans_count: Int = 0
@@ -1275,7 +1269,7 @@ struct UserDetailAnswer: HandyJSON {
     var content: String = ""
     var bury_count: Int = 0
     var brow_count: Int = 0
-//    var browCount: String { return brow_count.convertString() }
+    var browCount: String { return brow_count.convertString() }
     var ansid: String = ""
     var show_time: String = ""
     var wap_url: String = ""
@@ -1296,10 +1290,10 @@ struct UserDetailAnswer: HandyJSON {
 struct UserDetailAnswerContentAbstract: HandyJSON {
     var thumb_image_list: [ThumbImage]!
     var text: String = ""
-//    var textHeight: CGFloat {
-//        let height = Calculate.textHeight(text: text, fontSize: 16, width: screenWidth - 30.0)
-//        return height >= 42 ? 42 : height
-//    }
+    var textHeight: CGFloat {
+        let height = Calculate.textHeight(text: text, fontSize: 16, width: screenWidth - 30.0)
+        return height >= 42 ? 42 : height
+    }
     
     var large_image_list: [LargeImage]!
 }

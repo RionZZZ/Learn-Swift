@@ -271,23 +271,24 @@
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIn-dw-ZAA">
                     <rect key="frame" x="0.0" y="387.5" width="375" height="581.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QJF-N5-CWu" secondAttribute="trailing" id="B6Y-HI-6t3"/>
+                <constraint firstAttribute="trailing" secondItem="QJF-N5-CWu" secondAttribute="trailing" id="B6Y-HI-6t3"/>
                 <constraint firstItem="QJF-N5-CWu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ifk-3f-oix"/>
-                <constraint firstItem="fEV-L3-MuO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ser-vI-9gM"/>
+                <constraint firstItem="fEV-L3-MuO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ser-vI-9gM"/>
                 <constraint firstItem="WIn-dw-ZAA" firstAttribute="top" secondItem="fEV-L3-MuO" secondAttribute="bottom" id="TZu-KD-mi2"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WIn-dw-ZAA" secondAttribute="bottom" id="eyr-KQ-pjw"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fEV-L3-MuO" secondAttribute="trailing" id="jLA-Td-6Ue"/>
+                <constraint firstAttribute="bottom" secondItem="WIn-dw-ZAA" secondAttribute="bottom" id="eyr-KQ-pjw"/>
+                <constraint firstAttribute="trailing" secondItem="fEV-L3-MuO" secondAttribute="trailing" id="jLA-Td-6Ue"/>
                 <constraint firstItem="fEV-L3-MuO" firstAttribute="top" secondItem="QJF-N5-CWu" secondAttribute="bottom" id="lhq-HV-xd2"/>
-                <constraint firstItem="QJF-N5-CWu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="s7E-oQ-Tk2"/>
-                <constraint firstItem="WIn-dw-ZAA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xFd-7Y-BNN"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WIn-dw-ZAA" secondAttribute="trailing" id="z80-1Y-YN7"/>
+                <constraint firstItem="QJF-N5-CWu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="s7E-oQ-Tk2"/>
+                <constraint firstItem="WIn-dw-ZAA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xFd-7Y-BNN"/>
+                <constraint firstAttribute="trailing" secondItem="WIn-dw-ZAA" secondAttribute="trailing" id="z80-1Y-YN7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="FkC-qY-5Xn"/>
             <connections>
                 <outlet property="areaButton" destination="E6e-A5-6cE" id="qNc-MP-nIk"/>
                 <outlet property="areaButtonHeight" destination="fHh-8l-l69" id="4zh-2R-s78"/>

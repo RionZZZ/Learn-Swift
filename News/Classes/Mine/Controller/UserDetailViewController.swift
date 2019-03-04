@@ -71,7 +71,7 @@ class UserDetailViewController: UIViewController {
                 self.barView.userDetail = userDetail
                 if userDetail.bottom_tab.count == 0 {
                     self.headerView.height = 969 - 44
-                    self.bottomViewBottom.constant = 0
+                    self.bottomViewHeight.constant = 0
                     self.view.layoutIfNeeded()
                 } else {
                     self.headerView.height = 969

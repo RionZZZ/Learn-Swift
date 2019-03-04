@@ -158,6 +158,10 @@ class UserDetailHeaderView: UIView, NibLoadable {
 //    }
     
     @IBAction func sendMailClick(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: String(describing: MoreLoginViewController.self), bundle: nil)
+        let moreLoginVC = storyboard.instantiateViewController(withIdentifier: String(describing: MoreLoginViewController.self)) as! MoreLoginViewController
+        moreLoginVC.modalSize = (width: .full, height: .custom(size: Float(screenHeight - statusBarHeight)))
+        UIApplication.shared.keyWindow?.rootViewController?.present(moreLoginVC, animated: true, completion: nil)
     }
     
     @IBAction func concernButtonClick(_ sender: AnimatableButton) {

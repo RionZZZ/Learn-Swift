@@ -29,7 +29,7 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
         didSet {
             avatarImage.kf.setImage(with: URL(string: dongtai!.user.avatar_url))
             nameLabel.text = dongtai!.user.screen_name
-            modifyTimeLabel.text = "· \(dongtai!.create_time)"
+            modifyTimeLabel.text = "· \(dongtai!.createTime)"
             likeButton.setTitle("\(dongtai!.comment_count)", for: .normal)
             forwardButton.setTitle("\(dongtai!.forward_count)", for: .normal)
             bottomLabel.text = ("\(dongtai!.read_count)") + "人阅读"
@@ -60,7 +60,6 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
                 middleView.addSubview(originalThreadView)
                 originalThreadView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: dongtai!.origin_thread.height)
                 originalThreadView.originThread = dongtai!.origin_thread
-                break
             default:
                 break
             }
