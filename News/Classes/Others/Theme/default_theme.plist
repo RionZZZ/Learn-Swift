@@ -4,14 +4,16 @@
 <dict>
 	<key>images</key>
 	<dict>
-        <key>personal_home_back_black</key>
-        <string>personal_home_back_black_24x24_</string>
-        <key>personal_home_back_white</key>
-        <string>personal_home_back_white_24x24_</string>
-        <key>new_more_titlebar</key>
-        <string>new_more_titlebar_24x24_</string>
-        <key>new_morewhite_titlebar</key>
-        <string>new_morewhite_titlebar_22x22_</string>
+		<key>homeHead</key>
+		<string>home_no_login_head</string>
+		<key>personal_home_back_black</key>
+		<string>personal_home_back_black_24x24_</string>
+		<key>personal_home_back_white</key>
+		<string>personal_home_back_white_24x24_</string>
+		<key>new_more_titlebar</key>
+		<string>new_more_titlebar_24x24_</string>
+		<key>new_morewhite_titlebar</key>
+		<string>new_morewhite_titlebar_22x22_</string>
 		<key>tabbar-options</key>
 		<string>tabbar-options_9x9_</string>
 		<key>air_download</key>
@@ -58,7 +60,7 @@
 		<key>globalRedColor</key>
 		<string>#e6645f</string>
 		<key>navigationBarTint</key>
-		<string>#000000</string>
+		<string>#c44943</string>
 		<key>loginFieldBackground</key>
 		<string>#ffffff</string>
 		<key>enterTextColor</key>

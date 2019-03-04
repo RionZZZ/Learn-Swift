@@ -14,10 +14,28 @@ class MyNavigationController: UINavigationController {
         super.viewDidLoad()
 
         let navigationBar = UINavigationBar.appearance()
-        navigationBar.theme_backgroundColor = "colors.cellBackgroundColor"
+//        navigationBar.theme_backgroundColor = "colors.cellBackgroundColor"
         navigationBar.theme_tintColor = "colors.navigationBarTint"
         
+        if UserDefaults.standard.bool(forKey: isNight) {
+            navigationBar.setBackgroundImage(UIImage(named: "navigation_background_night"), for: .default)
+        } else {
+            navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
+        }
+        //接收更换主题通知
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveDayOrNightClick), name: NSNotification.Name(rawValue: "dayOrNightClick"), object: nil)
+        
+        //全局手势
         initGlobalPan()
+    }
+    
+    
+    @objc func receiveDayOrNightClick(notification: Notification) {
+        if notification.object as! Bool {
+            navigationBar.setBackgroundImage(UIImage(named: "navigation_background_night"), for: .default)
+        } else {
+            navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
+        }
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

@@ -4,14 +4,16 @@
 <dict>
 	<key>images</key>
 	<dict>
-        <key>personal_home_back_black</key>
-        <string>personal_home_back_black_night_24x24_</string>
-        <key>personal_home_back_white</key>
-        <string>personal_home_back_white_night_24x24_</string>
-        <key>new_more_titlebar</key>
-        <string>new_more_titlebar_night_24x24_</string>
-        <key>new_morewhite_titlebar</key>
-        <string>new_morewhite_titlebar_night_22x22_</string>
+		<key>homeHead</key>
+		<string>home_no_login_head_night</string>
+		<key>personal_home_back_black</key>
+		<string>personal_home_back_black_night_24x24_</string>
+		<key>personal_home_back_white</key>
+		<string>personal_home_back_white_night_24x24_</string>
+		<key>new_more_titlebar</key>
+		<string>new_more_titlebar_night_24x24_</string>
+		<key>new_morewhite_titlebar</key>
+		<string>new_morewhite_titlebar_night_22x22_</string>
 		<key>tabbar-options</key>
 		<string>tabbar-options_night_9x9_</string>
 		<key>air_download</key>
@@ -58,7 +60,7 @@
 		<key>globalRedColor</key>
 		<string>#651413</string>
 		<key>navigationBarTint</key>
-		<string>#707070</string>
+		<string>#651413</string>
 		<key>loginFieldBackground</key>
 		<string>#cacaca</string>
 		<key>enterTextColor</key>

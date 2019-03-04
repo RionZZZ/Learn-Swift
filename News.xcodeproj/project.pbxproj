@@ -26,6 +26,8 @@
 		AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */; };
 		AE2EA177222CC04F003FDEB1 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA176222CC04F003FDEB1 /* Int.swift */; };
 		AE2EA179222CC443003FDEB1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA178222CC443003FDEB1 /* Date.swift */; };
+		AE2EA17B222CF772003FDEB1 /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA17A222CF772003FDEB1 /* HomeNavigationBar.swift */; };
+		AE2EA17D222CF783003FDEB1 /* HomeNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2EA17C222CF783003FDEB1 /* HomeNavigationBar.xib */; };
 		AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B692224F09C00CC8F25 /* Calculate.swift */; };
 		AE375B6C2225104200CC8F25 /* PostVideoOrArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */; };
 		AE375B6E2225105100CC8F25 /* PostVideoOrArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */; };
@@ -126,6 +128,8 @@
 		AE231FCF221950A3004F0D1A /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
 		AE2EA176222CC04F003FDEB1 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		AE2EA178222CC443003FDEB1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		AE2EA17A222CF772003FDEB1 /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
+		AE2EA17C222CF783003FDEB1 /* HomeNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNavigationBar.xib; sourceTree = "<group>"; };
 		AE375B692224F09C00CC8F25 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoOrArticleView.swift; sourceTree = "<group>"; };
 		AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoOrArticleView.xib; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 		AEB9C6F02215ADD300904DDE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE2EA17A222CF772003FDEB1 /* HomeNavigationBar.swift */,
+				AE2EA17C222CF783003FDEB1 /* HomeNavigationBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -698,6 +704,7 @@
 				AEA8CC46222A83360055B021 /* DongtaiOriginalThreadView.xib in Resources */,
 				AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */,
 				AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */,
+				AE2EA17D222CF783003FDEB1 /* HomeNavigationBar.xib in Resources */,
 				AE48AC20221AA57200FA2015 /* OfflineDownloadCell.xib in Resources */,
 				AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */,
 				AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */,
@@ -850,6 +857,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2EA17B222CF772003FDEB1 /* HomeNavigationBar.swift in Sources */,
 				AEB9C70D2215ADD300904DDE /* AppDelegate.swift in Sources */,
 				AE22DC39221AE786000C1E20 /* SQLite.swift in Sources */,
 				AE48AC0F221A418500FA2015 /* SettingViewController.swift in Sources */,

@@ -50,6 +50,7 @@ class NoLoginHeaderView: UIView, NibLoadable {
     
     @IBAction func onDayOrNightClick(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        //本地储存！
         UserDefaults.standard.set(sender.isSelected, forKey: isNight)
         Theme.switchNight(sender.isSelected)
         
