@@ -16,6 +16,9 @@ class DongtaiCollectionView: UICollectionView, UICollectionViewDelegateFlowLayou
         }
     }
     var largeImages = [LargeImage]()
+    
+    var isPostVideo = false
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +26,7 @@ class DongtaiCollectionView: UICollectionView, UICollectionViewDelegateFlowLayou
         dataSource = self
         _registerCell(cell: DongtaiCollectionCell.self)
         collectionViewLayout = DongtaiCollectionFlowLayout()
+        isScrollEnabled = false
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -31,7 +35,9 @@ class DongtaiCollectionView: UICollectionView, UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView._dequeueReusableCell(indexPath: indexPath) as DongtaiCollectionCell
-        cell.thumbImage = thumbImageList[indexPath.row]
+        cell.thumbImageView.contentMode = .scaleAspectFill
+        cell.thumbImage = thumbImageList[indexPath.item]
+        cell.isPostVideo = isPostVideo
         return cell
     }
     

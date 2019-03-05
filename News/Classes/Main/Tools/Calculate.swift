@@ -28,9 +28,9 @@ extension Calculate {
     
     static func collectionViewWidth(_ count: Int) -> CGFloat {
         switch count {
-        case 1:
-            return image1Width
-        case 2:
+//        case 1:
+//            return image1Width
+        case 1, 2:
             return (image2Width + 5) * 2
         case 3,5...9:
             return screenWidth - 30
@@ -43,9 +43,9 @@ extension Calculate {
     
     static func collectionViewHeight(_ count: Int) -> CGFloat {
         switch count {
-        case 1:
-            return image1Width
-        case 2:
+//        case 1:
+//            return image1Width
+        case 1, 2:
             return image2Width
         case 3:
             return image3Width + 5
@@ -60,9 +60,9 @@ extension Calculate {
     
     static func collectionCellSize(_ count: Int) -> CGSize {
         switch count {
-        case 1:
-            return CGSize(width: image1Width, height: image1Width)
-        case 2:
+//        case 1:
+//            return CGSize(width: image1Width, height: image1Width)
+        case 1, 2:
             return CGSize(width: image2Width, height: image2Width)
         case 3...9:
             return CGSize(width: image3Width, height: image3Width)

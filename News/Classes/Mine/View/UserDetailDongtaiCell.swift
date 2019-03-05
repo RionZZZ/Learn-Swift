@@ -48,21 +48,26 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
             }
             
             switch dongtai!.item_type {
-            case .postVideoOrArticle: //文章或视频
+            case .postVideoOrArticle, .postVideo, .answerQuestion, .proposeQuestion, .forwardArticle, .postContentAndVideo: //文章或视频
                 middleView.addSubview(postVideoOrArticle)
-                postVideoOrArticle.group = dongtai!.group
                 postVideoOrArticle.frame = CGRect(x: 15, y: 0, width: screenWidth - 30, height: middleView.height)
-            case .postContent: //文字内容
+                if dongtai!.group.title == "" {
+                    postVideoOrArticle.originGroup = dongtai!.origin_group
+                } else {
+                    postVideoOrArticle.group = dongtai!.group
+                }
+            case .postContent, .postSmallVideo: //文字内容
                 middleView.addSubview(collectionView)
                 collectionView.frame = CGRect(x: 15, y: 0, width: dongtai!.collectionViewW, height: dongtai!.collectionViewH)
+                if dongtai!.item_type  == .postSmallVideo {
+                    collectionView.isPostVideo = true
+                }
                 collectionView.thumbImageList = dongtai!.thumb_image_list
                 collectionView.largeImages = dongtai!.large_image_list
-            case .commentOrQuoteContent: //引用或评论
+            case .commentOrQuoteContent, .commentOrQuoteOthers: //引用或评论
                 middleView.addSubview(originalThreadView)
                 originalThreadView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: dongtai!.origin_thread.height)
                 originalThreadView.originThread = dongtai!.origin_thread
-            default:
-                break
             }
         }
     }

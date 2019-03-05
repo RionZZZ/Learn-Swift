@@ -60,6 +60,8 @@ class UserDetailViewController: UIViewController {
         view.layoutIfNeeded()
         
         //用户详情数据
+//        userId = 51025535398 //马未都
+        userId = 8 //张一鸣
         Network.loadUserDetail(user_id: userId) { (userDetail) in
             //用户动态列表
             Network.loadUserDetailDongtai(user_id: self.userId, completionHandler: { (dongtais) in
@@ -72,6 +74,7 @@ class UserDetailViewController: UIViewController {
                 if userDetail.bottom_tab.count == 0 {
                     self.headerView.height = 969 - 44
                     self.bottomViewHeight.constant = 0
+                    self.bottomViewBottom.constant = 0
                     self.view.layoutIfNeeded()
                 } else {
                     self.headerView.height = 969
@@ -157,7 +160,7 @@ extension UserDetailViewController: UIScrollViewDelegate {
                 barView.backButton.theme_setImage("images.personal_home_back_white", forState: .normal)
                 barView.moreButton.theme_setImage("images.new_morewhite_titlebar", forState: .normal)
             }
-            
+
             //14 --> 导航栏距离图片底部
             //15 --> 关注按钮距离导航栏底部
             //14 --> 关注按钮高度的一半
@@ -173,9 +176,10 @@ extension UserDetailViewController: UIScrollViewDelegate {
                 barView.titleLabel.textColor = UIColor(r: 0, g: 0, b: 0, alpha: concernAlpha)
                 barView.concernButton.alpha = concernAlpha
             }
-            
+
             //设置headerview的topTabView黏住顶部
-            if offsetY >= (14 + headerView.topTabView.frame.minY) {//14 + 201
+            let topViewH = 14 + headerView.topTabView.frame.minY //14 + 201
+            if offsetY >= topViewH {
                 headerView.y = offsetY - (14 + headerView.topTabView.frame.minY)
                 for subview in headerView.bottomScrollView.subviews {
                     let tableview = subview as! UITableView
@@ -184,7 +188,7 @@ extension UserDetailViewController: UIScrollViewDelegate {
             } else {
                 headerView.y = 0
             }
-            
+
         }
     }
 }

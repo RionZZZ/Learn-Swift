@@ -102,6 +102,9 @@ class UserDetailHeaderView: UIView, NibLoadable {
                     //tabview
                     let tabview = UITableView(frame: CGRect(x: CGFloat(index) * screenWidth, y: 0, width: screenWidth, height: bottomScrollView.height))
                     tabview._registerCell(cell: UserDetailDongtaiCell.self)
+                    if userDetail!.bottom_tab.count == 0 {
+                        tabview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: safeAreaBottom!, right: 0)
+                    }
                     tabview.delegate = self
                     tabview.dataSource = self
 //                    tabview.rowHeight = 130
@@ -150,7 +153,12 @@ class UserDetailHeaderView: UIView, NibLoadable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        //解决样式bug
         width = screenWidth
+        for subview in bottomScrollView.subviews {
+            let tableview = subview as! UITableView
+            tableview.height = bottomScrollView.height
+        }
     }
     
 //    class func headerView() -> UserDetailHeaderView {

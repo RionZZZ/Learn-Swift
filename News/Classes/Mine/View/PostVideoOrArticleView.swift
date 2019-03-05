@@ -14,16 +14,31 @@ class PostVideoOrArticleView: UIView, NibLoadable {
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var title: UILabel!
     
-    var group: DongtaiOriginGroup? {
+    var group = DongtaiOriginGroup() {
         didSet {
-            iconButton.kf.setBackgroundImage(with: URL(string: group!.image_url), for: .normal)
-            title.text = group!.title
-            switch group!.media_type {
+            iconButton.kf.setBackgroundImage(with: URL(string: group.thumb_url), for: .normal)
+            title.text = group.title
+            switch group.media_type {
             case .postArticle:
                 iconButton.setImage(nil, for: .normal)
             case .postVideo:
                 iconButton.setImage(UIImage(named: "smallvideo_all_32x32_"), for: .normal)
             
+            }
+        }
+    }
+    
+    var originGroup = DongtaiOriginGroup() {
+        didSet {
+            iconButton.kf.setBackgroundImage(with: URL(string: group.thumb_url), for: .normal)
+            title.text = originGroup.source + ":" + originGroup.title
+            iconButton.kf.setImage(with: URL(string: originGroup.open_url), for: .normal)
+            switch group.media_type {
+            case .postArticle:
+                iconButton.setImage(nil, for: .normal)
+            case .postVideo:
+                iconButton.setImage(UIImage(named: "smallvideo_all_32x32_"), for: .normal)
+                
             }
         }
     }

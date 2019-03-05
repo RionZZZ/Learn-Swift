@@ -58,9 +58,8 @@ extension PreviewLagerImageViewController: UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView._dequeueReusableCell(indexPath: indexPath) as DongtaiCollectionCell
-        cell.largeImage = images[indexPath.item]
         cell.thumbImageView.contentMode = .scaleAspectFit
-        cell.thumbImageView.layer.borderWidth = 0
+        cell.largeImage = images[indexPath.item]
         return cell
     }
     

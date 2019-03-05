@@ -13,6 +13,13 @@ import SVProgressHUD
 class DongtaiCollectionCell: UICollectionViewCell, RegisterCellOrNib {
 
     @IBOutlet weak var thumbImageView: UIImageView!
+    @IBOutlet weak var iconButton: UIButton!
+    
+    var isPostVideo = false {
+        didSet {
+            iconButton.setImage(isPostVideo ? UIImage(named: "smallvideo_all_32x32_") : nil, for: .normal)
+        }
+    }
     
     var thumbImage: ThumbImage? {
         didSet {
