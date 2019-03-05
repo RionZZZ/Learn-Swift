@@ -19,6 +19,7 @@ class DongtaiOriginalThreadView: UIView, NibLoadable {
             contentLabel.text = originThread!.content
             contentLabelHeight.constant = originThread!.contentH
             collectionView.thumbImageList = originThread!.thumb_image_list
+            collectionView.largeImages = originThread!.large_image_list
             layoutIfNeeded()
         }
     }

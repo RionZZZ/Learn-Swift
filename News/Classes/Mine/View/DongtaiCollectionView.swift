@@ -15,6 +15,7 @@ class DongtaiCollectionView: UICollectionView, UICollectionViewDelegateFlowLayou
             reloadData()
         }
     }
+    var largeImages = [LargeImage]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,6 +37,13 @@ class DongtaiCollectionView: UICollectionView, UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return Calculate.collectionCellSize(thumbImageList.count)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let previewLargeImage = PreviewLagerImageViewController()
+        previewLargeImage.selectedIndex = indexPath.item
+        previewLargeImage.images = largeImages
+        UIApplication.shared.keyWindow?.rootViewController?.present(previewLargeImage, animated: false, completion: nil)
     }
     
 }

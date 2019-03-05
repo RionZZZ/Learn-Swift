@@ -56,6 +56,7 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
                 middleView.addSubview(collectionView)
                 collectionView.frame = CGRect(x: 15, y: 0, width: dongtai!.collectionViewW, height: dongtai!.collectionViewH)
                 collectionView.thumbImageList = dongtai!.thumb_image_list
+                collectionView.largeImages = dongtai!.large_image_list
             case .commentOrQuoteContent: //引用或评论
                 middleView.addSubview(originalThreadView)
                 originalThreadView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: dongtai!.origin_thread.height)

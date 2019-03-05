@@ -30,6 +30,8 @@
 		AE2EA17D222CF783003FDEB1 /* HomeNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2EA17C222CF783003FDEB1 /* HomeNavigationBar.xib */; };
 		AE2EA18C222D1D77003FDEB1 /* WeiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA18A222D1D77003FDEB1 /* WeiViewController.swift */; };
 		AE2EA18D222D1D77003FDEB1 /* WeiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2EA18B222D1D77003FDEB1 /* WeiViewController.xib */; };
+		AE2EA190222D2866003FDEB1 /* PreviewLagerImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2EA18E222D2866003FDEB1 /* PreviewLagerImageViewController.swift */; };
+		AE2EA191222D2866003FDEB1 /* PreviewLagerImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2EA18F222D2866003FDEB1 /* PreviewLagerImageViewController.xib */; };
 		AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B692224F09C00CC8F25 /* Calculate.swift */; };
 		AE375B6C2225104200CC8F25 /* PostVideoOrArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */; };
 		AE375B6E2225105100CC8F25 /* PostVideoOrArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */; };
@@ -134,6 +136,8 @@
 		AE2EA17C222CF783003FDEB1 /* HomeNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNavigationBar.xib; sourceTree = "<group>"; };
 		AE2EA18A222D1D77003FDEB1 /* WeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiViewController.swift; sourceTree = "<group>"; };
 		AE2EA18B222D1D77003FDEB1 /* WeiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeiViewController.xib; sourceTree = "<group>"; };
+		AE2EA18E222D2866003FDEB1 /* PreviewLagerImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLagerImageViewController.swift; sourceTree = "<group>"; };
+		AE2EA18F222D2866003FDEB1 /* PreviewLagerImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewLagerImageViewController.xib; sourceTree = "<group>"; };
 		AE375B692224F09C00CC8F25 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		AE375B6B2225104200CC8F25 /* PostVideoOrArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoOrArticleView.swift; sourceTree = "<group>"; };
 		AE375B6D2225105100CC8F25 /* PostVideoOrArticleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoOrArticleView.xib; sourceTree = "<group>"; };
@@ -487,6 +491,8 @@
 				AEEA86A0221E3BAB00BD0137 /* UserDetailBottomPopController.swift */,
 				AEEA86A6221E405000BD0137 /* UserDetailBottomPopController.storyboard */,
 				AEEA86AA221E4EE400BD0137 /* BottomPresentationController.swift */,
+				AE2EA18E222D2866003FDEB1 /* PreviewLagerImageViewController.swift */,
+				AE2EA18F222D2866003FDEB1 /* PreviewLagerImageViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -761,6 +767,7 @@
 				AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */,
 				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
 				AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */,
+				AE2EA191222D2866003FDEB1 /* PreviewLagerImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,6 +924,7 @@
 				AE2EA179222CC443003FDEB1 /* Date.swift in Sources */,
 				AE48AC13221A4C6C00FA2015 /* MineCellModel.swift in Sources */,
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
+				AE2EA190222D2866003FDEB1 /* PreviewLagerImageViewController.swift in Sources */,
 				AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */,
 				AEB9C70F2215ADD300904DDE /* MineViewController.swift in Sources */,
 				AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */,
