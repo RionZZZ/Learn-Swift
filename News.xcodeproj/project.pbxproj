@@ -20,6 +20,10 @@
 		AE1A4A972216550F004DFFB9 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A962216550F004DFFB9 /* Const.swift */; };
 		AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9C221655F0004DFFB9 /* UIColor.swift */; };
 		AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9F221661B8004DFFB9 /* Network.swift */; };
+		AE1E7520222F5F6D0094EB07 /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */; };
+		AE1E7521222F5F6D0094EB07 /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751E222F5F6D0094EB07 /* emojis.plist */; };
+		AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */; };
+		AE1E7524222F5FA80094EB07 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1E7523222F5FA80094EB07 /* Emoji.swift */; };
 		AE22DC39221AE786000C1E20 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22DC38221AE786000C1E20 /* SQLite.swift */; };
 		AE22DC3B221AE7D5000C1E20 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE22DC3A221AE7D5000C1E20 /* libsqlite3.0.tbd */; };
 		AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */; };
@@ -126,6 +130,10 @@
 		AE1A4A962216550F004DFFB9 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		AE1A4A9C221655F0004DFFB9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AE1A4A9F221661B8004DFFB9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
+		AE1E751E222F5F6D0094EB07 /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
+		AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
+		AE1E7523222F5FA80094EB07 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		AE22DC38221AE786000C1E20 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		AE22DC3A221AE7D5000C1E20 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +284,7 @@
 				AE46B90C2217E29C006B75DD /* Theme.swift */,
 				AE22DC38221AE786000C1E20 /* SQLite.swift */,
 				AE375B692224F09C00CC8F25 /* Calculate.swift */,
+				AE1E7523222F5FA80094EB07 /* Emoji.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -463,6 +472,9 @@
 				AEB9C6FD2215ADD300904DDE /* Info.plist */,
 				AE1A4A962216550F004DFFB9 /* Const.swift */,
 				AE48AC10221A45BA00FA2015 /* Setting.plist */,
+				AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */,
+				AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */,
+				AE1E751E222F5F6D0094EB07 /* emojis.plist */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -747,14 +759,17 @@
 				AE034B94221E9ADF00CE0EE5 /* RelationRecommandView.xib in Resources */,
 				AEA8CC46222A83360055B021 /* DongtaiOriginalThreadView.xib in Resources */,
 				AE4401022216B2160097DEA9 /* MineOtherCell.xib in Resources */,
+				AE1E7521222F5F6D0094EB07 /* emojis.plist in Resources */,
 				AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */,
 				AE2EA17D222CF783003FDEB1 /* HomeNavigationBar.xib in Resources */,
 				AE48AC20221AA57200FA2015 /* OfflineDownloadCell.xib in Resources */,
+				AE1E7520222F5F6D0094EB07 /* emoji_sort.plist in Resources */,
 				AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */,
 				AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
 				AE034B98221E9F4500CE0EE5 /* RelationRecommandCell.xib in Resources */,
 				AE2EA18D222D1D77003FDEB1 /* WeiViewController.xib in Resources */,
+				AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */,
 				AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */,
 				AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */,
 				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
@@ -945,6 +960,7 @@
 				AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */,
 				AEA8CC3E222A6D7C0055B021 /* DongtaiCollectionView.swift in Sources */,
 				AE375B71222540BB00CC8F25 /* DongtaiCollectionCell.swift in Sources */,
+				AE1E7524222F5FA80094EB07 /* Emoji.swift in Sources */,
 				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,

@@ -82,6 +82,7 @@ class UserDetailViewController: UIViewController {
                     self.footerView.bottomTabs = userDetail.bottom_tab
                 }
                 self.scrollView.contentSize = CGSize(width: screenWidth, height: self.headerView.height)
+                
             })
         }
     }

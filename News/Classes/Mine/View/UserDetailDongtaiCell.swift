@@ -25,15 +25,17 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
     @IBOutlet weak var allContent: UILabel!
     @IBOutlet weak var middleView: UIView!
     
+    private let emojiManager = EmojiManager()
     var dongtai: UserDetailDongtai? {
         didSet {
             avatarImage.kf.setImage(with: URL(string: dongtai!.user.avatar_url))
             nameLabel.text = dongtai!.user.screen_name
             modifyTimeLabel.text = "· \(dongtai!.createTime)"
-            likeButton.setTitle("\(dongtai!.comment_count)", for: .normal)
-            forwardButton.setTitle("\(dongtai!.forward_count)", for: .normal)
-            bottomLabel.text = ("\(dongtai!.read_count)") + "人阅读"
-            contentLabel.text = dongtai!.content
+            likeButton.setTitle("\(dongtai!.commentCount)", for: .normal)
+            forwardButton.setTitle("\(dongtai!.forwardCount)", for: .normal)
+            bottomLabel.text = ("\(dongtai!.readCount)") + "人阅读"
+//            contentLabel.text = dongtai!.content
+            contentLabel.attributedText = emojiManager.emojiShow(content: dongtai!.content, font: contentLabel.font)
             contentHeight.constant = dongtai!.contentH
             allContent.isHidden = dongtai!.contentH != 110
             //防止cell重用机制，导致数据错乱
@@ -52,6 +54,8 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
                 middleView.addSubview(postVideoOrArticle)
                 postVideoOrArticle.frame = CGRect(x: 15, y: 0, width: screenWidth - 30, height: middleView.height)
                 if dongtai!.group.title == "" {
+                    print(dongtai!.group)
+                    print(dongtai!.origin_group)
                     postVideoOrArticle.originGroup = dongtai!.origin_group
                 } else {
                     postVideoOrArticle.group = dongtai!.group

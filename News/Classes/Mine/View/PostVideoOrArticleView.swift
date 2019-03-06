@@ -30,9 +30,8 @@ class PostVideoOrArticleView: UIView, NibLoadable {
     
     var originGroup = DongtaiOriginGroup() {
         didSet {
-            iconButton.kf.setBackgroundImage(with: URL(string: group.thumb_url), for: .normal)
-            title.text = originGroup.source + ":" + originGroup.title
-            iconButton.kf.setImage(with: URL(string: originGroup.open_url), for: .normal)
+            iconButton.kf.setBackgroundImage(with: URL(string: originGroup.thumb_url), for: .normal)
+            title.text = originGroup.source + ": " + originGroup.title
             switch group.media_type {
             case .postArticle:
                 iconButton.setImage(nil, for: .normal)
