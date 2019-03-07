@@ -22,5 +22,9 @@ extension UIColor {
         return UIColor(r: 113, g: 113, b: 113)
     }
     
+    class func blueFontColor() -> UIColor {
+        return UIColor(r: 76, g: 105, b: 44)
+    }
+    
 }
 

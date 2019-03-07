@@ -20,6 +20,8 @@ protocol Calculatable {
     
     static func textWidth(text: String, fontSize: CGFloat, height: CGFloat) -> CGFloat
     
+    static func richContents(from content: String, idPattern: String, titlePattern: String) -> [RichContent]
+    
 }
 
 struct Calculate: Calculatable { }
@@ -79,6 +81,36 @@ extension Calculate {
     //计算文本高度
     static func textHeight(text: String, fontSize: CGFloat, width: CGFloat) -> CGFloat {
         return text.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes:[.font: UIFont.systemFont(ofSize:fontSize)], context: nil).size.height + 5
+    }
+    
+    //从文本内容中获取uid和用户名
+    static func richContents(from content: String, idPattern: String, titlePattern: String) -> [RichContent] {
+        
+        var richContents = [RichContent]()
+        var temps = [RichContent]()
+        
+        let idRegex = try! NSRegularExpression(pattern: idPattern, options: [])
+        let idResults = idRegex.matches(in: content, options: [], range: NSRange(location: 0, length: content.count))
+        if idResults.count != 0 {
+            temps = idResults.compactMap{
+                let id = (content as NSString).substring(with: $0.range)
+                return RichContent(id, "")
+            }
+        }
+        
+        let titleRegex = try! NSRegularExpression(pattern: titlePattern, options: [])
+        let titleResults = titleRegex.matches(in: content, options: [], range: NSRange(location: 0, length: content.count))
+        if titleResults.count != 0 {
+            for (index, value) in titleResults.enumerated() {
+                let name = (content as NSString).substring(with: value.range)
+                //取出临时数组中的模型
+                var richContent = temps[index]
+                richContent.name = "@\(name):"
+                richContents.append(richContent)
+            }
+        }
+        
+        return richContents
     }
     
     

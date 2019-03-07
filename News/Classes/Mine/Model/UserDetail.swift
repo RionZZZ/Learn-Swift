@@ -284,13 +284,13 @@ struct UserDetailDongtai: HandyJSON {
     
     var rich_content: String = ""
     // 用户数组
-//    var userContents: [RichContent]? {
-//        return Calculate.richContents(from: rich_content, idPattern: "(?<=uid=).*?(?=\">@)", titlePattern: "(?<=\">@).*?(?=</a>:)")
-//    }
+    var userContents: [RichContent]? {
+        return Calculate.richContents(from: rich_content, idPattern: "(?<=uid=).*?(?=\">@)", titlePattern: "(?<=\">@).*?(?=</a>:)")
+    }
     // 话题数组
-//    var topicContents: [RichContent]? {
-//        return Calculate.richContents(from: rich_content, idPattern: "(?<=cid=).*?(?=&enter_from=)", titlePattern: "#.*?#")
-//    }
+    var topicContents: [RichContent]? {
+        return Calculate.richContents(from: rich_content, idPattern: "(?<=cid=).*?(?=&enter_from=)", titlePattern: "#.*?#")
+    }
     
     var content_unescape: String = ""
     var content: String = ""

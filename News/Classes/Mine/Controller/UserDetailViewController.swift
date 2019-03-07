@@ -61,7 +61,7 @@ class UserDetailViewController: UIViewController {
         
         //用户详情数据
 //        userId = 51025535398 //马未都
-        userId = 8 //张一鸣
+//        userId = 8 //张一鸣
         Network.loadUserDetail(user_id: userId) { (userDetail) in
             //用户动态列表
             Network.loadUserDetailDongtai(user_id: self.userId, completionHandler: { (dongtais) in
@@ -84,6 +84,13 @@ class UserDetailViewController: UIViewController {
                 self.scrollView.contentSize = CGSize(width: screenWidth, height: self.headerView.height)
                 
             })
+        }
+        
+        //点击@user
+        headerView.didClickUserUid = { [weak self] in
+            let userDetailVC = UserDetailViewController()
+            userDetailVC.userId = $0
+            self!.navigationController?.pushViewController(userDetailVC, animated: true)
         }
     }
     

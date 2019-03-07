@@ -43,6 +43,7 @@ class PreviewLagerImageViewController: UIViewController {
                 SVProgressHUD.dismiss()
                 if success {
                     SVProgressHUD.showSuccess(withStatus: "保存成功!")
+                    SVProgressHUD.dismiss(withDelay: 1)
                 }
             })
         }

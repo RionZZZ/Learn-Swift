@@ -140,7 +140,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okt-7r-q2L">
                         <rect key="frame" x="0.0" y="50" width="320" height="31.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f0-rI-Dn5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f0-rI-Dn5" customClass="RichLabel" customModule="News" customModuleProvider="target">
                                 <rect key="frame" x="15" y="0.0" width="290" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="HwF-uL-vw4"/>
@@ -201,7 +201,7 @@
                 <outlet property="bottomLabel" destination="8Jc-xU-NF7" id="bbn-V3-G4C"/>
                 <outlet property="commentButton" destination="vGS-tS-pMH" id="XHc-Cd-6Ry"/>
                 <outlet property="contentHeight" destination="HwF-uL-vw4" id="mbQ-ph-sL7"/>
-                <outlet property="contentLabel" destination="5f0-rI-Dn5" id="DZO-5e-IAi"/>
+                <outlet property="contentLabel" destination="5f0-rI-Dn5" id="6rr-Ab-6wZ"/>
                 <outlet property="forwardButton" destination="zhw-Vm-mG6" id="VNf-ad-YIT"/>
                 <outlet property="likeButton" destination="1oY-v0-sHj" id="ErJ-cE-oIE"/>
                 <outlet property="middleView" destination="UgG-hj-1sh" id="Yi8-Kf-MZc"/>

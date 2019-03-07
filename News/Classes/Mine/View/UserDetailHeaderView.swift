@@ -46,6 +46,8 @@ class UserDetailHeaderView: UIView, NibLoadable {
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var bottomScrollView: UIScrollView!
     
+    var didClickUserUid: ((_ uid: Int) -> ())?
+    
     var previousButton = UIButton()
     lazy var indicatorView: UIView = {
         let indicatorView = UIView(frame: CGRect(x: (topTabButtonWidth - topTabindicatorWidth) * 0.5, y: topTabView.height - 2, width: topTabindicatorWidth, height: topTabindicatorHeight))
@@ -260,6 +262,10 @@ extension UserDetailHeaderView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView._dequeueReusableCell(indexPath: indexPath) as UserDetailDongtaiCell
         cell.dongtai = dongtais[indexPath.row]
+        cell.didClickUserName = { [weak self] uid in
+            //向上传递事件（闭包）
+            self!.didClickUserUid?(uid)
+        }
         return cell
     }
     

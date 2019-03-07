@@ -19,12 +19,13 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
+    @IBOutlet weak var contentLabel: RichLabel!
     @IBOutlet weak var bottomLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var contentHeight: NSLayoutConstraint!
     @IBOutlet weak var allContent: UILabel!
     @IBOutlet weak var middleView: UIView!
     
+    var didClickUserName: ((_ uid: Int) -> ())?
     private let emojiManager = EmojiManager()
     var dongtai: UserDetailDongtai? {
         didSet {
@@ -33,9 +34,29 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
             modifyTimeLabel.text = "· \(dongtai!.createTime)"
             likeButton.setTitle("\(dongtai!.commentCount)", for: .normal)
             forwardButton.setTitle("\(dongtai!.forwardCount)", for: .normal)
-            bottomLabel.text = ("\(dongtai!.readCount)") + "人阅读"
+            bottomLabel.text = ("\(dongtai!.readCount)人阅读\(dongtai!.brand_info)")
+            
 //            contentLabel.text = dongtai!.content
             contentLabel.attributedText = emojiManager.emojiShow(content: dongtai!.content, font: contentLabel.font)
+            
+            contentLabel.userTapeed = {(userName, range) in
+                for user in self.dongtai!.userContents! {
+                    if user.name == userName {
+                        //向上传递事件（闭包）
+                        self.didClickUserName?(Int(user.uid)!)
+                    }
+                }
+            }
+            
+            contentLabel.topicTapeed = {(topic, range) in
+                
+            }
+            
+            contentLabel.linkTapeed = {(link, range) in
+                
+            }
+            
+            
             contentHeight.constant = dongtai!.contentH
             allContent.isHidden = dongtai!.contentH != 110
             //防止cell重用机制，导致数据错乱
@@ -54,8 +75,6 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
                 middleView.addSubview(postVideoOrArticle)
                 postVideoOrArticle.frame = CGRect(x: 15, y: 0, width: screenWidth - 30, height: middleView.height)
                 if dongtai!.group.title == "" {
-                    print(dongtai!.group)
-                    print(dongtai!.origin_group)
                     postVideoOrArticle.originGroup = dongtai!.origin_group
                 } else {
                     postVideoOrArticle.group = dongtai!.group
@@ -125,7 +144,7 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
 //    
 //    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        let cell = collectionView._dequeueReusableCell(indexPath: indexPath) as DongtaiCollectionCell
-//        cell.thumbImage = dongtai!.thumb_image_list[indexPath.row]
+//        cell.thumbImage = dongtai!.thumb_image_list[indexPath.item]
 //        return cell
 //    }
 //    

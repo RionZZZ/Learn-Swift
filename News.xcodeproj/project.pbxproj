@@ -24,6 +24,7 @@
 		AE1E7521222F5F6D0094EB07 /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751E222F5F6D0094EB07 /* emojis.plist */; };
 		AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */; };
 		AE1E7524222F5FA80094EB07 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1E7523222F5FA80094EB07 /* Emoji.swift */; };
+		AE1E7526222F9EBE0094EB07 /* RichLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1E7525222F9EBE0094EB07 /* RichLabel.swift */; };
 		AE22DC39221AE786000C1E20 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22DC38221AE786000C1E20 /* SQLite.swift */; };
 		AE22DC3B221AE7D5000C1E20 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE22DC3A221AE7D5000C1E20 /* libsqlite3.0.tbd */; };
 		AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */; };
@@ -134,6 +135,7 @@
 		AE1E751E222F5F6D0094EB07 /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
 		AE1E7523222F5FA80094EB07 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		AE1E7525222F9EBE0094EB07 /* RichLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichLabel.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		AE22DC38221AE786000C1E20 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		AE22DC3A221AE7D5000C1E20 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AE231FCD22195069004F0D1A /* MoreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB9C7092215ADD300904DDE /* MyTabBar.swift */,
+				AE1E7525222F9EBE0094EB07 /* RichLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				AEB9C7122215ADD300904DDE /* MyTabBar.swift in Sources */,
 				AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */,
 				AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */,
+				AE1E7526222F9EBE0094EB07 /* RichLabel.swift in Sources */,
 				AEEA86A9221E4B1700BD0137 /* PopAnimator.swift in Sources */,
 				AE5C141A221BACA100EF208D /* UserDetailViewController.swift in Sources */,
 				AE2EA179222CC443003FDEB1 /* Date.swift in Sources */,

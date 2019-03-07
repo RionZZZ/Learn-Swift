@@ -33,11 +33,13 @@ struct EmojiManager {
     func emojiShow(content: String, font: UIFont) -> NSMutableAttributedString {
         
         let attributed = NSMutableAttributedString(string: content)
+        
+        //emoji 替换
         let emojiPattern = "\\[.*?\\]" //emoji正则表达式
         let regex = try! NSRegularExpression(pattern: emojiPattern, options: [])
         let results = regex.matches(in: content, options: [], range: NSRange(location: 0, length: attributed.length))
         if results.count != 0 {
-            //倒序遍历
+            //倒序遍历，避免更改字符串长度
             for index in stride(from: results.count - 1, through: 0, by: -1) {
                 //取出结果的范围
                 let result = results[index]
@@ -45,9 +47,11 @@ struct EmojiManager {
                 let emojiName = (content as NSString).substring(with: result.range)
                 let attachment = NSTextAttachment()
                 //取出对应的emoji模型
-                let emoji = emojis.filter({
+                guard let emoji = emojis.filter({
                     $0.name == emojiName
-                }).first!
+                }).first else {
+                    return attributed
+                }
                 //设置图片
                 attachment.image = UIImage(named: emoji.png)
                 attachment.bounds = CGRect(x: 0, y: -4, width: font.lineHeight, height: font.lineHeight)
@@ -56,6 +60,19 @@ struct EmojiManager {
                 attributed.replaceCharacters(in: result.range, with: imageString)
             }
         }
+        
+//        //@用户 替换
+//        let userPattern = "@.*?:" //@正则表达式
+//        let userRegex = try! NSRegularExpression(pattern: userPattern, options: [])
+//        let userResults = userRegex.matches(in: content, options: [], range: NSRange(location: 0, length: attributed.length))
+//        if userResults.count != 0 {
+//            for result in userResults {
+//                let userName = (content as NSString).substring(with: result.range)
+//                let attributedName = NSMutableAttributedString(string: userName)
+//                attributedName.setAttributes([.foregroundColor: UIColor.blueFontColor()], range: NSRange(location: 0, length: attributedName.length))
+//                attributed.replaceCharacters(in: result.range, with: attributedName)
+//            }
+//        }
         
         return attributed
     }
