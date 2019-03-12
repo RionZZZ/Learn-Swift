@@ -9,6 +9,7 @@
 import UIKit
 import IBAnimatable
 import Kingfisher
+import SVProgressHUD
 
 class UserDetailHeaderView: UIView, NibLoadable {
 
@@ -47,6 +48,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
     @IBOutlet weak var bottomScrollView: UIScrollView!
     
     var didClickUserUid: ((_ uid: Int) -> ())?
+    var didClickTopicCid: ((_ cid: Int) -> ())?
     
     var previousButton = UIButton()
     lazy var indicatorView: UIView = {
@@ -136,14 +138,97 @@ class UserDetailHeaderView: UIView, NibLoadable {
     }()
     
     //动态数据列表
-    var dongtais = [UserDetailDongtai]() {
+//    var dongtais = [UserDetailDongtai]() {
+//        didSet {
+//            if bottomScrollView.subviews.count > 0 {
+//                let tabview = bottomScrollView.subviews[0] as! UITableView
+//                tabview.reloadData()
+//            }
+//        }
+//    }
+    var dongtais = [UserDetailDongtai]()
+    var articles = [UserDetailDongtai]()
+    var videos = [UserDetailDongtai]()
+    var wendas = [UserDetailWenda]()
+    var iesVideos = [UserDetailDongtai]()
+    
+    // 刷新的指示器
+    var maxCursor = 0
+    /// 记录当前的数据是否刷新过
+    var isDongtaisShown = false
+    var isArticlesShown = false
+    var isVideosShown = false
+    var isWendasShown = false
+    var isIesVideosShown = false
+    //当前toptab的类型和索引
+    var currentTopTabIndex = 0
+    var currentTopTabType: TopTabType = .dongtai {
         didSet {
-            if bottomScrollView.subviews.count > 0 {
-                let tabview = bottomScrollView.subviews[0] as! UITableView
-                tabview.reloadData()
+            let tableview = bottomScrollView.subviews[currentTopTabIndex] as! UITableView
+            switch currentTopTabType {
+            case .dongtai:
+                setupFooter(tableview) { (dongtais) in
+                    self.dongtais += dongtais
+                    tableview.reloadData()
+                }
+                if !isDongtaisShown {
+                    isDongtaisShown = true
+                    tableview.reloadData()
+                }
+            case .article:
+                setupFooter(tableview) { (dongtais) in
+                    self.articles += dongtais
+                    tableview.reloadData()
+                }
+                if !isArticlesShown {
+                    isArticlesShown = true
+                    tableview.mj_footer.beginRefreshing()
+                }
+            case .video:
+                setupFooter(tableview) { (dongtais) in
+                    self.videos += dongtais
+                    tableview.reloadData()
+                }
+                if !isVideosShown {
+                    isVideosShown = true
+                    tableview.mj_footer.beginRefreshing()
+                }
+            case .wenda:
+                if !isWendasShown {
+                    isWendasShown = true
+//                    tableview.mj_footer.beginRefreshing()
+                }
+            case .iesVideo:
+                setupFooter(tableview) { (dongtais) in
+                    self.iesVideos += dongtais
+                    tableview.reloadData()
+                }
+                if !isIesVideosShown {
+                    isIesVideosShown = true
+                    tableview.mj_footer.beginRefreshing()
+                }
             }
         }
     }
+    
+    private func setupFooter(_ tableview: UITableView, completionHandler:@escaping ((_ datas: [UserDetailDongtai])->())) {
+        tableview.mj_footer = RefreshFooter(refreshingBlock: { [weak self] in
+            Network.loadUserDetailDongtaiList(userId: self!.userDetail!.user_id, maxCursor: self!.maxCursor, completionHandler: { (cursor, dongtais) in
+                if tableview.mj_footer.isRefreshing {
+                    tableview.mj_footer.endRefreshing()
+                }
+                tableview.mj_footer.pullingPercent = 0
+                if dongtais.count == 0 {
+                    tableview.mj_footer.endRefreshingWithNoMoreData()
+                    SVProgressHUD.showInfo(withStatus: "没有更多数据")
+                    return
+                }
+                self!.maxCursor = cursor
+                completionHandler(dongtais)
+            })
+        })
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -250,37 +335,86 @@ class UserDetailHeaderView: UIView, NibLoadable {
         }) { (_) in
             self.previousButton = button
         }
+        
+        currentTopTabIndex = button.tag
+        currentTopTabType = userDetail!.top_tab[button.tag].type
     }
     
 }
 
 extension UserDetailHeaderView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dongtais.count
+//        return dongtais.count
+        switch currentTopTabType {
+        case .dongtai:   // 动态
+            return dongtais.count
+        case .article:   // 文章
+            return articles.count
+        case .video:     // 视频
+            return videos.count
+        case .wenda:     // 问答
+            return wendas.count
+        case .iesVideo:  // 小视频
+            return iesVideos.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch currentTopTabType {
+        case .dongtai:   // 动态
+            return cellFor(tableView, at: indexPath, with: dongtais)
+        case .article:   // 文章
+            return cellFor(tableView, at: indexPath, with: articles)
+        case .video:     // 视频
+            return cellFor(tableView, at: indexPath, with: videos)
+        case .wenda:     // 问答
+            let cell = tableView._dequeueReusableCell(indexPath: indexPath) as UserDetailDongtaiCell
+            return cell
+        case .iesVideo:  // 小视频
+            return cellFor(tableView, at: indexPath, with: iesVideos)
+        }
+    }
+    
+    private func cellFor(_ tableView: UITableView, at indexPath: IndexPath, with datas: [UserDetailDongtai]) -> UserDetailDongtaiCell {
         let cell = tableView._dequeueReusableCell(indexPath: indexPath) as UserDetailDongtaiCell
-        cell.dongtai = dongtais[indexPath.row]
+        cell.dongtai = datas[indexPath.row]
         cell.didClickUserName = { [weak self] uid in
             //向上传递事件（闭包）
             self!.didClickUserUid?(uid)
+        }
+        cell.didClickTopic = { [weak self] cid in
+            //向上传递事件（闭包）
+            self!.didClickTopicCid?(cid)
         }
         return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 {
-            for subview in bottomScrollView.subviews {
-                let tableview = subview as! UITableView
-                tableview.isScrollEnabled = false
-            }
-        }
+//        if scrollView.contentOffset.y < 0 {
+//            for subview in bottomScrollView.subviews {
+//                let tableview = subview as! UITableView
+//                tableview.isScrollEnabled = false
+//            }
+//        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let dongtai = dongtais[indexPath.row]
-        return dongtai.cellHeight
+        switch currentTopTabType {
+        case .dongtai:   // 动态
+            return cellHeight(with: dongtais[indexPath.row])
+        case .article:   // 文章
+            return cellHeight(with: articles[indexPath.row])
+        case .video:     // 视频
+            return cellHeight(with: videos[indexPath.row])
+        case .wenda:     // 问答
+            return 0
+        case .iesVideo:  // 小视频
+            return cellHeight(with: iesVideos[indexPath.row])
+        }
+    }
+    
+    private func cellHeight(with data: UserDetailDongtai) -> CGFloat {
+        return data.cellHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

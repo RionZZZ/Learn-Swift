@@ -15,6 +15,7 @@ target 'News' do
   pod 'RxCocoa'
   pod 'SQLite.swift'
   pod 'SVProgressHUD'
+  pod 'MJRefresh'
 
   # Pods for News
 

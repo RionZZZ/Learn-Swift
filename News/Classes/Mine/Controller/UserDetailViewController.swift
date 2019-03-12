@@ -92,6 +92,11 @@ class UserDetailViewController: UIViewController {
             userDetailVC.userId = $0
             self!.navigationController?.pushViewController(userDetailVC, animated: true)
         }
+        
+        //点击话题
+        headerView.didClickTopicCid = { cid in
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -38,6 +38,9 @@ protocol NetworkProtocol {
     
     //首页顶部搜索内容
     static func loadHomeSearchSuggest(completionHandler: @escaping (_ suggestInfo: String) -> ())
+    
+    //用户详情动态列表数据
+    static func loadUserDetailDongtaiList(userId: Int, maxCursor: Int, completionHandler: @escaping (_ cursor: Int,_ dongtais: [UserDetailDongtai]) -> ())
 }
 
 extension NetworkProtocol {
@@ -352,6 +355,34 @@ extension NetworkProtocol {
             
         }
     }
+    
+    //用户详情动态列表数据
+    static func loadUserDetailDongtaiList(userId: Int, maxCursor: Int, completionHandler: @escaping (_ cursor: Int,_ dongtais: [UserDetailDongtai]) -> ()) {
+        
+        let url = BASE_URL + "/dongtai/list/v15/?"
+        let params = ["user_id": userId,
+                      "max_cursor": maxCursor,
+                      "device_id": device_id,
+                      "iid": iid] as [String : Any]
+        
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { completionHandler(maxCursor, []); return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else { completionHandler(maxCursor, []); return }
+                if let data = json["data"].dictionary {
+                    let max_cursor = data["max_cursor"]!.int
+                    if let datas = data["data"]!.arrayObject {
+                        completionHandler(max_cursor!, datas.compactMap({
+                            UserDetailDongtai.deserialize(from: $0 as? Dictionary)
+                        }))
+                    }
+                }
+            }
+        }
+    }
+    
     
 }
 

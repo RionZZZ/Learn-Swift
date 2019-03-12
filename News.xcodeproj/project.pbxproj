@@ -74,6 +74,7 @@
 		AEA8CC3E222A6D7C0055B021 /* DongtaiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */; };
 		AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */; };
 		AEA8CC46222A83360055B021 /* DongtaiOriginalThreadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA8CC45222A83360055B021 /* DongtaiOriginalThreadView.xib */; };
+		AEB3341A223742B600EAC84A /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB33419223742B600EAC84A /* RefreshView.swift */; };
 		AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */; };
 		AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F32215ADD300904DDE /* VideoViewController.swift */; };
 		AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F82215ADD300904DDE /* HuoshanViewController.swift */; };
@@ -185,6 +186,7 @@
 		AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionView.swift; sourceTree = "<group>"; };
 		AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DongtaiCollectionView.xib; sourceTree = "<group>"; };
 		AEA8CC45222A83360055B021 /* DongtaiOriginalThreadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiOriginalThreadView.xib; sourceTree = "<group>"; };
+		AEB33419223742B600EAC84A /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RefreshView.swift; path = /www/News/News/Classes/Main/View/RefreshView.swift; sourceTree = "<absolute>"; };
 		AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F32215ADD300904DDE /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F82215ADD300904DDE /* HuoshanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuoshanViewController.swift; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 			children = (
 				AEB9C7092215ADD300904DDE /* MyTabBar.swift */,
 				AE1E7525222F9EBE0094EB07 /* RichLabel.swift */,
+				AEB33419223742B600EAC84A /* RefreshView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -901,6 +905,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -972,6 +977,7 @@
 				AEFD90472223C2A6002AC12B /* UserDetailDongtaiCell.swift in Sources */,
 				AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */,
 				AE375B6C2225104200CC8F25 /* PostVideoOrArticleView.swift in Sources */,
+				AEB3341A223742B600EAC84A /* RefreshView.swift in Sources */,
 				AEEA869F221E348200BD0137 /* UserDetailBottomPushController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

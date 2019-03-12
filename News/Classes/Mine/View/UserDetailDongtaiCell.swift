@@ -26,6 +26,7 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
     @IBOutlet weak var middleView: UIView!
     
     var didClickUserName: ((_ uid: Int) -> ())?
+    var didClickTopic: ((_ cid: Int) -> ())?
     private let emojiManager = EmojiManager()
     var dongtai: UserDetailDongtai? {
         didSet {
@@ -49,7 +50,11 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
             }
             
             contentLabel.topicTapeed = {(topic, range) in
-                
+                for topicContent in self.dongtai!.userContents! {
+                    if topic.contains(topicContent.name) {
+                        self.didClickTopic?(Int(topicContent.uid)!)
+                    }
+                }
             }
             
             contentLabel.linkTapeed = {(link, range) in
