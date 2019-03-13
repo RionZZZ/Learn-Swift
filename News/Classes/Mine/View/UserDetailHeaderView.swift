@@ -106,11 +106,18 @@ class UserDetailHeaderView: UIView, NibLoadable {
                     //tabview
                     let tabview = UITableView(frame: CGRect(x: CGFloat(index) * screenWidth, y: 0, width: screenWidth, height: bottomScrollView.height))
 //                    if value.type == .wenda {
-//                        tabview._registerCell(cell: UserDetailWendaCell.self)
+                        tabview._registerCell(cell: UserDetailWendaCell.self)
 //                    } else {
-//                        tabview._registerCell(cell: UserDetailDongtaiCell.self)
+                        tabview._registerCell(cell: UserDetailDongtaiCell.self)
 //                    }
-                    tabview._registerCell(cell: UserDetailDongtaiCell.self)
+                    
+                    if value.type == .wenda {
+                        //加载问答数据
+                        Network.loadUserDetailWenDaList(userId: self.userDetail!.user_id, cursor: self.wendaCursor) { (cursor, wendas) in
+                            self.wendas = wendas
+                            self.wendaCursor = cursor
+                        }
+                    }
                     if userDetail!.bottom_tab.count == 0 {
                         tabview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: safeAreaBottom!, right: 0)
                     }
@@ -182,12 +189,6 @@ class UserDetailHeaderView: UIView, NibLoadable {
                     isDongtaisShown = true
                     tableview.reloadData()
                 }
-                
-                //加载问答数据
-                Network.loadUserDetailWenDaList(userId: self.userDetail!.user_id, cursor: self.wendaCursor) { (cursor, wendas) in
-                    self.wendas = wendas
-                    self.wendaCursor = cursor
-                }
             case .article:
                 setupFooter(tableview) { (dongtais) in
                     self.articles += dongtais
@@ -249,6 +250,8 @@ class UserDetailHeaderView: UIView, NibLoadable {
         backgroundTop.constant = -statusBarHeight
         concernButton.setTitle("关注", for: .normal)
         concernButton.setTitle("已关注", for: .selected)
+        
+        SVProgressHUD.configuration()
     }
     
     override func layoutSubviews() {
