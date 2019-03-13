@@ -14,7 +14,7 @@ import Kingfisher
 //    func MineFirstSectionCell(_ firstCell: MineFirstSectionCell, mineConcern: MineConcernModel)
 //}
 
-class MineFirstSectionCell: UITableViewCell, RegisterCellOrNib {
+class MineFirstSectionCell: UITableViewCell, RegisterCellFromNib {
 
 //    weak var delegate: MineFirstSectionCellDelegate?
     var mineConcernSelected: ((_ mineConcern: MineConcernModel)->())?

@@ -11,7 +11,7 @@ import UIKit
 extension UICollectionView {
     
     //注册cell
-    func _registerCell<T: UICollectionViewCell>(cell: T.Type) where T: RegisterCellOrNib {
+    func _registerCell<T: UICollectionViewCell>(cell: T.Type) where T: RegisterCellFromNib {
         if let nib = T.nib {
             register(nib, forCellWithReuseIdentifier: T.identifier)
         } else {
@@ -20,7 +20,7 @@ extension UICollectionView {
     }
     
     //从缓存池出队已经存在的cell
-    func _dequeueReusableCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T where T: RegisterCellOrNib {
+    func _dequeueReusableCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T where T: RegisterCellFromNib {
         return dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as! T
     }
 }

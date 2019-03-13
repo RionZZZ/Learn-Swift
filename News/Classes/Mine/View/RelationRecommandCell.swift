@@ -10,7 +10,7 @@ import UIKit
 import IBAnimatable
 import Kingfisher
 
-class RelationRecommandCell: UICollectionViewCell, RegisterCellOrNib {
+class RelationRecommandCell: UICollectionViewCell, RegisterCellFromNib {
 
     @IBOutlet weak var avatarImage: AnimatableImageView!
     @IBOutlet weak var vip: UIImageView!

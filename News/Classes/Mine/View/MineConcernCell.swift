@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class MineConcernCell: UICollectionViewCell, RegisterCellOrNib {
+class MineConcernCell: UICollectionViewCell, RegisterCellFromNib {
     
     @IBOutlet weak var avatorImage: UIImageView!
     @IBOutlet weak var vip: UIImageView!

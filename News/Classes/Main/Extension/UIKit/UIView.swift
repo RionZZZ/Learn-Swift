@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol RegisterCellOrNib { }
+protocol RegisterCellFromNib { }
 
-extension RegisterCellOrNib {
+extension RegisterCellFromNib {
     
     static var identifier : String {
         return "\(self)"

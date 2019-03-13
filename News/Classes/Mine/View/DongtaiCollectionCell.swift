@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import SVProgressHUD
 
-class DongtaiCollectionCell: UICollectionViewCell, RegisterCellOrNib {
+class DongtaiCollectionCell: UICollectionViewCell, RegisterCellFromNib {
 
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBOutlet weak var iconButton: UIButton!

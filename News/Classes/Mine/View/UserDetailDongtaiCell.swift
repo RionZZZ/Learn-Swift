@@ -10,7 +10,7 @@ import UIKit
 import IBAnimatable
 import Kingfisher
 
-class UserDetailDongtaiCell: UITableViewCell, RegisterCellOrNib {
+class UserDetailDongtaiCell: UITableViewCell, RegisterCellFromNib {
     
     @IBOutlet weak var avatarImage: AnimatableImageView!
     @IBOutlet weak var nameLabel: UILabel!

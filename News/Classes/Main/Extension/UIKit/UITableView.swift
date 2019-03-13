@@ -11,7 +11,7 @@ import UIKit
 extension UITableView {
     
     //注册cell
-    func _registerCell<T: UITableViewCell>(cell: T.Type) where T: RegisterCellOrNib {
+    func _registerCell<T: UITableViewCell>(cell: T.Type) where T: RegisterCellFromNib {
         if let nib = T.nib {
             register(nib, forCellReuseIdentifier: T.identifier)
         } else {
@@ -20,7 +20,7 @@ extension UITableView {
     }
     
     //从缓存池出队已经存在的cell
-    func _dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: RegisterCellOrNib {
+    func _dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: RegisterCellFromNib {
         return dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as! T
     }
 }

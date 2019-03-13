@@ -75,6 +75,8 @@
 		AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */; };
 		AEA8CC46222A83360055B021 /* DongtaiOriginalThreadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA8CC45222A83360055B021 /* DongtaiOriginalThreadView.xib */; };
 		AEB3341A223742B600EAC84A /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB33419223742B600EAC84A /* RefreshView.swift */; };
+		AEB334252237AC2500EAC84A /* UserDetailWendaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */; };
+		AEB334262237AC2500EAC84A /* UserDetailWendaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */; };
 		AEB9C70A2215ADD300904DDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */; };
 		AEB9C70B2215ADD300904DDE /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F32215ADD300904DDE /* VideoViewController.swift */; };
 		AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9C6F82215ADD300904DDE /* HuoshanViewController.swift */; };
@@ -187,6 +189,8 @@
 		AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DongtaiCollectionView.xib; sourceTree = "<group>"; };
 		AEA8CC45222A83360055B021 /* DongtaiOriginalThreadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiOriginalThreadView.xib; sourceTree = "<group>"; };
 		AEB33419223742B600EAC84A /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RefreshView.swift; path = /www/News/News/Classes/Main/View/RefreshView.swift; sourceTree = "<absolute>"; };
+		AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailWendaCell.swift; sourceTree = "<group>"; };
+		AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailWendaCell.xib; sourceTree = "<group>"; };
 		AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F32215ADD300904DDE /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		AEB9C6F82215ADD300904DDE /* HuoshanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuoshanViewController.swift; sourceTree = "<group>"; };
@@ -558,6 +562,8 @@
 				AEA8CC45222A83360055B021 /* DongtaiOriginalThreadView.xib */,
 				AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */,
 				AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */,
+				AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */,
+				AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -787,6 +793,7 @@
 				AE5C141B221BACA100EF208D /* UserDetailViewController.xib in Resources */,
 				AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */,
 				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
+				AEB334262237AC2500EAC84A /* UserDetailWendaCell.xib in Resources */,
 				AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */,
 				AE2EA191222D2866003FDEB1 /* PreviewLagerImageViewController.xib in Resources */,
 			);
@@ -939,6 +946,7 @@
 				AED17667221AA83A00789669 /* HomeNewsTitleModel.swift in Sources */,
 				AE46B9092217C82C006B75DD /* NoLoginHeaderView.swift in Sources */,
 				AE46B9062217AFED006B75DD /* MineConcernCell.swift in Sources */,
+				AEB334252237AC2500EAC84A /* UserDetailWendaCell.swift in Sources */,
 				AEB9C7122215ADD300904DDE /* MyTabBar.swift in Sources */,
 				AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */,
 				AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingCell: UITableViewCell, RegisterCellOrNib {
+class SettingCell: UITableViewCell, RegisterCellFromNib {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!

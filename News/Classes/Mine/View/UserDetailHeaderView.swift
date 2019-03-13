@@ -105,6 +105,11 @@ class UserDetailHeaderView: UIView, NibLoadable {
                     
                     //tabview
                     let tabview = UITableView(frame: CGRect(x: CGFloat(index) * screenWidth, y: 0, width: screenWidth, height: bottomScrollView.height))
+//                    if value.type == .wenda {
+//                        tabview._registerCell(cell: UserDetailWendaCell.self)
+//                    } else {
+//                        tabview._registerCell(cell: UserDetailDongtaiCell.self)
+//                    }
                     tabview._registerCell(cell: UserDetailDongtaiCell.self)
                     if userDetail!.bottom_tab.count == 0 {
                         tabview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: safeAreaBottom!, right: 0)
@@ -114,6 +119,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
 //                    tabview.rowHeight = 130
                     tabview.isScrollEnabled = false
                     tabview.showsVerticalScrollIndicator = false
+                    tabview.separatorStyle = .none
                     tabview.tableFooterView = UIView()
                     bottomScrollView.addSubview(tabview)
                     
@@ -154,6 +160,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
     
     // 刷新的指示器
     var maxCursor = 0
+    var wendaCursor = ""
     /// 记录当前的数据是否刷新过
     var isDongtaisShown = false
     var isArticlesShown = false
@@ -174,6 +181,12 @@ class UserDetailHeaderView: UIView, NibLoadable {
                 if !isDongtaisShown {
                     isDongtaisShown = true
                     tableview.reloadData()
+                }
+                
+                //加载问答数据
+                Network.loadUserDetailWenDaList(userId: self.userDetail!.user_id, cursor: self.wendaCursor) { (cursor, wendas) in
+                    self.wendas = wendas
+                    self.wendaCursor = cursor
                 }
             case .article:
                 setupFooter(tableview) { (dongtais) in
@@ -196,7 +209,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
             case .wenda:
                 if !isWendasShown {
                     isWendasShown = true
-//                    tableview.mj_footer.beginRefreshing()
+                    tableview.reloadData()
                 }
             case .iesVideo:
                 setupFooter(tableview) { (dongtais) in
@@ -368,7 +381,8 @@ extension UserDetailHeaderView: UITableViewDelegate, UITableViewDataSource {
         case .video:     // 视频
             return cellFor(tableView, at: indexPath, with: videos)
         case .wenda:     // 问答
-            let cell = tableView._dequeueReusableCell(indexPath: indexPath) as UserDetailDongtaiCell
+            let cell = tableView._dequeueReusableCell(indexPath: indexPath) as UserDetailWendaCell
+            cell.wenda = wendas[indexPath.row]
             return cell
         case .iesVideo:  // 小视频
             return cellFor(tableView, at: indexPath, with: iesVideos)
@@ -407,7 +421,8 @@ extension UserDetailHeaderView: UITableViewDelegate, UITableViewDataSource {
         case .video:     // 视频
             return cellHeight(with: videos[indexPath.row])
         case .wenda:     // 问答
-            return 0
+            let wenda = wendas[indexPath.row]
+            return wenda.cellHeight
         case .iesVideo:  // 小视频
             return cellHeight(with: iesVideos[indexPath.row])
         }

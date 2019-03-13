@@ -41,6 +41,9 @@ protocol NetworkProtocol {
     
     //用户详情动态列表数据
     static func loadUserDetailDongtaiList(userId: Int, maxCursor: Int, completionHandler: @escaping (_ cursor: Int,_ dongtais: [UserDetailDongtai]) -> ())
+    
+    //用户详情问答列表数据
+    static func loadUserDetailWenDaList(userId: Int, cursor: String, completionHandler: @escaping (_ cursor: String,_ wendas: [UserDetailWenda]) -> ())
 }
 
 extension NetworkProtocol {
@@ -383,6 +386,35 @@ extension NetworkProtocol {
         }
     }
     
+    //用户详情问答列表数据
+    static func loadUserDetailWenDaList(userId: Int, cursor: String, completionHandler: @escaping (_ cursor: String,_ wendas: [UserDetailWenda]) -> ()) {
+        
+        let url = BASE_URL + "/wenda/profile/wendatab/brow/?"
+        let params = ["other_id": userId,
+                      "format": "json",
+                      "max_cursor": cursor,
+                      "device_id": device_id,
+                      "iid": iid] as [String : Any]
+        
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { completionHandler(cursor, []); return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["err_no"] == 0 else { completionHandler(cursor, []); return }
+                if let answerQuestions = json["answer_question"].arrayObject {
+                    if (answerQuestions.count == 0) {
+                        completionHandler(cursor, [])
+                    } else {
+                        let cursor = json["cursor"].string
+                        completionHandler(cursor!, answerQuestions.compactMap({
+                            UserDetailWenda.deserialize(from: $0 as? Dictionary)
+                        }))
+                    }
+                }
+            }
+        }
+    }
     
 }
 

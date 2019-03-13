@@ -1282,7 +1282,7 @@ struct UserDetailAnswer: HandyJSON {
     var is_buryed: Bool = false
     var user = DongtaiUser()
     var digg_count: Int = 0
-//    var diggCount: String { return digg_count.convertString() }
+    var diggCount: String { return digg_count.convertString() }
     var ans_url: String = ""
     
 }

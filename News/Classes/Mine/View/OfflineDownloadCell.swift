@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OfflineDownloadCell: UITableViewCell, RegisterCellOrNib {
+class OfflineDownloadCell: UITableViewCell, RegisterCellFromNib {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rightImage: UIImageView!
