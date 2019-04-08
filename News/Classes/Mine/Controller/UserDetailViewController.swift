@@ -94,8 +94,13 @@ class UserDetailViewController: UIViewController {
         }
         
         //点击话题
-        headerView.didClickTopicCid = { cid in
-            
+        headerView.didClickTopicCid = { cid in }
+        
+        //点击cell
+        headerView.didSelectCell = { [weak self] dongtai in
+            let dongtaiDetailVC = DongtaiDetailController()
+            dongtaiDetailVC.dongtai = dongtai
+            self!.navigationController?.pushViewController(dongtaiDetailVC, animated: true)
         }
     }
     

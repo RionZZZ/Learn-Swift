@@ -41,15 +41,28 @@ enum Theme: Int {
 
 struct ThemeStyle {
     
-    static func setDayNavigationStyle(_ viewController: UIViewController) {
-        viewController.navigationController?.navigationBar.barStyle = .default
-        viewController.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background_white"), for: .default)
-        viewController.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+    static func setNavigationStyle(_ viewController: UIViewController, _ isNight: Bool) {
+        
+        if isNight {
+            viewController.navigationController?.navigationBar.barStyle = .black
+            viewController.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background_white_night"), for: .default)
+            viewController.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.grayColor113()]
+        } else {
+            viewController.navigationController?.navigationBar.barStyle = .default
+            viewController.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background_white"), for: .default)
+            viewController.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        }
     }
     
-    static func setNightNavigationStyle(_ viewController: UIViewController) {
-        viewController.navigationController?.navigationBar.barStyle = .black
-        viewController.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background_white_night"), for: .default)
-        viewController.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.grayColor113()]
-    }
+//    static func setDayNavigationStyle(_ viewController: UIViewController) {
+//        viewController.navigationController?.navigationBar.barStyle = .default
+//        viewController.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background_white"), for: .default)
+//        viewController.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+//    }
+//
+//    static func setNightNavigationStyle(_ viewController: UIViewController) {
+//        viewController.navigationController?.navigationBar.barStyle = .black
+//        viewController.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background_white_night"), for: .default)
+//        viewController.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.grayColor113()]
+//    }
 }

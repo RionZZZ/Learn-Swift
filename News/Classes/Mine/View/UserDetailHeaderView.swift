@@ -49,6 +49,7 @@ class UserDetailHeaderView: UIView, NibLoadable {
     
     var didClickUserUid: ((_ uid: Int) -> ())?
     var didClickTopicCid: ((_ cid: Int) -> ())?
+    var didSelectCell: ((_ dongtai: UserDetailDongtai) -> ())?
     
     var previousButton = UIButton()
     lazy var indicatorView: UIView = {
@@ -406,13 +407,14 @@ extension UserDetailHeaderView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    //滑到顶部时，禁止tableview滚动，启用页面滚动
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y < 0 {
-//            for subview in bottomScrollView.subviews {
-//                let tableview = subview as! UITableView
-//                tableview.isScrollEnabled = false
-//            }
-//        }
+        if scrollView.contentOffset.y < 0 {
+            for subview in bottomScrollView.subviews {
+                let tableview = subview as! UITableView
+                tableview.isScrollEnabled = false
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -436,7 +438,22 @@ extension UserDetailHeaderView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        switch currentTopTabType {
+        case .dongtai:   // 动态
+            let dongtai = dongtais[indexPath.row]
+            didSelectCell?(dongtai)
+        case .article:   // 文章
+            let dongtai = articles[indexPath.row]
+            didSelectCell?(dongtai)
+        case .video:     // 视频
+            let dongtai = videos[indexPath.row]
+            didSelectCell?(dongtai)
+        case .wenda:     // 问答
+            print("")
+        case .iesVideo:  // 小视频
+            let dongtai = iesVideos[indexPath.row]
+            didSelectCell?(dongtai)
+        }
     }
     
 }
