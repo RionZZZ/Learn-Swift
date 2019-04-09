@@ -13,6 +13,8 @@ class DongtaiOriginalThreadView: UIView, NibLoadable {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var contentLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: DongtaiCollectionView!
+    
+//    var isPostVideo = false
 
     let emojiManager = EmojiManager()
     var originThread: DongtaiOriginThread? {
@@ -22,6 +24,7 @@ class DongtaiOriginalThreadView: UIView, NibLoadable {
             mutableAttrbuted.append(emojiManager.emojiShow(content: originThread!.content, font: contentLabel.font))
             contentLabel.attributedText = mutableAttrbuted
             contentLabelHeight.constant = originThread!.contentH
+            collectionView.isDongtaiDetail = originThread!.isDongtaiDetail
             collectionView.thumbImageList = originThread!.thumb_image_list
             collectionView.largeImages = originThread!.large_image_list
             layoutIfNeeded()

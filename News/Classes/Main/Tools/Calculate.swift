@@ -22,6 +22,9 @@ protocol Calculatable {
     
     static func richContents(from content: String, idPattern: String, titlePattern: String) -> [RichContent]
     
+    static func detailCollectionCellSize(_ thumbImageList: [ThumbImage]) -> CGSize
+    
+    static func detailCollectionViewHeight(_ thumbImageList: [ThumbImage]) -> CGFloat
 }
 
 struct Calculate: Calculatable { }
@@ -70,6 +73,43 @@ extension Calculate {
             return CGSize(width: image3Width, height: image3Width)
         default:
             return .zero
+        }
+    }
+    
+    static func detailCollectionCellSize(_ thumbImageList: [ThumbImage]) -> CGSize {
+        switch thumbImageList.count {
+        case 1:
+            let thumbImage = thumbImageList.first!
+            let height = (screenWidth - 30) + thumbImage.height / thumbImage.width
+            return CGSize(width: screenWidth - 30, height: height)
+        case 2, 4:
+            let image2Width = (screenWidth - 35) / 2
+            return CGSize(width: image2Width, height: image2Width)
+        case 3, 5...9:
+            return CGSize(width: image3Width, height: image3Width)
+        default:
+            return .zero
+        }
+    }
+    
+    static func detailCollectionViewHeight(_ thumbImageList: [ThumbImage]) -> CGFloat {
+        switch thumbImageList.count {
+        case 1:
+            let thumbImage = thumbImageList.first!
+            let height = (screenWidth - 30) + thumbImage.height / thumbImage.width
+            return height
+        case 2:
+            return (screenWidth - 35) / 2
+        case 3:
+            return image3Width + 5
+        case 4:
+            return screenWidth - 35
+        case 5,6:
+            return (image3Width + 5) * 2
+        case 7...9:
+            return (image3Width + 5) * 3
+        default:
+            return 0
         }
     }
     

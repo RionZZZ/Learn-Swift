@@ -236,19 +236,19 @@ struct RichContent {
 // MARK: - 用户详情 动态模型
 struct UserDetailDongtai: HandyJSON {
     /// header view 的高度
-//    var detailHeaderHeight: CGFloat {
-//        // 60 + contentHeight + middleViewHeight + 25 + 5 + 40
-//        var height: CGFloat = 135 + detailContentH
-//        switch item_type {
-//        case .postVideoOrArticle, .postVideo, .answerQuestion, .proposeQuestion, .forwardArticle, .postContentAndVideo:   // 发布了视频和文章,提出了问题,回答了问题
-//            height += 60
-//        case .postContent, .postSmallVideo:   // 发布了文字内容
-//            height += collectionViewH
-//        case .commentOrQuoteContent, .commentOrQuoteOthers:   // 引用或者评论别人的内容
-//            height += origin_thread.detailHeight
-//        }
-//        return height
-//    }
+    var detailHeaderHeight: CGFloat {
+        // 60 + contentHeight + middleViewHeight + 25 + 5 + 40
+        var height: CGFloat = 135 + detailContentH
+        switch item_type {
+        case .postVideoOrArticle, .postVideo, .answerQuestion, .proposeQuestion, .forwardArticle, .postContentAndVideo:   // 发布了视频和文章,提出了问题,回答了问题
+            height += 60
+        case .postContent, .postSmallVideo:   // 发布了文字内容
+            height += collectionViewH
+        case .commentOrQuoteContent, .commentOrQuoteOthers:   // 引用或者评论别人的内容
+            height += origin_thread.height
+        }
+        return height
+    }
     
     /// cell 的高度
     var cellHeight: CGFloat {
@@ -268,9 +268,9 @@ struct UserDetailDongtai: HandyJSON {
     var isDongtaiDetail = false
     
     /// 详情 collectionView 高度
-//    var detailConllectionViewH : CGFloat {
-//        return Calculate.detailCollectionViewHieght(thumb_image_list)
-//    }
+    var detailConllectionViewH : CGFloat {
+        return Calculate.detailCollectionViewHeight(thumb_image_list)
+    }
     
     /// collectionView 高度
     var collectionViewH: CGFloat {
@@ -294,9 +294,9 @@ struct UserDetailDongtai: HandyJSON {
     
     var content_unescape: String = ""
     var content: String = ""
-//    var detailContentH: CGFloat {
-//        return Calculate.textHeight(text: content, fontSize: 17, width: screenWidth - 30.0)
-//    }
+    var detailContentH: CGFloat {
+        return Calculate.textHeight(text: content, fontSize: 17, width: screenWidth - 30.0)
+    }
     
     var contentH: CGFloat {
         let height = Calculate.textHeight(text: content, fontSize: 17, width: screenWidth - 30)
@@ -307,7 +307,7 @@ struct UserDetailDongtai: HandyJSON {
 //        let height = content.boundingRect(with: CGSize(width: screenWidth - 30, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [.font: UIFont.systemFont(ofSize: 17)], context: nil).size.height + 5
 //        return height >= 110 ? 110 : height
 //    }
-    
+//
     /// 富文本内容高度
 //    var attributedCntentHeight: CGFloat {
 //        let height = Calculate.attributedTextHeight(text: attributedContent, width: screenWidth - 30.0)
@@ -688,7 +688,7 @@ struct DongtaiPosition: HandyJSON {
 struct DongtaiOriginThread: HandyJSON {
     /// cell 的高度
     var height: CGFloat {
-        return 20 + contentH + collectionViewH
+        return 20 + contentH + (isDongtaiDetail ? detailCollectionViewH : collectionViewH)
     }
 //    var detailHeight: CGFloat { return 20 + contentH + detailCollectionViewH }
     
@@ -707,9 +707,9 @@ struct DongtaiOriginThread: HandyJSON {
     var isDongtaiDetail = false
     
     /// 详情 collectionView 高度
-//    var detailCollectionViewH: CGFloat {
-//        return Calculate.detailCollectionViewHieght(thumb_image_list)
-//    }
+    var detailCollectionViewH: CGFloat {
+        return Calculate.detailCollectionViewHeight(thumb_image_list)
+    }
     
     /// collectionView 高度
     var collectionViewH: CGFloat {

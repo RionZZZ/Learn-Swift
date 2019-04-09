@@ -12,13 +12,18 @@ class DongtaiDetailController: UITableViewController {
     
     var dongtai = UserDetailDongtai() {
         didSet {
-            
+            navigationBar.user = dongtai.user
+            headerView.dongtai = dongtai
         }
     }
 
     lazy var navigationBar: DongtaiNavigationView = {
         let navView = DongtaiNavigationView.loadViewFromNib()
         return navView
+    }()
+    lazy var headerView: DongtaiDetailHeaderView = {
+        let header = DongtaiDetailHeaderView.loadViewFromNib()
+        return header
     }()
 
     override func viewDidLoad() {
@@ -31,14 +36,6 @@ class DongtaiDetailController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
     
 }
 
@@ -50,10 +47,13 @@ extension DongtaiDetailController {
         navigationItem.titleView = navigationBar
     
         ThemeStyle.setNavigationStyle(self, UserDefaults.standard.bool(forKey: isNight))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: UserDefaults.standard.bool(forKey: isNight) ? "follow_title_profile_night_18x18_" : "follow_title_profile_18x18_"), style: .plain, target: self, action: #selector(rightBarClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: UserDefaults.standard.bool(forKey: isNight) ? "new_more_titlebar_night_24x24_" : "new_more_titlebar_24x24_"), style: .plain, target: self, action: #selector(rightBarClick))
         
         //接收更换主题通知
         NotificationCenter.default.addObserver(self, selector: #selector(receiveDayOrNightClick), name: NSNotification.Name(rawValue: "dayOrNightClick"), object: nil)
+        
+        tableView.tableHeaderView = headerView
+        tableView.tableFooterView = UIView()
         
     }
     
@@ -63,5 +63,20 @@ extension DongtaiDetailController {
     
     @objc func rightBarClick() {
         
+    }
+}
+
+extension DongtaiDetailController {
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        navigationBar.titleLabel.isHidden = scrollView.contentOffset.y >= 50
+        navigationBar.nameButton.isHidden = scrollView.contentOffset.y <= 50
+        navigationBar.avatarButton.isHidden = scrollView.contentOffset.y <= 50
+        navigationBar.followersButton.isHidden = scrollView.contentOffset.y <= 50
+        navigationBar.vipImage.isHidden = scrollView.contentOffset.y <= 50
     }
 }

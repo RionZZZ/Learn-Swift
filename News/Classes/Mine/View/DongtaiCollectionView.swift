@@ -19,7 +19,8 @@ class DongtaiCollectionView: UICollectionView, UICollectionViewDelegateFlowLayou
     
     var isPostVideo = false
     
-
+    var isDongtaiDetail = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         delegate = self
@@ -42,7 +43,7 @@ class DongtaiCollectionView: UICollectionView, UICollectionViewDelegateFlowLayou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return Calculate.collectionCellSize(thumbImageList.count)
+        return isDongtaiDetail ? Calculate.detailCollectionCellSize(thumbImageList) : Calculate.collectionCellSize(thumbImageList.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

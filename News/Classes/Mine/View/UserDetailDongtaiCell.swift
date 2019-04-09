@@ -87,9 +87,7 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellFromNib {
             case .postContent, .postSmallVideo: //文字内容
                 middleView.addSubview(collectionView)
                 collectionView.frame = CGRect(x: 15, y: 0, width: dongtai!.collectionViewW, height: dongtai!.collectionViewH)
-                if dongtai!.item_type  == .postSmallVideo {
-                    collectionView.isPostVideo = true
-                }
+                collectionView.isPostVideo = dongtai!.item_type == .postSmallVideo
                 collectionView.thumbImageList = dongtai!.thumb_image_list
                 collectionView.largeImages = dongtai!.large_image_list
             case .commentOrQuoteContent, .commentOrQuoteOthers: //引用或评论

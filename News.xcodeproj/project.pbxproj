@@ -70,6 +70,8 @@
 		AE4B51122238E66D00CB360D /* DongtaiDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4B51102238E66D00CB360D /* DongtaiDetailController.xib */; };
 		AE591CB5225B3E9A00132598 /* DongtaiNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE591CB4225B3E9A00132598 /* DongtaiNavigationView.swift */; };
 		AE591CB7225B3EA300132598 /* DongtaiNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE591CB6225B3EA300132598 /* DongtaiNavigationView.xib */; };
+		AE591CB9225B4FC700132598 /* DongtaiDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE591CB8225B4FC700132598 /* DongtaiDetailHeaderView.swift */; };
+		AE591CBB225B4FCE00132598 /* DongtaiDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE591CBA225B4FCE00132598 /* DongtaiDetailHeaderView.xib */; };
 		AE5C141A221BACA100EF208D /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C1418221BACA100EF208D /* UserDetailViewController.swift */; };
 		AE5C141B221BACA100EF208D /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5C1419221BACA100EF208D /* UserDetailViewController.xib */; };
 		AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */; };
@@ -189,6 +191,8 @@
 		AE4B51102238E66D00CB360D /* DongtaiDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiDetailController.xib; sourceTree = "<group>"; };
 		AE591CB4225B3E9A00132598 /* DongtaiNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiNavigationView.swift; sourceTree = "<group>"; };
 		AE591CB6225B3EA300132598 /* DongtaiNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiNavigationView.xib; sourceTree = "<group>"; };
+		AE591CB8225B4FC700132598 /* DongtaiDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiDetailHeaderView.swift; sourceTree = "<group>"; };
+		AE591CBA225B4FCE00132598 /* DongtaiDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiDetailHeaderView.xib; sourceTree = "<group>"; };
 		AE5C1418221BACA100EF208D /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		AE5C1419221BACA100EF208D /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
@@ -579,6 +583,8 @@
 				AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */,
 				AE591CB4225B3E9A00132598 /* DongtaiNavigationView.swift */,
 				AE591CB6225B3EA300132598 /* DongtaiNavigationView.xib */,
+				AE591CB8225B4FC700132598 /* DongtaiDetailHeaderView.swift */,
+				AE591CBA225B4FCE00132598 /* DongtaiDetailHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -791,6 +797,7 @@
 				AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */,
 				AE2EA17D222CF783003FDEB1 /* HomeNavigationBar.xib in Resources */,
 				AE4B51122238E66D00CB360D /* DongtaiDetailController.xib in Resources */,
+				AE591CBB225B4FCE00132598 /* DongtaiDetailHeaderView.xib in Resources */,
 				AE48AC20221AA57200FA2015 /* OfflineDownloadCell.xib in Resources */,
 				AE1E7520222F5F6D0094EB07 /* emoji_sort.plist in Resources */,
 				AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */,
@@ -975,6 +982,7 @@
 				AE2EA179222CC443003FDEB1 /* Date.swift in Sources */,
 				AE48AC13221A4C6C00FA2015 /* MineCellModel.swift in Sources */,
 				AE591CB5225B3E9A00132598 /* DongtaiNavigationView.swift in Sources */,
+				AE591CB9225B4FC700132598 /* DongtaiDetailHeaderView.swift in Sources */,
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
 				AE2EA190222D2866003FDEB1 /* PreviewLagerImageViewController.swift in Sources */,
 				AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */,
