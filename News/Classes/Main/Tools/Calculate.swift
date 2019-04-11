@@ -80,7 +80,7 @@ extension Calculate {
         switch thumbImageList.count {
         case 1:
             let thumbImage = thumbImageList.first!
-            let height = (screenWidth - 30) + thumbImage.height / thumbImage.width
+            let height = (screenWidth - 30) * thumbImage.height / thumbImage.width
             return CGSize(width: screenWidth - 30, height: height)
         case 2, 4:
             let image2Width = (screenWidth - 35) / 2
@@ -96,7 +96,7 @@ extension Calculate {
         switch thumbImageList.count {
         case 1:
             let thumbImage = thumbImageList.first!
-            let height = (screenWidth - 30) + thumbImage.height / thumbImage.width
+            let height = (screenWidth - 30) * thumbImage.height / thumbImage.width
             return height
         case 2:
             return (screenWidth - 35) / 2

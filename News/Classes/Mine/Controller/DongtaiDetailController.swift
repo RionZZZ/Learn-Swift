@@ -25,6 +25,8 @@ class DongtaiDetailController: UITableViewController {
         let header = DongtaiDetailHeaderView.loadViewFromNib()
         return header
     }()
+    
+    var comments = [DongtaiComment]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,18 @@ extension DongtaiDetailController {
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
         
+        tableView._registerCell(cell: DongtaiCommentCell.self)
+        
+        switch dongtai.item_type {
+        case .commentOrQuoteContent, .commentOrQuoteOthers:
+            Network.loadUserDetailQuoteComments(detailId: dongtai.id, offset: 0) { (comments) in
+                self.comments = comments
+                self.tableView.reloadData()
+            }
+        default:
+            break
+        }
+        
     }
     
     @objc func receiveDayOrNightClick(notification: Notification) {
@@ -69,7 +83,13 @@ extension DongtaiDetailController {
 extension DongtaiDetailController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return comments.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView._dequeueReusableCell(indexPath: indexPath) as DongtaiCommentCell
+        cell.comment = comments[indexPath.row]
+        return cell
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

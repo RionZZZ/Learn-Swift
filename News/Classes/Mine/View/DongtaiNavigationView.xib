@@ -30,11 +30,12 @@
                     </connections>
                 </button>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="all_v_avatar_18x18_" translatesAutoresizingMaskIntoConstraints="NO" id="E1W-vN-20Z">
-                    <rect key="frame" x="16" y="23" width="14" height="14"/>
+                    <rect key="frame" x="18" y="25" width="12" height="12"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="14" id="6Zd-99-hQ0"/>
-                        <constraint firstAttribute="height" constant="14" id="6fq-9i-Zq3"/>
+                        <constraint firstAttribute="width" constant="12" id="6Zd-99-hQ0"/>
+                        <constraint firstAttribute="height" constant="12" id="6fq-9i-Zq3"/>
                     </constraints>
+                    <viewLayoutGuide key="safeArea" id="a2F-Lk-3qD"/>
                 </imageView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ql-rd-Yeh">
                     <rect key="frame" x="35" y="0.0" width="108.5" height="22"/>

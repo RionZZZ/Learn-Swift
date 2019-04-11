@@ -72,6 +72,8 @@
 		AE591CB7225B3EA300132598 /* DongtaiNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE591CB6225B3EA300132598 /* DongtaiNavigationView.xib */; };
 		AE591CB9225B4FC700132598 /* DongtaiDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE591CB8225B4FC700132598 /* DongtaiDetailHeaderView.swift */; };
 		AE591CBB225B4FCE00132598 /* DongtaiDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE591CBA225B4FCE00132598 /* DongtaiDetailHeaderView.xib */; };
+		AE591CBE225EEDB100132598 /* DongtaiCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE591CBC225EEDB100132598 /* DongtaiCommentCell.swift */; };
+		AE591CBF225EEDB100132598 /* DongtaiCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE591CBD225EEDB100132598 /* DongtaiCommentCell.xib */; };
 		AE5C141A221BACA100EF208D /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C1418221BACA100EF208D /* UserDetailViewController.swift */; };
 		AE5C141B221BACA100EF208D /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5C1419221BACA100EF208D /* UserDetailViewController.xib */; };
 		AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */; };
@@ -193,6 +195,8 @@
 		AE591CB6225B3EA300132598 /* DongtaiNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiNavigationView.xib; sourceTree = "<group>"; };
 		AE591CB8225B4FC700132598 /* DongtaiDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiDetailHeaderView.swift; sourceTree = "<group>"; };
 		AE591CBA225B4FCE00132598 /* DongtaiDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiDetailHeaderView.xib; sourceTree = "<group>"; };
+		AE591CBC225EEDB100132598 /* DongtaiCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCommentCell.swift; sourceTree = "<group>"; };
+		AE591CBD225EEDB100132598 /* DongtaiCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DongtaiCommentCell.xib; sourceTree = "<group>"; };
 		AE5C1418221BACA100EF208D /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		AE5C1419221BACA100EF208D /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
@@ -585,6 +589,8 @@
 				AE591CB6225B3EA300132598 /* DongtaiNavigationView.xib */,
 				AE591CB8225B4FC700132598 /* DongtaiDetailHeaderView.swift */,
 				AE591CBA225B4FCE00132598 /* DongtaiDetailHeaderView.xib */,
+				AE591CBC225EEDB100132598 /* DongtaiCommentCell.swift */,
+				AE591CBD225EEDB100132598 /* DongtaiCommentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -809,6 +815,7 @@
 				AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */,
 				AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */,
 				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
+				AE591CBF225EEDB100132598 /* DongtaiCommentCell.xib in Resources */,
 				AEFD90482223C2A6002AC12B /* UserDetailDongtaiCell.xib in Resources */,
 				AE46B9072217AFED006B75DD /* MineConcernCell.xib in Resources */,
 				AE375B6E2225105100CC8F25 /* PostVideoOrArticleView.xib in Resources */,
@@ -963,6 +970,7 @@
 				AE48AC0F221A418500FA2015 /* SettingViewController.swift in Sources */,
 				AE4B510E2238D9D000CB360D /* SVProgressHUD.swift in Sources */,
 				AE4B51112238E66D00CB360D /* DongtaiDetailController.swift in Sources */,
+				AE591CBE225EEDB100132598 /* DongtaiCommentCell.swift in Sources */,
 				AE48AC18221A519F00FA2015 /* SettingCell.swift in Sources */,
 				AE48AC1F221AA57200FA2015 /* OfflineDownloadCell.swift in Sources */,
 				AE231FCE22195069004F0D1A /* MoreLoginViewController.swift in Sources */,

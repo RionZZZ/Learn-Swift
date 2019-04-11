@@ -72,25 +72,25 @@ class DongtaiDetailHeaderView: UIView, NibLoadable {
             
             switch dongtai.item_type {
             case .postVideoOrArticle, .postVideo, .answerQuestion, .proposeQuestion, .forwardArticle, .postContentAndVideo: //文章或视频
-                middleView.addSubview(postVideoOrArticle)
                 postVideoOrArticle.frame = CGRect(x: 15, y: 0, width: screenWidth - 30, height: middleView.height)
                 if dongtai.group.title == "" {
                     postVideoOrArticle.originGroup = dongtai.origin_group
                 } else {
                     postVideoOrArticle.group = dongtai.group
                 }
+                middleView.addSubview(postVideoOrArticle)
             case .postContent, .postSmallVideo: //文字内容
-                middleView.addSubview(collectionView)
-                collectionView.isDongtaiDetail = true
                 collectionView.frame = CGRect(x: 15, y: 0, width: dongtai.collectionViewW, height: dongtai.detailConllectionViewH)
                 collectionView.isPostVideo = dongtai.item_type == .postSmallVideo
                 collectionView.thumbImageList = dongtai.thumb_image_list
                 collectionView.largeImages = dongtai.large_image_list
+                collectionView.isDongtaiDetail = true
+                middleView.addSubview(collectionView)
             case .commentOrQuoteContent, .commentOrQuoteOthers: //引用或评论
-                middleView.addSubview(originalThreadView)
+                originalThreadView.originThread = dongtai.origin_thread
                 originalThreadView.originThread!.isDongtaiDetail = true
                 originalThreadView.frame = CGRect(x: 0, y: 0, width: screenWidth - 30, height: dongtai.origin_thread.height)
-                originalThreadView.originThread = dongtai.origin_thread
+                middleView.addSubview(originalThreadView)
             }
         }
     }

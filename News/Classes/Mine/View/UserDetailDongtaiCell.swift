@@ -36,6 +36,7 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellFromNib {
             likeButton.setTitle("\(dongtai!.commentCount)", for: .normal)
             forwardButton.setTitle("\(dongtai!.forwardCount)", for: .normal)
             bottomLabel.text = ("\(dongtai!.readCount)人阅读\(dongtai!.brand_info)")
+            commentButton.setTitle(dongtai!.commentCount, for: .normal)
             
 //            contentLabel.text = dongtai!.content
             contentLabel.attributedText = emojiManager.emojiShow(content: dongtai!.content, font: contentLabel.font)

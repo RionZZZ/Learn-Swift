@@ -44,6 +44,12 @@ protocol NetworkProtocol {
     
     //用户详情问答列表数据
     static func loadUserDetailWenDaList(userId: Int, cursor: String, completionHandler: @escaping (_ cursor: String,_ wendas: [UserDetailWenda]) -> ())
+    
+    //用户详情评论列表
+    static func loadUserDetailNormalComments(groupId: Int, count: Int, offset: Int, completionHandler: @escaping (_ comments: [DongtaiComment]) -> ())
+    
+    //其他类型用户详情评论列表
+    static func loadUserDetailQuoteComments(detailId: Int, offset: Int, completionHandler: @escaping (_ comments: [DongtaiComment]) -> ())
 }
 
 extension NetworkProtocol {
@@ -360,7 +366,7 @@ extension NetworkProtocol {
     }
     
     //用户详情动态列表数据
-    static func loadUserDetailDongtaiList(userId: Int, maxCursor: Int, completionHandler: @escaping (_ cursor: Int,_ dongtais: [UserDetailDongtai]) -> ()) {
+    static func loadUserDetailDongtaiList(userId: Int, maxCursor: Int, completionHandler: @escaping (_ cursor: Int, _ dongtais: [UserDetailDongtai]) -> ()) {
         
         let url = BASE_URL + "/dongtai/list/v15/?"
         let params = ["user_id": userId,
@@ -387,7 +393,7 @@ extension NetworkProtocol {
     }
     
     //用户详情问答列表数据
-    static func loadUserDetailWenDaList(userId: Int, cursor: String, completionHandler: @escaping (_ cursor: String,_ wendas: [UserDetailWenda]) -> ()) {
+    static func loadUserDetailWenDaList(userId: Int, cursor: String, completionHandler: @escaping (_ cursor: String, _ wendas: [UserDetailWenda]) -> ()) {
         
         let url = BASE_URL + "/wenda/profile/wendatab/brow/?"
         let params = ["other_id": userId,
@@ -416,7 +422,57 @@ extension NetworkProtocol {
         }
     }
     
+    //用户详情评论列表
+    static func loadUserDetailNormalComments(groupId: Int, count: Int, offset: Int, completionHandler: @escaping (_ comments: [DongtaiComment]) -> ()) {
+        
+        let url = BASE_URL + "/article/v2/tab_comments/"
+        let params = ["forum_id": "",
+                      "group_id": groupId,
+                      "count": count,
+                      "offset": offset,
+                      "device_id": device_id,
+                      "iid": iid] as [String : Any]
+        
+        Alamofire.request(url, method: .post, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { completionHandler([]); return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else { completionHandler([]); return }
+                if let datas = json["data"].arrayObject {
+                    completionHandler(datas.compactMap({
+                        DongtaiComment.deserialize(from: ($0 as! [String: Any])["comment"] as? Dictionary)
+                    }))
+                }
+            }
+        }
+    }
+    
+    //其他类型用户详情评论列表
+    static func loadUserDetailQuoteComments(detailId: Int, offset: Int, completionHandler: @escaping (_ comments: [DongtaiComment]) -> ()) {
+        
+        let url = BASE_URL + "/2/comment/v1/reply_list/?"
+        let params = ["id": detailId,
+                      "count": 20,
+                      "offset": offset,
+                      "device_id": device_id,
+                      "iid": iid] as [String : Any]
+        
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { completionHandler([]); return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else { completionHandler([]); return }
+                if let data = json["data"].dictionary {
+                    if let datas = data["data"]!.arrayObject {
+                        completionHandler(datas.compactMap({ DongtaiComment.deserialize(from: $0 as? Dictionary) }))
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
-struct Network : NetworkProtocol {
-}
+struct Network : NetworkProtocol { }
