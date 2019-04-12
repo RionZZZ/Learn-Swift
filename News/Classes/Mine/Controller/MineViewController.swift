@@ -131,7 +131,8 @@ extension MineViewController {
 //            cell.delegate = self
             cell.mineConcernSelected = { (concernCell) in
                 if concernCell.userid != nil {
-                    let userDetailVC = UserDetailViewController()
+//                    let userDetailVC = UserDetailViewController()
+                    let userDetailVC = UserDetailViewController2()
                     userDetailVC.userId = concernCell.userid!
                     self.navigationController?.pushViewController(userDetailVC, animated: true)
                 }

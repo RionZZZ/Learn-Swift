@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailViewController2" customModule="News" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="ZpC-um-mey" id="VEY-bT-YAi"/>
+                <outlet property="bottomViewBottom" destination="v7H-1t-kwp" id="K96-os-V0M"/>
+                <outlet property="bottomViewHeight" destination="Vsi-Dr-jt2" id="VW5-x4-Mq8"/>
+                <outlet property="tabview" destination="yJb-Ys-eQg" id="h9T-Ca-wuq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZpC-um-mey">
+                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="Vsi-Dr-jt2"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yJb-Ys-eQg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FoU-WO-SpZ"/>
+                        <outlet property="delegate" destination="-1" id="z4m-Nl-AJr"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yJb-Ys-eQg" secondAttribute="trailing" id="Fl6-IZ-Se3"/>
+                <constraint firstAttribute="trailing" secondItem="ZpC-um-mey" secondAttribute="trailing" id="MoO-pY-EcB"/>
+                <constraint firstItem="yJb-Ys-eQg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="O0Z-Qn-Ffb"/>
+                <constraint firstItem="yJb-Ys-eQg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SvX-ZZ-WEm"/>
+                <constraint firstItem="ZpC-um-mey" firstAttribute="top" secondItem="yJb-Ys-eQg" secondAttribute="bottom" id="aJk-YQ-hHa"/>
+                <constraint firstAttribute="bottom" secondItem="ZpC-um-mey" secondAttribute="bottom" id="v7H-1t-kwp"/>
+                <constraint firstItem="ZpC-um-mey" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wOF-g5-SNR"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
