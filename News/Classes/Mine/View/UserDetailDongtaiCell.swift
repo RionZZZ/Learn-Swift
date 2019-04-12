@@ -39,7 +39,8 @@ class UserDetailDongtaiCell: UITableViewCell, RegisterCellFromNib {
             commentButton.setTitle(dongtai!.commentCount, for: .normal)
             
 //            contentLabel.text = dongtai!.content
-            contentLabel.attributedText = emojiManager.emojiShow(content: dongtai!.content, font: contentLabel.font)
+//            contentLabel.attributedText = emojiManager.emojiShow(content: dongtai!.content, font: contentLabel.font)
+            contentLabel.attributedText = dongtai!.attributedContent
             
             contentLabel.userTapeed = {(userName, range) in
                 for user in self.dongtai!.userContents! {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DongtaiDetailController: UITableViewController {
     
@@ -31,6 +32,7 @@ class DongtaiDetailController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SVProgressHUD.configuration()
         setupUI()
     }
 
@@ -60,15 +62,37 @@ extension DongtaiDetailController {
         tableView._registerCell(cell: DongtaiCommentCell.self)
         
         switch dongtai.item_type {
-        case .commentOrQuoteContent, .commentOrQuoteOthers:
-            Network.loadUserDetailQuoteComments(detailId: dongtai.id, offset: 0) { (comments) in
-                self.comments = comments
-                self.tableView.reloadData()
-            }
+        case .commentOrQuoteContent, .commentOrQuoteOthers, .forwardArticle:
+            tableView.mj_footer = RefreshFooter(refreshingBlock: { [weak self] in
+                Network.loadUserDetailQuoteComments(detailId: self!.dongtai.id, offset: self!.comments.count) { (comments) in
+                    self!.loadData(comments: comments)
+                }
+            })
+        case .postContent:
+            tableView.mj_footer = RefreshFooter(refreshingBlock: { [weak self] in
+                Network.loadUserDetailNormalComments(groupId: Int(self!.dongtai.id_str)!, count: 20, offset: self!.comments.count) { (comments) in
+                    self!.loadData(comments: comments)
+                }
+            })
         default:
             break
         }
+        tableView.mj_footer.beginRefreshing()
         
+    }
+    
+    func loadData(comments: [DongtaiComment]) {
+        if tableView.mj_footer.isRefreshing {
+            tableView.mj_footer.endRefreshing()
+        }
+        tableView.mj_footer.pullingPercent = 0
+        if comments.count == 0 {
+            tableView.mj_footer.endRefreshingWithNoMoreData()
+            SVProgressHUD.showInfo(withStatus: "没有更多数据")
+            return
+        }
+        self.comments = comments
+        tableView.reloadData()
     }
     
     @objc func receiveDayOrNightClick(notification: Notification) {

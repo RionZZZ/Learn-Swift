@@ -47,7 +47,8 @@ class DongtaiCommentCell: UITableViewCell, RegisterCellFromNib {
             replyButton.setTitle(comment.reply_count == 0 ? "回复" : "\(comment.reply_count)回复", for: .normal)
             zanButton.setTitle(comment.digg_count == 0 ? "赞" : comment.diggCount, for: .normal)
             zanButton.isSelected = comment.user_digg
-            contentLabel.text = comment.text
+//            contentLabel.text = comment.text
+            contentLabel.attributedText = comment.attributedContent
         }
     }
 

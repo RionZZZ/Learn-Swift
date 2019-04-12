@@ -20,9 +20,10 @@ class DongtaiOriginalThreadView: UIView, NibLoadable {
     var originThread: DongtaiOriginThread? {
         didSet {
             //            contentLabel.text = originThread!.content
-            let mutableAttrbuted = NSMutableAttributedString(string: "@\(originThread!.user.screen_name)", attributes: [.foregroundColor: UIColor.blueFontColor()])
-            mutableAttrbuted.append(emojiManager.emojiShow(content: originThread!.content, font: contentLabel.font))
-            contentLabel.attributedText = mutableAttrbuted
+//            let mutableAttrbuted = NSMutableAttributedString(string: "@\(originThread!.user.screen_name)", attributes: [.foregroundColor: UIColor.blueFontColor()])
+//            mutableAttrbuted.append(emojiManager.emojiShow(content: originThread!.content, font: contentLabel.font))
+//            contentLabel.attributedText = mutableAttrbuted
+            contentLabel.attributedText = originThread!.attributedContent
             contentLabelHeight.constant = originThread!.contentH
             collectionView.isDongtaiDetail = originThread!.isDongtaiDetail
             collectionView.thumbImageList = originThread!.thumb_image_list

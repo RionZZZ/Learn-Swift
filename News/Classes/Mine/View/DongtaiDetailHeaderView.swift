@@ -36,7 +36,8 @@ class DongtaiDetailHeaderView: UIView, NibLoadable {
             commentCountLabel.text = "\(dongtai.commentCount)人评论"
             zanButton.setTitle(dongtai.diggCount, for: .normal)
             
-            contentLabel.attributedText = emojiManager.emojiShow(content: dongtai.content, font: contentLabel.font)
+//            contentLabel.attributedText = emojiManager.emojiShow(content: dongtai.content, font: contentLabel.font)
+            contentLabel.attributedText = dongtai.attributedContent
             
             contentLabel.userTapeed = {(userName, range) in
                 for user in self.dongtai.userContents! {
