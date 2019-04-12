@@ -93,6 +93,8 @@
 		AEAADE24225F75CD00403F67 /* UserDetailNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE22225F75CD00403F67 /* UserDetailNavigationBar.swift */; };
 		AEAADE25225F75CD00403F67 /* UserDetailNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAADE23225F75CD00403F67 /* UserDetailNavigationBar.xib */; };
 		AEAADE2722602B3800403F67 /* TopTabScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE2622602B3800403F67 /* TopTabScrollView.swift */; };
+		AEAADE2A22608FEE00403F67 /* WendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE2822608FEE00403F67 /* WendaViewController.swift */; };
+		AEAADE2B22608FEE00403F67 /* WendaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAADE2922608FEE00403F67 /* WendaViewController.xib */; };
 		AEB3341A223742B600EAC84A /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB33419223742B600EAC84A /* RefreshView.swift */; };
 		AEB334252237AC2500EAC84A /* UserDetailWendaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */; };
 		AEB334262237AC2500EAC84A /* UserDetailWendaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */; };
@@ -226,6 +228,8 @@
 		AEAADE22225F75CD00403F67 /* UserDetailNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailNavigationBar.swift; sourceTree = "<group>"; };
 		AEAADE23225F75CD00403F67 /* UserDetailNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailNavigationBar.xib; sourceTree = "<group>"; };
 		AEAADE2622602B3800403F67 /* TopTabScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabScrollView.swift; sourceTree = "<group>"; };
+		AEAADE2822608FEE00403F67 /* WendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WendaViewController.swift; sourceTree = "<group>"; };
+		AEAADE2922608FEE00403F67 /* WendaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WendaViewController.xib; sourceTree = "<group>"; };
 		AEB33419223742B600EAC84A /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RefreshView.swift; path = /www/News/News/Classes/Main/View/RefreshView.swift; sourceTree = "<absolute>"; };
 		AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailWendaCell.swift; sourceTree = "<group>"; };
 		AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailWendaCell.xib; sourceTree = "<group>"; };
@@ -426,6 +430,8 @@
 			isa = PBXGroup;
 			children = (
 				AEB9C6EE2215ADD300904DDE /* HomeViewController.swift */,
+				AEAADE2822608FEE00403F67 /* WendaViewController.swift */,
+				AEAADE2922608FEE00403F67 /* WendaViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -844,6 +850,7 @@
 				AE034B98221E9F4500CE0EE5 /* RelationRecommandCell.xib in Resources */,
 				AE2EA18D222D1D77003FDEB1 /* WeiViewController.xib in Resources */,
 				AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */,
+				AEAADE2B22608FEE00403F67 /* WendaViewController.xib in Resources */,
 				AEEA86A7221E405000BD0137 /* UserDetailBottomPopController.storyboard in Resources */,
 				AE46B9122217E4F1006B75DD /* night_theme.plist in Resources */,
 				AE48AC11221A45BA00FA2015 /* Setting.plist in Resources */,
@@ -1052,6 +1059,7 @@
 				AE034B97221E9F4500CE0EE5 /* RelationRecommandCell.swift in Sources */,
 				AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */,
 				AEA8CC3E222A6D7C0055B021 /* DongtaiCollectionView.swift in Sources */,
+				AEAADE2A22608FEE00403F67 /* WendaViewController.swift in Sources */,
 				AE375B71222540BB00CC8F25 /* DongtaiCollectionCell.swift in Sources */,
 				AE1E7524222F5FA80094EB07 /* Emoji.swift in Sources */,
 				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,

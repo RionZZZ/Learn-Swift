@@ -10,7 +10,7 @@ import UIKit
 
 class UserDetailViewController2: UIViewController {
 
-    @IBOutlet weak var tabview: UITableView!
+    @IBOutlet weak var tabview: UserDetailTableView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
     @IBOutlet weak var bottomViewBottom: NSLayoutConstraint!
@@ -43,6 +43,7 @@ class UserDetailViewController2: UIViewController {
                 }
                 self.userDetail = userDetail
                 self.headerView.userDetail = userDetail
+                self.barView.userDetail = userDetail
                 self.topTabView.topTabs = userDetail.top_tab
                 self.tabview.tableHeaderView = self.headerView
                 
@@ -59,7 +60,7 @@ class UserDetailViewController2: UIViewController {
                         let dongtaiVC = DongtaiTableViewController()
                         self.addChild(dongtaiVC)
                         if index == 0 {
-                            dongtaiVC.currentTopTab = topTab.type
+                            dongtaiVC.currentTopTabType = topTab.type
                         }
                         dongtaiVC.userId = userDetail.user_id
                         dongtaiVC.tableView.frame = CGRect(x: CGFloat(index) * screenWidth, y: 0, width: screenWidth, height: rowHeight)
@@ -95,7 +96,7 @@ class UserDetailViewController2: UIViewController {
         return barView
     }()
     
-    //懒加载scroll
+    //懒加载topTab
     fileprivate lazy var topTabView: TopTabScrollView = {
         let topTabView = TopTabScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 40))
         return topTabView
@@ -153,6 +154,13 @@ extension UserDetailViewController2: UserDetailBottomDelegate {
         }
         headerView.didSelectConcernButton = { [weak self] in
             self!.tabview.tableHeaderView = self!.headerView
+        }
+        //当前topTab类型
+        topTabView.currentTopTab = { [weak self] (topTab, index) in
+            let cell = self!.tabview.cellForRow(at: IndexPath(row: 0, section: 0)) as! UserDetailCell
+            let dongtaiVC = self!.children[index] as! DongtaiTableViewController
+            dongtaiVC.currentTopTabType = topTab.type
+            cell.scrollView.setContentOffset(CGPoint(x: CGFloat(index) * screenWidth, y: 0), animated: true)
         }
     }
     
@@ -215,3 +223,20 @@ extension UserDetailViewController2: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
+
+class UserDetailTableView: UITableView, UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        guard let otherView = otherGestureRecognizer.view else {
+            return false
+        }
+        if otherView.isMember(of: UIScrollView.self) {
+            return false
+        }
+        let isPan = gestureRecognizer.isKind(of: UIPanGestureRecognizer.self)
+        if isPan && otherView.isKind(of: UIScrollView.self) {
+            return true
+        }
+        return false
+    }
+}

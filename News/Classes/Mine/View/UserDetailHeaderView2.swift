@@ -45,7 +45,6 @@ class UserDetailHeaderView2: UIView, NibLoadable {
     
     var didClickUserUid: ((_ uid: Int) -> ())?
     var didClickTopicCid: ((_ cid: Int) -> ())?
-    var didSelectCell: ((_ dongtai: UserDetailDongtai) -> ())?
     // 点击关注按钮
     var didSelectConcernButton: (()->())?
     
