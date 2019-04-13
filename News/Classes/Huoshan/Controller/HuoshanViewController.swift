@@ -16,5 +16,17 @@ class HuoshanViewController: UIViewController {
         view.theme_backgroundColor = "colors.cellBackgroundColor"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        if UserDefaults.standard.bool(forKey: isNight) {
+            navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background_night"), for: .default)
+        } else {
+            navigationController?.navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
+        }
+        
+    }
+    
 
 }

@@ -111,6 +111,7 @@ class UserDetailViewController2: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        UIApplication.shared.keyWindow?.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
