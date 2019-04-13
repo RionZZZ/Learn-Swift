@@ -9,7 +9,9 @@
 import UIKit
 import SVProgressHUD
 
-class DongtaiDetailController: UITableViewController {
+class DongtaiDetailController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var dongtai = UserDetailDongtai() {
         didSet {
@@ -42,13 +44,22 @@ class DongtaiDetailController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    @IBAction func onCommentClick(_ sender: UIButton) {
+        
+    }
+    @IBAction func onDiggClick(_ sender: Any) {
+    }
+    @IBAction func onShareClick(_ sender: Any) {
+    }
+    
+    
 }
 
 extension DongtaiDetailController {
     
     func setupUI() {
         
-        tableView.theme_backgroundColor = "colors.cellBackgroundColor"
+        view.theme_backgroundColor = "colors.cellBackgroundColor"
         navigationItem.titleView = navigationBar
     
         ThemeStyle.setNavigationStyle(self, UserDefaults.standard.bool(forKey: isNight))
@@ -113,19 +124,19 @@ extension DongtaiDetailController {
     }
 }
 
-extension DongtaiDetailController {
+extension DongtaiDetailController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView._dequeueReusableCell(indexPath: indexPath) as DongtaiCommentCell
         cell.comment = comments[indexPath.row]
         return cell
     }
     
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         navigationBar.titleLabel.isHidden = scrollView.contentOffset.y >= 50
         navigationBar.nameButton.isHidden = scrollView.contentOffset.y <= 50
         navigationBar.avatarButton.isHidden = scrollView.contentOffset.y <= 50
