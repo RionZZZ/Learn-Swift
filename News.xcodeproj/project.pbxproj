@@ -95,6 +95,10 @@
 		AEAADE2722602B3800403F67 /* TopTabScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE2622602B3800403F67 /* TopTabScrollView.swift */; };
 		AEAADE2A22608FEE00403F67 /* WendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE2822608FEE00403F67 /* WendaViewController.swift */; };
 		AEAADE2B22608FEE00403F67 /* WendaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAADE2922608FEE00403F67 /* WendaViewController.xib */; };
+		AEAADE2E22616F9E00403F67 /* UserDiggController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE2C22616F9E00403F67 /* UserDiggController.swift */; };
+		AEAADE2F22616F9E00403F67 /* UserDiggController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAADE2D22616F9E00403F67 /* UserDiggController.xib */; };
+		AEAADE322261746C00403F67 /* UserDiggCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE302261746C00403F67 /* UserDiggCell.swift */; };
+		AEAADE332261746C00403F67 /* UserDiggCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAADE312261746C00403F67 /* UserDiggCell.xib */; };
 		AEB3341A223742B600EAC84A /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB33419223742B600EAC84A /* RefreshView.swift */; };
 		AEB334252237AC2500EAC84A /* UserDetailWendaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */; };
 		AEB334262237AC2500EAC84A /* UserDetailWendaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */; };
@@ -230,6 +234,10 @@
 		AEAADE2622602B3800403F67 /* TopTabScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabScrollView.swift; sourceTree = "<group>"; };
 		AEAADE2822608FEE00403F67 /* WendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WendaViewController.swift; sourceTree = "<group>"; };
 		AEAADE2922608FEE00403F67 /* WendaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WendaViewController.xib; sourceTree = "<group>"; };
+		AEAADE2C22616F9E00403F67 /* UserDiggController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiggController.swift; sourceTree = "<group>"; };
+		AEAADE2D22616F9E00403F67 /* UserDiggController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDiggController.xib; sourceTree = "<group>"; };
+		AEAADE302261746C00403F67 /* UserDiggCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiggCell.swift; sourceTree = "<group>"; };
+		AEAADE312261746C00403F67 /* UserDiggCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDiggCell.xib; sourceTree = "<group>"; };
 		AEB33419223742B600EAC84A /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RefreshView.swift; path = /www/News/News/Classes/Main/View/RefreshView.swift; sourceTree = "<absolute>"; };
 		AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailWendaCell.swift; sourceTree = "<group>"; };
 		AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailWendaCell.xib; sourceTree = "<group>"; };
@@ -563,6 +571,8 @@
 				AE55D163225F34B800139E1F /* UserDetailViewController2.swift */,
 				AE55D164225F34B800139E1F /* UserDetailViewController2.xib */,
 				AE55D16B225F446A00139E1F /* DongtaiTableViewController.swift */,
+				AEAADE2C22616F9E00403F67 /* UserDiggController.swift */,
+				AEAADE2D22616F9E00403F67 /* UserDiggController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -627,6 +637,8 @@
 				AEAADE22225F75CD00403F67 /* UserDetailNavigationBar.swift */,
 				AEAADE23225F75CD00403F67 /* UserDetailNavigationBar.xib */,
 				AEAADE2622602B3800403F67 /* TopTabScrollView.swift */,
+				AEAADE302261746C00403F67 /* UserDiggCell.swift */,
+				AEAADE312261746C00403F67 /* UserDiggCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -829,6 +841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEAADE25225F75CD00403F67 /* UserDetailNavigationBar.xib in Resources */,
+				AEAADE332261746C00403F67 /* UserDiggCell.xib in Resources */,
 				AE5C141F221BB64C00EF208D /* UserDetailHeaderView.xib in Resources */,
 				AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */,
 				AEDEA61A221444F9006074A1 /* LaunchScreen.storyboard in Resources */,
@@ -864,6 +877,7 @@
 				AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */,
 				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
 				AEB334262237AC2500EAC84A /* UserDetailWendaCell.xib in Resources */,
+				AEAADE2F22616F9E00403F67 /* UserDiggController.xib in Resources */,
 				AE55D166225F34B800139E1F /* UserDetailViewController2.xib in Resources */,
 				AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */,
 				AE2EA191222D2866003FDEB1 /* PreviewLagerImageViewController.xib in Resources */,
@@ -1011,6 +1025,7 @@
 				AE48AC0F221A418500FA2015 /* SettingViewController.swift in Sources */,
 				AE4B510E2238D9D000CB360D /* SVProgressHUD.swift in Sources */,
 				AE4B51112238E66D00CB360D /* DongtaiDetailController.swift in Sources */,
+				AEAADE2E22616F9E00403F67 /* UserDiggController.swift in Sources */,
 				AEAADE20225F6C9B00403F67 /* UserDetailCell.swift in Sources */,
 				AE591CBE225EEDB100132598 /* DongtaiCommentCell.swift in Sources */,
 				AE48AC18221A519F00FA2015 /* SettingCell.swift in Sources */,
@@ -1063,6 +1078,7 @@
 				AE375B71222540BB00CC8F25 /* DongtaiCollectionCell.swift in Sources */,
 				AE1E7524222F5FA80094EB07 /* Emoji.swift in Sources */,
 				AEEA86A1221E3BAB00BD0137 /* UserDetailBottomPopController.swift in Sources */,
+				AEAADE322261746C00403F67 /* UserDiggCell.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,
 				AE2EA177222CC04F003FDEB1 /* Int.swift in Sources */,

@@ -34,6 +34,7 @@ class DongtaiDetailController: UITableViewController {
         
         SVProgressHUD.configuration()
         setupUI()
+        onActionClick()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +102,14 @@ extension DongtaiDetailController {
     
     @objc func rightBarClick() {
         
+    }
+    
+    func onActionClick() {
+        headerView.didClickDigg = { [weak self] dongtai in
+            let userDiggVC = UserDiggController()
+            userDiggVC.detailId = dongtai.id
+            self!.navigationController?.pushViewController(userDiggVC, animated: true)
+        }
     }
 }
 

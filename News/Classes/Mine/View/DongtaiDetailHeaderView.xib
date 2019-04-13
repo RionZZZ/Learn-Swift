@@ -103,6 +103,9 @@
                             <state key="normal" title="0">
                                 <color key="titleColor" red="0.518686431" green="0.76636585700000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="onDiggClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="MAU-H7-j3u"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

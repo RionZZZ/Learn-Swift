@@ -50,6 +50,9 @@ protocol NetworkProtocol {
     
     //其他类型用户详情评论列表
     static func loadUserDetailQuoteComments(detailId: Int, offset: Int, completionHandler: @escaping (_ comments: [DongtaiComment]) -> ())
+    
+    //加载动态点赞列表
+    static func loadUserDongtaiDetailDiggList(detailId: Int, offset: Int, completionHandler: @escaping (_ comments: [DongtaiUserDigg]) -> ())
 }
 
 extension NetworkProtocol {
@@ -467,6 +470,31 @@ extension NetworkProtocol {
                 if let data = json["data"].dictionary {
                     if let datas = data["data"]!.arrayObject {
                         completionHandler(datas.compactMap({ DongtaiComment.deserialize(from: $0 as? Dictionary) }))
+                    }
+                }
+            }
+        }
+    }
+    
+    //加载动态点赞列表
+    static func loadUserDongtaiDetailDiggList(detailId: Int, offset: Int, completionHandler: @escaping (_ comments: [DongtaiUserDigg]) -> ()) {
+        
+        let url = BASE_URL + "/2/comment/v1/digg_list/?"
+        let params = ["id": detailId,
+                      "count": 20,
+                      "offset": offset,
+                      "device_id": device_id,
+                      "iid": iid] as [String : Any]
+        
+        Alamofire.request(url, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { completionHandler([]); return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else { completionHandler([]); return }
+                if let data = json["data"].dictionary {
+                    if let datas = data["data"]!.arrayObject {
+                        completionHandler(datas.compactMap({ DongtaiUserDigg.deserialize(from: $0 as? Dictionary) }))
                     }
                 }
             }

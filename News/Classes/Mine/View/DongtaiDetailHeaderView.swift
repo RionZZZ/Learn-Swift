@@ -26,6 +26,7 @@ class DongtaiDetailHeaderView: UIView, NibLoadable {
     private let emojiManager = EmojiManager()
     var didClickUserName: ((_ uid: Int) -> ())?
     var didClickTopic: ((_ cid: Int) -> ())?
+    var didClickDigg: ((_ dongtai: UserDetailDongtai) -> ())?
     var dongtai = UserDetailDongtai() {
         didSet {
             avatatButton.kf.setImage(with: URL(string: dongtai.user.avatar_url), for: .normal)
@@ -125,4 +126,9 @@ class DongtaiDetailHeaderView: UIView, NibLoadable {
     @IBAction func onCoverClick(_ sender: UIButton) {
         didClickCover?(dongtai.user.user_id)
     }
+    
+    @IBAction func onDiggClick(_ sender: UIButton) {
+        didClickDigg?(dongtai)
+    }
+    
 }
