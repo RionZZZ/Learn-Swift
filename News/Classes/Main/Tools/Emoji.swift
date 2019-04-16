@@ -6,13 +6,24 @@
 //  Copyright © 2019年 Rion. All rights reserved.
 //
 
-import Foundation
-import HandyJSON
+import UIKit
+//import HandyJSON
 
-struct Emoji: HandyJSON {
+struct Emoji {
     var id = ""
     var name = ""
     var png = ""
+    
+    var isDelete = false
+    var isEmpty = false
+    
+    init(id: String = "", name: String = "", png: String = "", isDelete: Bool = false, isEmpty: Bool = false) {
+        self.id = id
+        self.name = name
+        self.png = png
+        self.isDelete = isDelete
+        self.isEmpty = isEmpty
+    }
 }
 
 struct EmojiManager {
@@ -21,13 +32,49 @@ struct EmojiManager {
     
     init() {
         //获取emoji的路径
-        let path = Bundle.main.path(forResource: "emojis.plist", ofType: nil)
+//        let path = Bundle.main.path(forResource: "emojis.plist", ofType: nil)
         //根据文件读取数据
-        let arr = NSArray(contentsOfFile: path!) as! [[String: String]]
+//        let arr = NSArray(contentsOfFile: path!) as! [[String: String]]
         //字典转模型
-        emojis = arr.compactMap {
-            Emoji.deserialize(from: $0 as NSDictionary)
+//        emojis = arr.compactMap {
+//            Emoji.deserialize(from: $0 as NSDictionary)
+//        }
+        
+        let arrayPath = Bundle.main.path(forResource: "emoji_sort.plist", ofType: nil)
+        let sorts = NSArray(contentsOfFile: arrayPath!) as! [String]
+        
+        let mappingPath = Bundle.main.path(forResource: "emoji_mapping.plist", ofType: nil)
+        let mappings = NSDictionary(contentsOfFile: mappingPath!)
+        
+        var temps = [Emoji]()
+        for (index, id) in sorts.enumerated() {
+            if index != 0 && index % 20 == 0 {
+                temps.append(Emoji(isDelete: true))
+            }
+            temps.append(Emoji(id: id, png: "emoji_\(id)_32x32_"))
         }
+        
+        mappings?.enumerateKeysAndObjects({ (key, value, stop) in
+            emojis = temps.compactMap({
+                var emoji = $0
+                if emoji.id == "\(value)" {
+                    emoji.name = "\(key)"
+                }
+                return emoji
+            })
+        })
+        
+        //判断分页是否有剩余
+        let count = emojis.count % 21
+        guard count != 0 else { return }
+        for index in count..<21 {
+            if index == 20 {
+                emojis.append(Emoji(isDelete: true))
+            } else {
+                emojis.append(Emoji(isEmpty: true))
+            }
+        }
+        
     }
     
     func emojiShow(content: String, font: UIFont) -> NSMutableAttributedString {

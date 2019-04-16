@@ -39,6 +39,6 @@ let image1Width = screenWidth / 2
 let image2Width = (screenWidth - 35) / 2
 let image3Width = (screenWidth - 40) / 3
 
-
+let emojiWidth = screenWidth / 7
 
 

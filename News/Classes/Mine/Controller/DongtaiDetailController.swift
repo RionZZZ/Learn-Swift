@@ -44,14 +44,26 @@ class DongtaiDetailController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    @IBAction func onCommentClick(_ sender: UIButton) {
-        
-    }
     @IBAction func onDiggClick(_ sender: Any) {
     }
     @IBAction func onShareClick(_ sender: Any) {
     }
+    @IBAction func onCommentClick(_ sender: UIButton) {
+        popPostComment(false)
+    }
+    @IBAction func onEmojiClick(_ sender: UIButton) {
+        popPostComment(true)
+    }
     
+    //弹出commentview
+    func popPostComment(_ isEmoji: Bool) {
+        let postComment = PostCommentView.loadViewFromNib()
+        postComment.placeholderView.text = "优质评论将会被优先展示"
+        postComment.isEmoji = isEmoji
+//        view.addSubview(postComment)
+        UIApplication.shared.keyWindow?.backgroundColor = .white
+        UIApplication.shared.keyWindow?.addSubview(postComment)
+    }
     
 }
 
@@ -134,6 +146,19 @@ extension DongtaiDetailController: UITableViewDelegate, UITableViewDataSource, U
         let cell = tableView._dequeueReusableCell(indexPath: indexPath) as DongtaiCommentCell
         cell.comment = comments[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let comment = comments[indexPath.row]
+        let postComment = PostCommentView.loadViewFromNib()
+        if comment.screen_name != "" {
+            postComment.placeholderView.text = "回复：\(comment.screen_name)"
+        } else if comment.user.user_id != 0 {
+            if comment.user.screen_name != "" {
+                postComment.placeholderView.text = "回复：\(comment.user.screen_name)"
+            }
+        }
+        view.addSubview(postComment)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -39,8 +39,8 @@ class MoreLoginViewController: AnimatableModalViewController {
         topLabel.theme_textColor = "colors.black"
         tipLabel.theme_textColor = "colors.cellRightTextColor"
         argeementLabel.theme_textColor = "colors.black"
-        argeementButton.theme_setImage("images.agreementButton", forState: .selected)
-        argeementButton.theme_setImage("images.agreementOKButton", forState: .normal)
+        argeementButton.theme_setImage("images.agreementButton", forState: .normal)
+        argeementButton.theme_setImage("images.agreementOKButton", forState: .selected)
         mobileView.theme_backgroundColor = "colors.loginFieldBackground"
         passwordView.theme_backgroundColor = "colors.loginFieldBackground"
         closeButton.theme_setImage("images.closeButton", forState: .normal)

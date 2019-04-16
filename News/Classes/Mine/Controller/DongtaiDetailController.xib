@@ -37,7 +37,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDX-nK-DD2">
                             <rect key="frame" x="285" y="0.0" width="45" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="3Fu-WY-Ef4"/>
                                 <constraint firstAttribute="width" constant="45" id="G1p-Nz-1eA"/>
                             </constraints>
                             <state key="normal" title="Button" image="tab_like_24x24_"/>
@@ -55,15 +54,19 @@
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                 </button>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_icon_emoji_24x24_" translatesAutoresizingMaskIntoConstraints="NO" id="vKE-Po-pgr">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQs-6u-a9W">
                                     <rect key="frame" x="221" y="3" width="24" height="24"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="EbM-rl-KbR"/>
-                                        <constraint firstAttribute="width" constant="24" id="li8-S3-jHm"/>
+                                        <constraint firstAttribute="height" constant="24" id="dpw-7m-EWe"/>
+                                        <constraint firstAttribute="width" constant="24" id="tu3-hX-Tay"/>
                                     </constraints>
-                                </imageView>
+                                    <state key="normal" image="tabbar_icon_emoji_24x24_"/>
+                                    <connections>
+                                        <action selector="onEmojiClick:" destination="-1" eventType="touchUpInside" id="Ujd-fJ-o2t"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1G-ig-ezT">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="221" height="30"/>
                                     <connections>
                                         <action selector="onCommentClick:" destination="-1" eventType="touchUpInside" id="gy1-kF-i4Z"/>
                                     </connections>
@@ -71,16 +74,16 @@
                             </subviews>
                             <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="dQs-6u-a9W" firstAttribute="centerY" secondItem="ULq-MP-dNf" secondAttribute="centerY" id="11L-Bw-q9V"/>
                                 <constraint firstAttribute="bottom" secondItem="vNj-HG-OGs" secondAttribute="bottom" id="HGk-Av-UPm"/>
                                 <constraint firstItem="m1G-ig-ezT" firstAttribute="leading" secondItem="ULq-MP-dNf" secondAttribute="leading" id="Ltk-io-uQa"/>
                                 <constraint firstAttribute="height" constant="30" id="bOG-Uf-qNb"/>
                                 <constraint firstAttribute="bottom" secondItem="m1G-ig-ezT" secondAttribute="bottom" id="cgO-hG-nE0"/>
                                 <constraint firstItem="vNj-HG-OGs" firstAttribute="top" secondItem="ULq-MP-dNf" secondAttribute="top" id="eQd-W0-ppO"/>
+                                <constraint firstItem="dQs-6u-a9W" firstAttribute="leading" secondItem="m1G-ig-ezT" secondAttribute="trailing" id="eZj-ki-y5Q"/>
                                 <constraint firstItem="vNj-HG-OGs" firstAttribute="leading" secondItem="ULq-MP-dNf" secondAttribute="leading" constant="10" id="fXv-Ct-EBW"/>
-                                <constraint firstItem="vKE-Po-pgr" firstAttribute="centerY" secondItem="ULq-MP-dNf" secondAttribute="centerY" id="goJ-dN-K1e"/>
                                 <constraint firstItem="m1G-ig-ezT" firstAttribute="top" secondItem="ULq-MP-dNf" secondAttribute="top" id="muT-BB-PvV"/>
-                                <constraint firstAttribute="trailing" secondItem="m1G-ig-ezT" secondAttribute="trailing" id="ssc-Bb-nUn"/>
-                                <constraint firstAttribute="trailing" secondItem="vKE-Po-pgr" secondAttribute="trailing" constant="5" id="zL6-Ps-w6w"/>
+                                <constraint firstAttribute="trailing" secondItem="dQs-6u-a9W" secondAttribute="trailing" constant="5" id="rqF-Cr-KHV"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
