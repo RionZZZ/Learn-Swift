@@ -104,6 +104,7 @@
 		AEAADE3A2261E37700403F67 /* EmojiCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE382261E37700403F67 /* EmojiCollectionCell.swift */; };
 		AEAADE3B2261E37700403F67 /* EmojiCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAADE392261E37700403F67 /* EmojiCollectionCell.xib */; };
 		AEAADE3D22641E2600403F67 /* EmojiLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE3C22641E2600403F67 /* EmojiLayout.swift */; };
+		AEAADE3F2265739B00403F67 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAADE3E2265739B00403F67 /* UITextView.swift */; };
 		AEB3341A223742B600EAC84A /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB33419223742B600EAC84A /* RefreshView.swift */; };
 		AEB334252237AC2500EAC84A /* UserDetailWendaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */; };
 		AEB334262237AC2500EAC84A /* UserDetailWendaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */; };
@@ -248,6 +249,7 @@
 		AEAADE382261E37700403F67 /* EmojiCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionCell.swift; sourceTree = "<group>"; };
 		AEAADE392261E37700403F67 /* EmojiCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiCollectionCell.xib; sourceTree = "<group>"; };
 		AEAADE3C22641E2600403F67 /* EmojiLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiLayout.swift; sourceTree = "<group>"; };
+		AEAADE3E2265739B00403F67 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		AEB33419223742B600EAC84A /* RefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RefreshView.swift; path = /www/News/News/Classes/Main/View/RefreshView.swift; sourceTree = "<absolute>"; };
 		AEB334232237AC2500EAC84A /* UserDetailWendaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailWendaCell.swift; sourceTree = "<group>"; };
 		AEB334242237AC2500EAC84A /* UserDetailWendaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailWendaCell.xib; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				AE46B8FE22179BCD006B75DD /* UIView.swift */,
 				AE46B90022179C70006B75DD /* UITableView.swift */,
 				AE46B90222179EB9006B75DD /* UICollectionView.swift */,
+				AEAADE3E2265739B00403F67 /* UITextView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1085,6 +1088,7 @@
 				AE48AC1C221AA41700FA2015 /* OfflineDownloadController.swift in Sources */,
 				AE46B90122179C70006B75DD /* UITableView.swift in Sources */,
 				AE034B8E221E800500CE0EE5 /* NavigationBarView.swift in Sources */,
+				AEAADE3F2265739B00403F67 /* UITextView.swift in Sources */,
 				AE034B92221E9ABC00CE0EE5 /* RelationRecommandView.swift in Sources */,
 				AE1A4A972216550F004DFFB9 /* Const.swift in Sources */,
 				AE46B90D2217E29C006B75DD /* Theme.swift in Sources */,

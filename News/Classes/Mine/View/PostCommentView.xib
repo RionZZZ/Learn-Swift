@@ -244,7 +244,7 @@
                 <outlet property="postButton" destination="2CV-Zn-edc" id="f1o-RV-RHB"/>
                 <outlet property="textView" destination="A40-B1-D0I" id="fT1-Lf-hmK"/>
                 <outlet property="textViewBackground" destination="Bck-Og-GAR" id="8BY-ZD-Myi"/>
-                <outlet property="textViewheight" destination="rF0-MI-6lm" id="RXf-az-GhN"/>
+                <outlet property="textViewHeight" destination="rF0-MI-6lm" id="pVi-gI-eeb"/>
                 <outlet property="viewBottom" destination="9Gl-eY-gRK" id="3MO-yg-fCJ"/>
             </connections>
             <point key="canvasLocation" x="138.40000000000001" y="326.08695652173918"/>

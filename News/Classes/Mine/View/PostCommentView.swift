@@ -19,7 +19,7 @@ class PostCommentView: UIView, NibLoadable {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var placeholderView: UILabel!
     @IBOutlet weak var viewBottom: NSLayoutConstraint!
-    @IBOutlet weak var textViewheight: NSLayoutConstraint!
+    @IBOutlet weak var textViewHeight: NSLayoutConstraint!
     @IBOutlet weak var leftEmojiButton: UIButton!
     @IBOutlet weak var leftEmojiHeight: NSLayoutConstraint!
     @IBOutlet weak var pageControllerView: UIView!
@@ -27,6 +27,13 @@ class PostCommentView: UIView, NibLoadable {
     @IBOutlet weak var emojiViewBottom: NSLayoutConstraint!
     @IBOutlet weak var emojiViewHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    private lazy var pageControl: UIPageControl = {
+       let pageControl = UIPageControl()
+        pageControl.pageIndicatorTintColor = UIColor.init(r: 200, g: 200, b: 200)
+        pageControl.currentPageIndicatorTintColor = UIColor.init(r: 100, g: 100, b: 100)
+        return pageControl
+    }()
     
     let emojiManager = EmojiManager()
     
@@ -39,6 +46,12 @@ class PostCommentView: UIView, NibLoadable {
                     self.changeConstraints()
                     self.viewBottom.constant = 60 + emojiWidth * 3
                     self.layoutIfNeeded()
+                }
+                
+                if pageControllerView.subviews.count == 0 {
+                    pageControl.numberOfPages = emojiManager.emojis.count / 21
+                    pageControl.center = pageControllerView.center
+                    pageControllerView.addSubview(pageControl)
                 }
             } else {
                 textView.becomeFirstResponder()
@@ -140,20 +153,22 @@ class PostCommentView: UIView, NibLoadable {
 extension PostCommentView: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        setup(textView.text)
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        setup(textView.text)
-        return true
-    }
-    
-    func setup(_ text: String) {
-        placeholderView.isHidden = text != ""
-        postButton.setTitleColor(text != "" ? .blueFontColor() : .grayColor210(), for: .normal)
-        let height = Calculate.textHeight(text: text, fontSize: 16, width: textView.width)
-        textViewheight.constant = height >= 80 ? 80 : height
+        placeholderView.isHidden = textView.text.count != 0
+        postButton.setTitleColor(textView.text.count != 0 ? .blueFontColor() : .grayColor210(), for: .normal)
+        let height = Calculate.attributedTextHeight(text: textView.attributedText, width: textView.width)
+        if height <= 30 {
+            textViewHeight.constant = 30
+        } else if height >= 80 {
+            textViewHeight.constant = 80
+        } else {
+            textViewHeight.constant = height
+        }
         layoutIfNeeded()
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        emojiButton.isSelected = false
+        return true
     }
 }
 
@@ -169,7 +184,15 @@ extension PostCommentView: UICollectionViewDelegate, UICollectionViewDataSource 
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let emoji = emojiManager.emojis[indexPath.item]
+        textView.setAttributedText(emoji: emoji)
+        placeholderView.isHidden = textView.attributedText.length != 0
+    }
     
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentPage = scrollView.contentOffset.x / scrollView.width
+        pageControl.currentPage = Int(currentPage + 0.5)
+    }
     
 }

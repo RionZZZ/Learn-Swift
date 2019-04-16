@@ -123,6 +123,11 @@ extension Calculate {
         return text.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes:[.font: UIFont.systemFont(ofSize:fontSize)], context: nil).size.height + 5
     }
     
+    //计算富文本高度
+    static func attributedTextHeight(text: NSAttributedString, width: CGFloat) -> CGFloat {
+        return text.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, context: nil).size.height + 5
+    }
+    
     //从文本内容中获取uid和用户名
     static func richContents(from content: String, idPattern: String, titlePattern: String) -> [RichContent] {
         
