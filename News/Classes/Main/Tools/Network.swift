@@ -53,6 +53,13 @@ protocol NetworkProtocol {
     
     //加载动态点赞列表
     static func loadUserDongtaiDetailDiggList(detailId: Int, offset: Int, completionHandler: @escaping (_ comments: [DongtaiUserDigg]) -> ())
+    
+    //问答列表
+    static func loadProposeQuestionList(qid: Int, enterForm: String, completionHandler: @escaping (_ comments: Wenda) -> ())
+    
+    //问答列表加载更多
+    static func loadMoreProposeQuestionList(qid: Int, enterForm: String, offset: Int, completionHandler: @escaping (_ comments: Wenda) -> ())
+    
 }
 
 extension NetworkProtocol {
@@ -501,6 +508,44 @@ extension NetworkProtocol {
         }
     }
     
+    //问答列表
+    static func loadProposeQuestionList(qid: Int, enterForm: String, completionHandler: @escaping (_ comments: Wenda) -> ()) {
+        
+        let url = BASE_URL + "/wenda/v1/question/brow/?device_id=\(device_id)&iid=\(iid)"
+        let params = ["qid": qid,
+                      "enter_form": enterForm] as [String : Any]
+        
+        Alamofire.request(url, method: .post, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["err_no"] == 0 else { return }
+                completionHandler(Wenda.deserialize(from: json.dictionaryObject)!)
+            }
+        }
+    }
+    
+    //问答列表加载更多
+    static func loadMoreProposeQuestionList(qid: Int, enterForm: String, offset: Int, completionHandler: @escaping (_ comments: Wenda) -> ()) {
+        
+        let url = BASE_URL + "/wenda/v1/question/loadmore/?device_id=\(device_id)&iid=\(iid)"
+        let params = ["qid": qid,
+                      "enter_form": enterForm,
+                      "count": 20,
+                      "offset": offset] as [String : Any]
+        
+        Alamofire.request(url, method: .post, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["err_no"] == 0 else { return }
+                completionHandler(Wenda.deserialize(from: json.dictionaryObject)!)
+            }
+        }
+    }
+    
 }
 
-struct Network : NetworkProtocol { }
+struct Network: NetworkProtocol { }

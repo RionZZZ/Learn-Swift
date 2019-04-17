@@ -20,6 +20,14 @@
 		AE1A4A972216550F004DFFB9 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A962216550F004DFFB9 /* Const.swift */; };
 		AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9C221655F0004DFFB9 /* UIColor.swift */; };
 		AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A4A9F221661B8004DFFB9 /* Network.swift */; };
+		AE1DD5802265C7FE00DAE3B8 /* WendaAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD57E2265C7FE00DAE3B8 /* WendaAnswerCell.swift */; };
+		AE1DD5812265C7FE00DAE3B8 /* WendaAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1DD57F2265C7FE00DAE3B8 /* WendaAnswerCell.xib */; };
+		AE1DD5832265D64500DAE3B8 /* Wenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5822265D64500DAE3B8 /* Wenda.swift */; };
+		AE1DD5852265D81800DAE3B8 /* WendaAnswerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5842265D81800DAE3B8 /* WendaAnswerHeaderView.swift */; };
+		AE1DD5892265D88000DAE3B8 /* WendaAnswerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1DD5882265D88000DAE3B8 /* WendaAnswerHeaderView.xib */; };
+		AE1DD5D322671C9600DAE3B8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D222671C9600DAE3B8 /* String.swift */; };
+		AE1DD5D52267236000DAE3B8 /* WendaAnswerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D42267236000DAE3B8 /* WendaAnswerBottomView.swift */; };
+		AE1DD5D72267273600DAE3B8 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D62267273600DAE3B8 /* BottomButton.swift */; };
 		AE1E7520222F5F6D0094EB07 /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */; };
 		AE1E7521222F5F6D0094EB07 /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751E222F5F6D0094EB07 /* emojis.plist */; };
 		AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */; };
@@ -165,6 +173,14 @@
 		AE1A4A962216550F004DFFB9 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		AE1A4A9C221655F0004DFFB9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AE1A4A9F221661B8004DFFB9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		AE1DD57E2265C7FE00DAE3B8 /* WendaAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WendaAnswerCell.swift; sourceTree = "<group>"; };
+		AE1DD57F2265C7FE00DAE3B8 /* WendaAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WendaAnswerCell.xib; sourceTree = "<group>"; };
+		AE1DD5822265D64500DAE3B8 /* Wenda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wenda.swift; sourceTree = "<group>"; };
+		AE1DD5842265D81800DAE3B8 /* WendaAnswerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WendaAnswerHeaderView.swift; sourceTree = "<group>"; };
+		AE1DD5882265D88000DAE3B8 /* WendaAnswerHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WendaAnswerHeaderView.xib; sourceTree = "<group>"; };
+		AE1DD5D222671C9600DAE3B8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		AE1DD5D42267236000DAE3B8 /* WendaAnswerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WendaAnswerBottomView.swift; sourceTree = "<group>"; };
+		AE1DD5D62267273600DAE3B8 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
 		AE1E751E222F5F6D0094EB07 /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
@@ -377,6 +393,7 @@
 			children = (
 				AE2EA176222CC04F003FDEB1 /* Int.swift */,
 				AE2EA178222CC443003FDEB1 /* Date.swift */,
+				AE1DD5D222671C9600DAE3B8 /* String.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -461,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				AED17666221AA83A00789669 /* HomeNewsTitleModel.swift */,
+				AE1DD5822265D64500DAE3B8 /* Wenda.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -470,6 +488,12 @@
 			children = (
 				AE2EA17A222CF772003FDEB1 /* HomeNavigationBar.swift */,
 				AE2EA17C222CF783003FDEB1 /* HomeNavigationBar.xib */,
+				AE1DD57E2265C7FE00DAE3B8 /* WendaAnswerCell.swift */,
+				AE1DD57F2265C7FE00DAE3B8 /* WendaAnswerCell.xib */,
+				AE1DD5842265D81800DAE3B8 /* WendaAnswerHeaderView.swift */,
+				AE1DD5882265D88000DAE3B8 /* WendaAnswerHeaderView.xib */,
+				AE1DD5D42267236000DAE3B8 /* WendaAnswerBottomView.swift */,
+				AE1DD5D62267273600DAE3B8 /* BottomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -877,9 +901,11 @@
 				AEAADE21225F6C9B00403F67 /* UserDetailCell.xib in Resources */,
 				AE1E7520222F5F6D0094EB07 /* emoji_sort.plist in Resources */,
 				AE46B8FD22170300006B75DD /* MineFirstSectionCell.xib in Resources */,
+				AE1DD5892265D88000DAE3B8 /* WendaAnswerHeaderView.xib in Resources */,
 				AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
 				AE034B98221E9F4500CE0EE5 /* RelationRecommandCell.xib in Resources */,
+				AE1DD5812265C7FE00DAE3B8 /* WendaAnswerCell.xib in Resources */,
 				AE2EA18D222D1D77003FDEB1 /* WeiViewController.xib in Resources */,
 				AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */,
 				AEAADE3B2261E37700403F67 /* EmojiCollectionCell.xib in Resources */,
@@ -1047,6 +1073,7 @@
 				AE4B51112238E66D00CB360D /* DongtaiDetailController.swift in Sources */,
 				AEAADE2E22616F9E00403F67 /* UserDiggController.swift in Sources */,
 				AEAADE20225F6C9B00403F67 /* UserDetailCell.swift in Sources */,
+				AE1DD5802265C7FE00DAE3B8 /* WendaAnswerCell.swift in Sources */,
 				AE591CBE225EEDB100132598 /* DongtaiCommentCell.swift in Sources */,
 				AE48AC18221A519F00FA2015 /* SettingCell.swift in Sources */,
 				AE48AC1F221AA57200FA2015 /* OfflineDownloadCell.swift in Sources */,
@@ -1057,6 +1084,7 @@
 				AE2EA18C222D1D77003FDEB1 /* WeiViewController.swift in Sources */,
 				AEAADE24225F75CD00403F67 /* UserDetailNavigationBar.swift in Sources */,
 				AED17667221AA83A00789669 /* HomeNewsTitleModel.swift in Sources */,
+				AE1DD5832265D64500DAE3B8 /* Wenda.swift in Sources */,
 				AE46B9092217C82C006B75DD /* NoLoginHeaderView.swift in Sources */,
 				AE46B9062217AFED006B75DD /* MineConcernCell.swift in Sources */,
 				AEB334252237AC2500EAC84A /* UserDetailWendaCell.swift in Sources */,
@@ -1075,6 +1103,7 @@
 				AE591CB5225B3E9A00132598 /* DongtaiNavigationView.swift in Sources */,
 				AE591CB9225B4FC700132598 /* DongtaiDetailHeaderView.swift in Sources */,
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
+				AE1DD5D322671C9600DAE3B8 /* String.swift in Sources */,
 				AE2EA190222D2866003FDEB1 /* PreviewLagerImageViewController.swift in Sources */,
 				AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */,
 				AEB9C70F2215ADD300904DDE /* MineViewController.swift in Sources */,
@@ -1082,7 +1111,9 @@
 				AE46B8FF22179BCD006B75DD /* UIView.swift in Sources */,
 				AE55D169225F37E400139E1F /* UserDetailHeaderView2.swift in Sources */,
 				AE4401012216B2160097DEA9 /* MineOtherCell.swift in Sources */,
+				AE1DD5852265D81800DAE3B8 /* WendaAnswerHeaderView.swift in Sources */,
 				AEB9C7102215ADD300904DDE /* MyTabBarController.swift in Sources */,
+				AE1DD5D72267273600DAE3B8 /* BottomButton.swift in Sources */,
 				AE0DEA5D221C3EDC00F9827E /* UserDetail.swift in Sources */,
 				AEEA869D221D534800BD0137 /* UserDetailBottomView.swift in Sources */,
 				AE48AC1C221AA41700FA2015 /* OfflineDownloadController.swift in Sources */,
@@ -1105,6 +1136,7 @@
 				AEAADE322261746C00403F67 /* UserDiggCell.swift in Sources */,
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,
+				AE1DD5D52267236000DAE3B8 /* WendaAnswerBottomView.swift in Sources */,
 				AE2EA177222CC04F003FDEB1 /* Int.swift in Sources */,
 				AEFD90472223C2A6002AC12B /* UserDetailDongtaiCell.swift in Sources */,
 				AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */,

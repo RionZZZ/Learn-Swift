@@ -204,21 +204,27 @@ extension DongtaiTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch currentTopTabType {
-        case .dongtai:   // 动态
-            let dongtai = dongtais[indexPath.row]
-            pushDetailController(dongtai)
-        case .article:   // 文章
-            let dongtai = articles[indexPath.row]
-            pushDetailController(dongtai)
-        case .video:     // 视频
-            let dongtai = videos[indexPath.row]
-            pushDetailController(dongtai)
-        case .wenda:     // 问答
-            print("wenda")
-        case .iesVideo:  // 小视频
-            let dongtai = iesVideos[indexPath.row]
-            pushDetailController(dongtai)
+//        switch currentTopTabType {
+//        case .dongtai:   // 动态
+//            let dongtai = dongtais[indexPath.row]
+//            pushDetailController(dongtai)
+//        case .article:   // 文章
+//            let dongtai = articles[indexPath.row]
+//            pushDetailController(dongtai)
+//        case .video:     // 视频
+//            let dongtai = videos[indexPath.row]
+//            pushDetailController(dongtai)
+//        case .wenda:     // 问答
+//            print("wenda")
+//        case .iesVideo:  // 小视频
+//            let dongtai = iesVideos[indexPath.row]
+//            pushDetailController(dongtai)
+//        }
+        
+        Network.loadProposeQuestionList(qid: 6485873422990573838, enterForm: "dongtai") { (wenda) in
+            let wendaVC = WendaViewController()
+            wendaVC.wenda = wenda
+            self.navigationController?.pushViewController(wendaVC, animated: true)
         }
     }
     
