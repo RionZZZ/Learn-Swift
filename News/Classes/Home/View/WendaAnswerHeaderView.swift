@@ -25,6 +25,8 @@ class WendaAnswerHeaderView: UIView, NibLoadable {
     @IBOutlet weak var unfoldButton: UIButton!
     @IBOutlet weak var unfoldButtonWidth: NSLayoutConstraint!
     
+    var didSelectUnfold: (()->())?
+    
     var question = WendaQuestion() {
         didSet {
             titleLabel.text = question.title
@@ -35,7 +37,7 @@ class WendaAnswerHeaderView: UIView, NibLoadable {
             collectionCount.text = question.followCount + "个收藏"
             if question.content.thumb_image_list.count != 0 {
                 let thumb = question.content.thumb_image_list.first!
-                imageView.kf.setImage(with: URL(string: (thumb.uri)))
+                imageView.kf.setImage(with: URL(string: (thumb.urlString)))
                 imageViewWidth.constant = 166
                 imageViewHeight.constant = 166 * thumb.ratio
             }
@@ -52,9 +54,10 @@ class WendaAnswerHeaderView: UIView, NibLoadable {
         sender.isHidden = true
         unfoldButtonWidth.constant = 0
         contentLabelHeight.constant = question.content.textH!
-        height = question.foldHeight!
+        height = question.unfoldHeight!
         UIView.animate(withDuration: 0.25) {
             self.layoutIfNeeded()
+            self.didSelectUnfold?()
         }
     }
 }

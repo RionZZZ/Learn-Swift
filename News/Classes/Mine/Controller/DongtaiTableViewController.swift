@@ -221,11 +221,9 @@ extension DongtaiTableViewController {
 //            pushDetailController(dongtai)
 //        }
         
-        Network.loadProposeQuestionList(qid: 6485873422990573838, enterForm: "dongtai") { (wenda) in
-            let wendaVC = WendaViewController()
-            wendaVC.wenda = wenda
-            self.navigationController?.pushViewController(wendaVC, animated: true)
-        }
+        let wendaVC = WendaViewController()
+        self.navigationController?.pushViewController(wendaVC, animated: true)
+        
     }
     
     func pushDetailController(_ dongtai: UserDetailDongtai) {

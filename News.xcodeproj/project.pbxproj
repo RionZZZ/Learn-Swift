@@ -28,6 +28,7 @@
 		AE1DD5D322671C9600DAE3B8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D222671C9600DAE3B8 /* String.swift */; };
 		AE1DD5D52267236000DAE3B8 /* WendaAnswerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D42267236000DAE3B8 /* WendaAnswerBottomView.swift */; };
 		AE1DD5D72267273600DAE3B8 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D62267273600DAE3B8 /* BottomButton.swift */; };
+		AE1DD5D922680FBF00DAE3B8 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D822680FBE00DAE3B8 /* UILabel.swift */; };
 		AE1E7520222F5F6D0094EB07 /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */; };
 		AE1E7521222F5F6D0094EB07 /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751E222F5F6D0094EB07 /* emojis.plist */; };
 		AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */; };
@@ -181,6 +182,7 @@
 		AE1DD5D222671C9600DAE3B8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		AE1DD5D42267236000DAE3B8 /* WendaAnswerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WendaAnswerBottomView.swift; sourceTree = "<group>"; };
 		AE1DD5D62267273600DAE3B8 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
+		AE1DD5D822680FBE00DAE3B8 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
 		AE1E751E222F5F6D0094EB07 /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				AE46B90022179C70006B75DD /* UITableView.swift */,
 				AE46B90222179EB9006B75DD /* UICollectionView.swift */,
 				AEAADE3E2265739B00403F67 /* UITextView.swift */,
+				AE1DD5D822680FBE00DAE3B8 /* UILabel.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1102,6 +1105,7 @@
 				AE55D16C225F446A00139E1F /* DongtaiTableViewController.swift in Sources */,
 				AE591CB5225B3E9A00132598 /* DongtaiNavigationView.swift in Sources */,
 				AE591CB9225B4FC700132598 /* DongtaiDetailHeaderView.swift in Sources */,
+				AE1DD5D922680FBF00DAE3B8 /* UILabel.swift in Sources */,
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
 				AE1DD5D322671C9600DAE3B8 /* String.swift in Sources */,
 				AE2EA190222D2866003FDEB1 /* PreviewLagerImageViewController.swift in Sources */,
