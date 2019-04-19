@@ -103,6 +103,7 @@
 		AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE89A51A221571B5007FF80F /* Assets.xcassets */; };
 		AE8AA7D02269B68E00EA98AA /* SmallVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8AA7CE2269B68E00EA98AA /* SmallVideoCell.swift */; };
 		AE8AA7D12269B68E00EA98AA /* SmallVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE8AA7CF2269B68E00EA98AA /* SmallVideoCell.xib */; };
+		AE8AA7D32269D39A00EA98AA /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8AA7D22269D39A00EA98AA /* Video.swift */; };
 		AEA8CC3A222A65A80055B021 /* DongtaiOriginalThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8CC39222A65A80055B021 /* DongtaiOriginalThreadView.swift */; };
 		AEA8CC3E222A6D7C0055B021 /* DongtaiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */; };
 		AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */; };
@@ -267,6 +268,7 @@
 		AE89A51A221571B5007FF80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE8AA7CE2269B68E00EA98AA /* SmallVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVideoCell.swift; sourceTree = "<group>"; };
 		AE8AA7CF2269B68E00EA98AA /* SmallVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallVideoCell.xib; sourceTree = "<group>"; };
+		AE8AA7D22269D39A00EA98AA /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		AEA8CC39222A65A80055B021 /* DongtaiOriginalThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiOriginalThreadView.swift; sourceTree = "<group>"; };
 		AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionView.swift; sourceTree = "<group>"; };
 		AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DongtaiCollectionView.xib; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 		AEB9C6F42215ADD300904DDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AE8AA7D22269D39A00EA98AA /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1053,16 +1056,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-News/Pods-News-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BMPlayer/BMPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SGPagingView/SGPagingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -1071,16 +1077,19 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGPagingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -1175,6 +1184,7 @@
 				AE46B90322179EB9006B75DD /* UICollectionView.swift in Sources */,
 				AE48AC15221A4C9600FA2015 /* SettingModel.swift in Sources */,
 				AE1DD5D52267236000DAE3B8 /* WendaAnswerBottomView.swift in Sources */,
+				AE8AA7D32269D39A00EA98AA /* Video.swift in Sources */,
 				AE2EA177222CC04F003FDEB1 /* Int.swift in Sources */,
 				AEFD90472223C2A6002AC12B /* UserDetailDongtaiCell.swift in Sources */,
 				AE375B6A2224F09C00CC8F25 /* Calculate.swift in Sources */,

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//import BMPlayer
+import SnapKit
 
 class SmallVideoViewController: UIViewController {
     
@@ -22,10 +24,14 @@ class SmallVideoViewController: UIViewController {
     var originalIndex = 0
     var currentIndex = 0
     
+    //播放器
+//    private lazy var player = BMPlayer(customControlView: SmallVideoPlayerCustomView())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        setupPlayer(currentIndex: originalIndex)
     }
     
     @IBAction func onCloseClick(_ sender: UIButton) {
@@ -58,6 +64,31 @@ extension SmallVideoViewController {
         }
         commentButton.setTitle(smallVideo.raw_data.action.commentCount, for: .normal)
         diggButton.setTitle(smallVideo.raw_data.action.diggCount, for: .normal)
+        //跳到当前item
+        collectionView.scrollToItem(at: IndexPath(item: originalIndex, section: 0), at: .centeredHorizontally, animated: false)
+    }
+    
+    func setupPlayer(currentIndex: Int) {
+        let smallVideo = smallVideos[currentIndex]
+        if let videoUrl = smallVideo.raw_data.video.play_addr.url_list.first {
+            
+            let dataTask = URLSession.shared.dataTask(with: URL(string: videoUrl)!) { (data, response, error) in
+                DispatchQueue.main.async {
+                    let cell = self.collectionView.cellForItem(at: IndexPath(item: currentIndex, section: 0)) as! SmallVideoCell
+                    
+//                    if self.player.isPlaying { self.player.pause() }
+//                    // 先把 bgImageView 的子视图移除，再添加
+//                    for subview in cell.bgImageView.subviews { subview.removeFromSuperview() }
+//                    cell.bgImageView.addSubview(self.player)
+//                    self.player.snp.makeConstraints({ $0.edges.equalTo(cell.bgImageView) })
+//                    let asset = BMPlayerResource(url: URL(string: response!.url!.absoluteString)!)
+//                    self.player.setVideo(resource: asset)
+                }
+            }
+            
+            dataTask.resume()
+        }
+        
     }
 }
 
@@ -80,6 +111,11 @@ extension SmallVideoViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView._dequeueReusableCell(indexPath: indexPath) as SmallVideoCell
         cell.smallVideo = smallVideos[indexPath.item]
         return cell
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentIndex = Int(scrollView.contentOffset.x / scrollView.width + 0.5)
+        setupPlayer(currentIndex: currentIndex)
     }
     
     

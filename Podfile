@@ -17,6 +17,7 @@ target 'News' do
   pod 'SVProgressHUD'
   pod 'MJRefresh'
   pod 'SGPagingView'
+  pod 'BMPlayer'
 
   # Pods for News
 

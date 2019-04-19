@@ -283,7 +283,7 @@ struct SmallVideo: HandyJSON {
     var music = Music()
     var title_rich_span: String = ""
     var user = User()
-//    var video = Video()
+    var video = Video()
     var label: String = ""
     var label_for_list: String = ""
     var distance: String = ""
@@ -528,7 +528,7 @@ struct NewsUserInfo: HandyJSON {
     var subcribed: Int = 0
     var fans_count: Int = 0
     var fansCount: String { return fans_count.convertString() }
-//    var special_column = [SpecialColumn]()
+    var special_column = [SpecialColumn]()
     var user_auth_info: String!
     var media_id: Int = 0
     var screen_name = ""
@@ -599,7 +599,7 @@ struct VideoPlayInfo: HandyJSON {
     var enable_ssl: Bool = false
     var poster_url: String = ""
     var message: String = ""
-//    var video_list = VideoList()
+    var video_list = VideoList()
     var original_play_url = OriginalPlayURL()
     var video_duration: Int = 0
 //    var videoDuration: String {
