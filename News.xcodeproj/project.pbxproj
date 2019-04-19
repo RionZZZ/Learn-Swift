@@ -35,6 +35,8 @@
 		AE1DD5E32268826F00DAE3B8 /* HuoshanCategoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1DD5E12268826F00DAE3B8 /* HuoshanCategoryController.xib */; };
 		AE1DD5E622695F9D00DAE3B8 /* HuoshanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5E422695F9D00DAE3B8 /* HuoshanCell.swift */; };
 		AE1DD5E722695F9D00DAE3B8 /* HuoshanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1DD5E522695F9D00DAE3B8 /* HuoshanCell.xib */; };
+		AE1DD5EA2269A7C200DAE3B8 /* SmallVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5E82269A7C200DAE3B8 /* SmallVideoViewController.swift */; };
+		AE1DD5EB2269A7C200DAE3B8 /* SmallVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1DD5E92269A7C200DAE3B8 /* SmallVideoViewController.xib */; };
 		AE1E7520222F5F6D0094EB07 /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */; };
 		AE1E7521222F5F6D0094EB07 /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751E222F5F6D0094EB07 /* emojis.plist */; };
 		AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */; };
@@ -99,6 +101,8 @@
 		AE5C141D221BB63900EF208D /* UserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */; };
 		AE5C141F221BB64C00EF208D /* UserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5C141E221BB64C00EF208D /* UserDetailHeaderView.xib */; };
 		AE89A51B221571B5007FF80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE89A51A221571B5007FF80F /* Assets.xcassets */; };
+		AE8AA7D02269B68E00EA98AA /* SmallVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8AA7CE2269B68E00EA98AA /* SmallVideoCell.swift */; };
+		AE8AA7D12269B68E00EA98AA /* SmallVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE8AA7CF2269B68E00EA98AA /* SmallVideoCell.xib */; };
 		AEA8CC3A222A65A80055B021 /* DongtaiOriginalThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8CC39222A65A80055B021 /* DongtaiOriginalThreadView.swift */; };
 		AEA8CC3E222A6D7C0055B021 /* DongtaiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */; };
 		AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */; };
@@ -195,6 +199,8 @@
 		AE1DD5E12268826F00DAE3B8 /* HuoshanCategoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HuoshanCategoryController.xib; sourceTree = "<group>"; };
 		AE1DD5E422695F9D00DAE3B8 /* HuoshanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuoshanCell.swift; sourceTree = "<group>"; };
 		AE1DD5E522695F9D00DAE3B8 /* HuoshanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HuoshanCell.xib; sourceTree = "<group>"; };
+		AE1DD5E82269A7C200DAE3B8 /* SmallVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVideoViewController.swift; sourceTree = "<group>"; };
+		AE1DD5E92269A7C200DAE3B8 /* SmallVideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallVideoViewController.xib; sourceTree = "<group>"; };
 		AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
 		AE1E751E222F5F6D0094EB07 /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
@@ -259,6 +265,8 @@
 		AE5C141C221BB63900EF208D /* UserDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailHeaderView.swift; sourceTree = "<group>"; };
 		AE5C141E221BB64C00EF208D /* UserDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailHeaderView.xib; sourceTree = "<group>"; };
 		AE89A51A221571B5007FF80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE8AA7CE2269B68E00EA98AA /* SmallVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVideoCell.swift; sourceTree = "<group>"; };
+		AE8AA7CF2269B68E00EA98AA /* SmallVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallVideoCell.xib; sourceTree = "<group>"; };
 		AEA8CC39222A65A80055B021 /* DongtaiOriginalThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiOriginalThreadView.swift; sourceTree = "<group>"; };
 		AEA8CC3D222A6D7C0055B021 /* DongtaiCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongtaiCollectionView.swift; sourceTree = "<group>"; };
 		AEA8CC43222A7AAC0055B021 /* DongtaiCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DongtaiCollectionView.xib; sourceTree = "<group>"; };
@@ -562,6 +570,8 @@
 				AEB9C6F82215ADD300904DDE /* HuoshanViewController.swift */,
 				AE1DD5E02268826F00DAE3B8 /* HuoshanCategoryController.swift */,
 				AE1DD5E12268826F00DAE3B8 /* HuoshanCategoryController.xib */,
+				AE1DD5E82269A7C200DAE3B8 /* SmallVideoViewController.swift */,
+				AE1DD5E92269A7C200DAE3B8 /* SmallVideoViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -579,6 +589,8 @@
 				AE1DD5DE2268758800DAE3B8 /* HuoshanNavigationView.swift */,
 				AE1DD5E422695F9D00DAE3B8 /* HuoshanCell.swift */,
 				AE1DD5E522695F9D00DAE3B8 /* HuoshanCell.xib */,
+				AE8AA7CE2269B68E00EA98AA /* SmallVideoCell.swift */,
+				AE8AA7CF2269B68E00EA98AA /* SmallVideoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -901,6 +913,7 @@
 				AE231FD0221950A3004F0D1A /* MoreLoginViewController.storyboard in Resources */,
 				AEDEA61A221444F9006074A1 /* LaunchScreen.storyboard in Resources */,
 				AE034B94221E9ADF00CE0EE5 /* RelationRecommandView.xib in Resources */,
+				AE1DD5EB2269A7C200DAE3B8 /* SmallVideoViewController.xib in Resources */,
 				AE591CB7225B3EA300132598 /* DongtaiNavigationView.xib in Resources */,
 				AEAADE372261B31E00403F67 /* PostCommentView.xib in Resources */,
 				AEA8CC46222A83360055B021 /* DongtaiOriginalThreadView.xib in Resources */,
@@ -935,6 +948,7 @@
 				AE375B72222540BB00CC8F25 /* DongtaiCollectionCell.xib in Resources */,
 				AE5C141B221BACA100EF208D /* UserDetailViewController.xib in Resources */,
 				AE034B90221E802400CE0EE5 /* NavigationBarView.xib in Resources */,
+				AE8AA7D12269B68E00EA98AA /* SmallVideoCell.xib in Resources */,
 				AE46B90B2217C849006B75DD /* NoLoginHeaderView.xib in Resources */,
 				AEB334262237AC2500EAC84A /* UserDetailWendaCell.xib in Resources */,
 				AEAADE2F22616F9E00403F67 /* UserDiggController.xib in Resources */,
@@ -1126,6 +1140,8 @@
 				AEB9C7112215ADD300904DDE /* MyNavigationController.swift in Sources */,
 				AE1DD5D322671C9600DAE3B8 /* String.swift in Sources */,
 				AE2EA190222D2866003FDEB1 /* PreviewLagerImageViewController.swift in Sources */,
+				AE1DD5EA2269A7C200DAE3B8 /* SmallVideoViewController.swift in Sources */,
+				AE8AA7D02269B68E00EA98AA /* SmallVideoCell.swift in Sources */,
 				AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */,
 				AE1DD5E22268826F00DAE3B8 /* HuoshanCategoryController.swift in Sources */,
 				AEB9C70F2215ADD300904DDE /* MineViewController.swift in Sources */,

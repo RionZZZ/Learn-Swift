@@ -90,6 +90,13 @@ extension HuoshanCategoryController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let videoVC = SmallVideoViewController()
+        videoVC.originalIndex = indexPath.item
+        videoVC.smallVideos = smallVideos
+        present(videoVC, animated: false, completion: nil)
+    }
+    
 }
 
 
