@@ -16,6 +16,7 @@ target 'News' do
   pod 'SQLite.swift'
   pod 'SVProgressHUD'
   pod 'MJRefresh'
+  pod 'SGPagingView'
 
   # Pods for News
 

@@ -60,6 +60,17 @@ protocol NetworkProtocol {
     //问答列表加载更多
     static func loadMoreProposeQuestionList(qid: Int, enterForm: String, offset: Int, completionHandler: @escaping (_ comments: Wenda) -> ())
     
+    //获取首页、视频、小视频的列表
+    static func loadApiNewsFeeds(category: String, ttForm: TTFrom, completionHandler: @escaping (_ maxBehotTime: TimeInterval, _ news: [NewsModel]) -> ())
+    
+    //首页、视频、小视频列表加载更多
+    static func loadMoreApiNewsFeeds(category: Int, ttForm: TTFrom, maxBehotTime: TimeInterval, listConut: Int, completionHandler: @escaping (_ news: [NewsModel]) -> ())
+    
+    //视频顶部新闻标题
+    static func loadSmallVideoNewsTitle(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ())
+    
+    
+    
 }
 
 extension NetworkProtocol {
@@ -546,6 +557,97 @@ extension NetworkProtocol {
         }
     }
     
+    
+    //获取首页、视频、小视频的列表
+    static func loadApiNewsFeeds(category: String, ttForm: TTFrom, completionHandler: @escaping (_ maxBehotTime: TimeInterval, _ news: [NewsModel]) -> ()) {
+        
+        let pullTime = Date().timeIntervalSince1970
+        let url = BASE_URL + "/api/news/feed/v75/?"
+        let params = ["category": category,
+                      "tt_form": ttForm,
+                      "count": 20,
+                      "list_count": 15,
+                      "min_behot_time": pullTime,
+                      "strict": 0,
+                      "detail": 1,
+                      "refresh_reason": 1,
+                      "device_id": device_id] as [String : Any]
+        
+        Alamofire.request(url, method: .post, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else { return }
+                
+                guard let datas = json["data"].array else { return }
+                completionHandler(pullTime, datas.compactMap({ NewsModel.deserialize(from: $0["content"].string) }))
+            }
+        }
+    }
+    
+    //首页、视频、小视频列表加载更多
+    static func loadMoreApiNewsFeeds(category: Int, ttForm: TTFrom, maxBehotTime: TimeInterval, listConut: Int, completionHandler: @escaping (_ news: [NewsModel]) -> ()) {
+        
+        let url = BASE_URL + "/api/news/feed/v75/?"
+        let params = ["category": category,
+                      "tt_form": ttForm,
+                      "count": 20,
+                      "list_count": listConut,
+                      "max_behot_time": maxBehotTime,
+                      "strict": 0,
+                      "detail": 1,
+                      "refresh_reason": 1,
+                      "device_id": device_id] as [String : Any]
+        
+        Alamofire.request(url, method: .post, parameters: params).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else { return }
+                guard let datas = json["data"].array else { return }
+                completionHandler(datas.compactMap({ NewsModel.deserialize(from: $0["content"].string) }))
+            }
+        }
+    }
+    
+    //小视频顶部新闻标题
+    static func loadSmallVideoNewsTitle(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ()){
+        let url = BASE_URL + "/article/category/get_subscribed/v1/?"
+//        let url = BASE_URL + "/category/get_ugc_video/1/?"    //此接口无数据？？？？？
+        let params = ["device_id": device_id, "iid": iid]
+        Alamofire.request(url, parameters: params).responseJSON { res in
+            guard res.result.isSuccess else {
+                //提示网络错误
+                print("网络连接错误!!")
+                return
+            }
+            if let value = res.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    //提示接口错误
+                    print("接口调用错误!!")
+                    return
+                }
+                if let dataDict = json["data"].dictionary {
+                    if let data = dataDict["data"]?.arrayObject {
+                        var titles = [HomeNewsTitleModel]()
+                        let jsonString = "{\"category\": \"hotsoon_video\", \"name\": \"推荐\"}"
+                        let recommend = HomeNewsTitleModel.deserialize(from: jsonString)
+                        titles.append(recommend!)
+//                        for item in data {
+//                            let newsTitle = HomeNewsTitleModel.deserialize(from: item as? NSDictionary)
+//                            titles.append(newsTitle!)
+//                        }
+                        titles += data.compactMap({ HomeNewsTitleModel.deserialize(from: $0 as? Dictionary) })
+                        completionHandler(titles)
+                    }
+                }
+            }
+            
+        }
+    }
 }
 
 struct Network: NetworkProtocol { }

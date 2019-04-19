@@ -29,6 +29,12 @@
 		AE1DD5D52267236000DAE3B8 /* WendaAnswerBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D42267236000DAE3B8 /* WendaAnswerBottomView.swift */; };
 		AE1DD5D72267273600DAE3B8 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D62267273600DAE3B8 /* BottomButton.swift */; };
 		AE1DD5D922680FBF00DAE3B8 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5D822680FBE00DAE3B8 /* UILabel.swift */; };
+		AE1DD5DB226860D500DAE3B8 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5DA226860D500DAE3B8 /* NewsModel.swift */; };
+		AE1DD5DF2268758800DAE3B8 /* HuoshanNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5DE2268758800DAE3B8 /* HuoshanNavigationView.swift */; };
+		AE1DD5E22268826F00DAE3B8 /* HuoshanCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5E02268826F00DAE3B8 /* HuoshanCategoryController.swift */; };
+		AE1DD5E32268826F00DAE3B8 /* HuoshanCategoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1DD5E12268826F00DAE3B8 /* HuoshanCategoryController.xib */; };
+		AE1DD5E622695F9D00DAE3B8 /* HuoshanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DD5E422695F9D00DAE3B8 /* HuoshanCell.swift */; };
+		AE1DD5E722695F9D00DAE3B8 /* HuoshanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1DD5E522695F9D00DAE3B8 /* HuoshanCell.xib */; };
 		AE1E7520222F5F6D0094EB07 /* emoji_sort.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */; };
 		AE1E7521222F5F6D0094EB07 /* emojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751E222F5F6D0094EB07 /* emojis.plist */; };
 		AE1E7522222F5F6D0094EB07 /* emoji_mapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */; };
@@ -183,6 +189,12 @@
 		AE1DD5D42267236000DAE3B8 /* WendaAnswerBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WendaAnswerBottomView.swift; sourceTree = "<group>"; };
 		AE1DD5D62267273600DAE3B8 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		AE1DD5D822680FBE00DAE3B8 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		AE1DD5DA226860D500DAE3B8 /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		AE1DD5DE2268758800DAE3B8 /* HuoshanNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuoshanNavigationView.swift; sourceTree = "<group>"; };
+		AE1DD5E02268826F00DAE3B8 /* HuoshanCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuoshanCategoryController.swift; sourceTree = "<group>"; };
+		AE1DD5E12268826F00DAE3B8 /* HuoshanCategoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HuoshanCategoryController.xib; sourceTree = "<group>"; };
+		AE1DD5E422695F9D00DAE3B8 /* HuoshanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuoshanCell.swift; sourceTree = "<group>"; };
+		AE1DD5E522695F9D00DAE3B8 /* HuoshanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HuoshanCell.xib; sourceTree = "<group>"; };
 		AE1E751D222F5F6D0094EB07 /* emoji_sort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_sort.plist; sourceTree = "<group>"; };
 		AE1E751E222F5F6D0094EB07 /* emojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojis.plist; sourceTree = "<group>"; };
 		AE1E751F222F5F6D0094EB07 /* emoji_mapping.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = emoji_mapping.plist; sourceTree = "<group>"; };
@@ -481,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				AED17666221AA83A00789669 /* HomeNewsTitleModel.swift */,
+				AE1DD5DA226860D500DAE3B8 /* NewsModel.swift */,
 				AE1DD5822265D64500DAE3B8 /* Wenda.swift */,
 			);
 			path = Model;
@@ -547,6 +560,8 @@
 			isa = PBXGroup;
 			children = (
 				AEB9C6F82215ADD300904DDE /* HuoshanViewController.swift */,
+				AE1DD5E02268826F00DAE3B8 /* HuoshanCategoryController.swift */,
+				AE1DD5E12268826F00DAE3B8 /* HuoshanCategoryController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -561,6 +576,9 @@
 		AEB9C6FA2215ADD300904DDE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE1DD5DE2268758800DAE3B8 /* HuoshanNavigationView.swift */,
+				AE1DD5E422695F9D00DAE3B8 /* HuoshanCell.swift */,
+				AE1DD5E522695F9D00DAE3B8 /* HuoshanCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -907,6 +925,7 @@
 				AE1DD5892265D88000DAE3B8 /* WendaAnswerHeaderView.xib in Resources */,
 				AE46B9102217E4D6006B75DD /* default_theme.plist in Resources */,
 				AEDEA615221444F8006074A1 /* Main.storyboard in Resources */,
+				AE1DD5E722695F9D00DAE3B8 /* HuoshanCell.xib in Resources */,
 				AE034B98221E9F4500CE0EE5 /* RelationRecommandCell.xib in Resources */,
 				AE1DD5812265C7FE00DAE3B8 /* WendaAnswerCell.xib in Resources */,
 				AE2EA18D222D1D77003FDEB1 /* WeiViewController.xib in Resources */,
@@ -928,6 +947,7 @@
 				AEB334262237AC2500EAC84A /* UserDetailWendaCell.xib in Resources */,
 				AEAADE2F22616F9E00403F67 /* UserDiggController.xib in Resources */,
 				AE55D166225F34B800139E1F /* UserDetailViewController2.xib in Resources */,
+				AE1DD5E32268826F00DAE3B8 /* HuoshanCategoryController.xib in Resources */,
 				AEA8CC44222A7AAC0055B021 /* DongtaiCollectionView.xib in Resources */,
 				AE2EA191222D2866003FDEB1 /* PreviewLagerImageViewController.xib in Resources */,
 				AE55D16A225F37E400139E1F /* UserDetailHeaderView2.xib in Resources */,
@@ -1034,6 +1054,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SGPagingView/SGPagingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
@@ -1051,6 +1072,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGPagingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
@@ -1069,6 +1091,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE2EA17B222CF772003FDEB1 /* HomeNavigationBar.swift in Sources */,
+				AE1DD5E622695F9D00DAE3B8 /* HuoshanCell.swift in Sources */,
 				AEB9C70D2215ADD300904DDE /* AppDelegate.swift in Sources */,
 				AE22DC39221AE786000C1E20 /* SQLite.swift in Sources */,
 				AE48AC0F221A418500FA2015 /* SettingViewController.swift in Sources */,
@@ -1092,11 +1115,13 @@
 				AE46B9062217AFED006B75DD /* MineConcernCell.swift in Sources */,
 				AEB334252237AC2500EAC84A /* UserDetailWendaCell.swift in Sources */,
 				AEB9C7122215ADD300904DDE /* MyTabBar.swift in Sources */,
+				AE1DD5DB226860D500DAE3B8 /* NewsModel.swift in Sources */,
 				AEAADE3A2261E37700403F67 /* EmojiCollectionCell.swift in Sources */,
 				AEB9C70C2215ADD300904DDE /* HuoshanViewController.swift in Sources */,
 				AEAADE3D22641E2600403F67 /* EmojiLayout.swift in Sources */,
 				AEAADE2722602B3800403F67 /* TopTabScrollView.swift in Sources */,
 				AE1A4AA0221661B8004DFFB9 /* Network.swift in Sources */,
+				AE1DD5DF2268758800DAE3B8 /* HuoshanNavigationView.swift in Sources */,
 				AE1E7526222F9EBE0094EB07 /* RichLabel.swift in Sources */,
 				AEEA86A9221E4B1700BD0137 /* PopAnimator.swift in Sources */,
 				AE5C141A221BACA100EF208D /* UserDetailViewController.swift in Sources */,
@@ -1110,6 +1135,7 @@
 				AE1DD5D322671C9600DAE3B8 /* String.swift in Sources */,
 				AE2EA190222D2866003FDEB1 /* PreviewLagerImageViewController.swift in Sources */,
 				AEEA86AB221E4EE400BD0137 /* BottomPresentationController.swift in Sources */,
+				AE1DD5E22268826F00DAE3B8 /* HuoshanCategoryController.swift in Sources */,
 				AEB9C70F2215ADD300904DDE /* MineViewController.swift in Sources */,
 				AE1A4A9D221655F0004DFFB9 /* UIColor.swift in Sources */,
 				AE46B8FF22179BCD006B75DD /* UIView.swift in Sources */,

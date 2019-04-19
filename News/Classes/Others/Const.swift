@@ -25,9 +25,9 @@ let UserDetailHeaderBGHeight: CGFloat = 146
 
 let isNight = "isNight"
 
-/// 关注的用户详情界面 topTab 的按钮的宽度
+//关注的用户详情界面 topTab 的按钮的宽度
 let topTabButtonWidth: CGFloat = screenWidth / 5
-/// 关注的用户详情界面 topTab 的指示条的宽度 和 高度
+//关注的用户详情界面 topTab 的指示条的宽度 和 高度
 let topTabindicatorWidth: CGFloat = 40
 let topTabindicatorHeight: CGFloat = 2
 
@@ -42,3 +42,11 @@ let image3Width = (screenWidth - 40) / 3
 let emojiWidth = screenWidth / 7
 
 
+//从哪里进入头条
+enum TTFrom: String {
+    case pull = "pull"
+    case loadMore = "load_more"
+    case auto = "auto"
+    case enterAuto = "enter_auto"
+    case preLoadMoreDraw = "pre_load_more_draw"
+}
