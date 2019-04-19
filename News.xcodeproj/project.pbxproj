@@ -712,7 +712,6 @@
 				AE1A4A9E22165D33004DFFB9 /* Tools */,
 				AE1A4A9B221655F0004DFFB9 /* Extension */,
 				AEB9C7042215ADD300904DDE /* Controller */,
-				AEB9C7072215ADD300904DDE /* Model */,
 				AEB9C7082215ADD300904DDE /* View */,
 			);
 			path = Main;
@@ -725,13 +724,6 @@
 				AEB9C7062215ADD300904DDE /* MyNavigationController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		AEB9C7072215ADD300904DDE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AEB9C7082215ADD300904DDE /* View */ = {

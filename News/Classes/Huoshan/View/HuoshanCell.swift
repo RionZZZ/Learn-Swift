@@ -33,7 +33,6 @@ class HuoshanCell: UICollectionViewCell, RegisterCellFromNib {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
     
     @IBAction func onCloseClick(_ sender: UIButton) {
     }

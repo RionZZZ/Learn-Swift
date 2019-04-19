@@ -64,7 +64,7 @@ protocol NetworkProtocol {
     static func loadApiNewsFeeds(category: String, ttForm: TTFrom, completionHandler: @escaping (_ maxBehotTime: TimeInterval, _ news: [NewsModel]) -> ())
     
     //首页、视频、小视频列表加载更多
-    static func loadMoreApiNewsFeeds(category: Int, ttForm: TTFrom, maxBehotTime: TimeInterval, listConut: Int, completionHandler: @escaping (_ news: [NewsModel]) -> ())
+    static func loadMoreApiNewsFeeds(category: String, ttForm: TTFrom, maxBehotTime: TimeInterval, listConut: Int, completionHandler: @escaping (_ news: [NewsModel]) -> ())
     
     //视频顶部新闻标题
     static func loadSmallVideoNewsTitle(completionHandler: @escaping (_ newsTitles: [HomeNewsTitleModel]) -> ())
@@ -587,7 +587,7 @@ extension NetworkProtocol {
     }
     
     //首页、视频、小视频列表加载更多
-    static func loadMoreApiNewsFeeds(category: Int, ttForm: TTFrom, maxBehotTime: TimeInterval, listConut: Int, completionHandler: @escaping (_ news: [NewsModel]) -> ()) {
+    static func loadMoreApiNewsFeeds(category: String, ttForm: TTFrom, maxBehotTime: TimeInterval, listConut: Int, completionHandler: @escaping (_ news: [NewsModel]) -> ()) {
         
         let url = BASE_URL + "/api/news/feed/v75/?"
         let params = ["category": category,

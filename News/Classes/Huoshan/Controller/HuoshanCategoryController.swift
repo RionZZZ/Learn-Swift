@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HuoshanCategoryController: UIViewController {
 
@@ -19,14 +20,60 @@ class HuoshanCategoryController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SVProgressHUD.configuration()
+        
         collectionView._registerCell(cell: HuoshanCell.self)
         collectionView.collectionViewLayout = HuoshanLayout()
         
-        Network.loadApiNewsFeeds(category: category.category, ttForm: .enterAuto) { (maxBehotTime, videos) in
-            self.smallVideos = videos
-            self.maxBehotTime = maxBehotTime
-            self.collectionView.reloadData()
+//        Network.loadApiNewsFeeds(category: category.category, ttForm: .enterAuto) { (maxBehotTime, videos) in
+//            self.smallVideos = videos
+//            self.maxBehotTime = maxBehotTime
+//            self.collectionView.reloadData()
+//        }
+        
+        setRefresh()
+    }
+    
+    
+    func setRefresh() {
+        
+        let header = RefreshHeader { [weak self] in
+            
+            Network.loadApiNewsFeeds(category: self!.category.category, ttForm: .enterAuto) { (maxBehotTime, videos) in
+                
+                if (self!.collectionView.mj_header.isRefreshing) {
+                    self!.collectionView.mj_header.endRefreshing()
+                }
+                self!.smallVideos = videos
+                self!.maxBehotTime = maxBehotTime
+                self!.collectionView.reloadData()
+            }
         }
+        header?.isAutomaticallyChangeAlpha = true
+        header?.lastUpdatedTimeLabel.isHidden = true
+        header?.beginRefreshing()
+        collectionView.mj_header = header
+        
+        collectionView.mj_footer = RefreshFooter(refreshingBlock: { [weak self] in
+            
+            Network.loadMoreApiNewsFeeds(category: self!.category.category, ttForm: .enterAuto, maxBehotTime: self!.maxBehotTime, listConut: self!.smallVideos.count, completionHandler: { (videos) in
+                
+                if (self!.collectionView.mj_footer.isRefreshing) {
+                    self!.collectionView.mj_footer.endRefreshing()
+                }
+                self!.collectionView.mj_footer.pullingPercent = 0.8
+                if videos.count == 0 {
+                    SVProgressHUD.showInfo(withStatus: "没有更多数据啦！")
+                    return
+                }
+                
+                self!.smallVideos += videos
+                self!.collectionView.reloadData()
+            })
+            
+        })
+        collectionView.mj_footer.isAutomaticallyChangeAlpha = true
+        
     }
     
 }
